@@ -1,0 +1,100 @@
+% thesis.tex: Primary TeX control file for thesis.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt, oneside]{mnthesis}
+\usepackage{epsfig} % Allows the inclusion of eps files
+\usepackage{epic} % Enhanced picture mode
+\usepackage{eepic} % Extensions for epic
+\usepackage{units} % SI unit typesetting
+\usepackage{url} % URL handling
+\usepackage{longtable} % Tables that continue onto multiple pages
+\usepackage{mathrsfs} % Support for \mathscr script
+\usepackage{multirow} % Span rows in tables
+\usepackage{bigstrut} % Space struts in tables up and down
+\usepackage{amssymb} % AMS math symbols and helpers
+\usepackage{graphicx} % Enhanced graphics support
+\usepackage{setspace} % Adjust spacing in captions, single by default
+\usepackage{xspace} % Automatically adjusting space after macros
+\usepackage{amsmath} % \text, and other math formatting options
+\usepackage{siunitx} % \num{} formatting and SI unit formatting
+\usepackage{booktabs} % Enhanced tables with \toprule, etc.
+\usepackage{hyperref} % Add clickable links to other parts of the document
+\usepackage[noabbrev]{cleveref} % Automatically determine \cref type
+\usepackage{epstopdf}
+\usepackage{pdfpages}
+\usepackage{textcomp}
+\usepackage[symbol]{footmisc}  % to use * footage
+
+% Configure the siunitx package
+\sisetup{
+    group-separator = {,}, % Use , to separate groups of digits, like 12,345
+    list-final-separator = {, and } % Always use the serial comma in \SIlist
+}
+
+% Configure the cleveref package
+\newcommand{\creflastconjunction}{, and } % Always use the serial comma
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+% 1   asterisk    *   2   dagger  ?   3   double dagger   ?
+%4   section symbol  �   5   paragraph   �   6   parallel lines  \\
+%7   two asterisks   **  8   two daggers ??  9   two double daggers  ??
+
+\input{my_definitions}
+
+% 1.6 for double spacing and 1.3 for 1.5 spacing.
+\linespread{1.6}
+
+% Compile only the chapters listed here
+\includeonly{
+    title/title,
+    chapters/introduction,
+    chapters/experimental_background,
+    chapters/3D_confinement,
+    chapters/2D_confinement,
+    chapters/1D_strings,
+    chapters/conclusion,
+    appendix/particle_synthesis,
+    appendix/fluorescent_label,
+}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title and other sections that come before the body of the document
+\include{title/title}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now lets include the body of the document...
+%Base Chapters
+\include{chapters/introduction}
+\include{chapters/experimental_background}
+
+% Results
+\include{chapters/3D_confinement}
+\include{chapters/2D_confinement}
+\include{chapters/1D_strings}
+
+%Conclusion
+\include{chapters/conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography, uncomment for final version
+\bibliographystyle{hunsrt} % style of bibliography
+\bibliography{Thesis_Refs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendices
+\appendix
+\include{appendix/particle_synthesis}
+\include{appendix/fluorescent_label}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
