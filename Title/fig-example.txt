@@ -1,0 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%If you wish to place the figure near, allow more positioning options, for instance by [htbp] (here, top, bottom, page). Use a ! symbol to remove further restrictions.
+\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=4 in]{Figs/2-Exp/tracks.png}
+	%select pdftexify command to run jpg or pdf files
+	\end{center}
+	\caption[]
+	{
+
+	}
+	\label{}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
