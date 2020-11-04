@@ -52,19 +52,11 @@ Active matter denotes a large group of active units which utilize ambient energy
 
 Active fluids are suspensions of active agents such as cells, particles and biological macromolecules that are capable of utilizing chemical energy to sustain their self-propulsion. "fluids" in the name suggests the important role of the viscous hydrodynamic interaction and stress in the systems of interest. The first glimmering of active fluids dates back to 1969, when Finlayson and Scriven found that motion could spontaneously set in a previously still material without the intervention of outside forces, due to composition-dependent stress \cite{Finlayson1969}. However, the study on active fluids did not bloom, until 26 year later, when the seminal paper on modeling collective flocks came out \cite{Vicsek1995}. From then on, physicists are getting unprecedentedly intereted in biological phenomena, leading to the emergence of a new field of study - active fluids.
 
-Early accomplishments in the research of active fluids include two successful theoretical predictions on the abnormal rheology and the spontaneous active turbulence \cite{Hatwalne2004, Simha2002}, which were then demonstrated in multiple experiments
-\cite{Dombroski2004, Wensink2012, Rafai2020, Sokolov2009, Gachelin2013, Lopez2015}. From these beginnings, the field has been enjoying a vibrant interplay between experiment and theory, and more complex environment and geometrical constraints have been investigated \cite{Ramaswamy2019}. As of now, the study of active fluids has provided us with a good qualitative understanding of some biological processes, such as how active turbulence enhances nutrient transport. In the future, 
+Early accomplishments in the research of active fluids include two successful theoretical predictions on the abnormal rheology and the spontaneous active turbulence \cite{Hatwalne2004, Simha2002}, which were then demonstrated in quite a few experiments
+\cite{Dombrowski2004, Wensink2012, Rafai2010, Sokolov2009, Gachelin2013, Lopez2015}. From these beginnings, the field has been enjoying a vibrant interplay between experiment and theory, and more complex environment and geometrical constraints have been investigated \cite{Ramaswamy2019}. As of now, the study of active fluids has provided us with a good qualitative understanding of some biological processes, such as how active turbulence enhances nutrient transport.
 
-% Recent success on engineering artificial self-propelled particles also demonstrated the possibility of realizing robots
-
-%% A quatitative understanding, however, requires more knowledge on the chemical and biological signalling
-
-
-
-The research on collective phenomena dates back to the 1980s, when flocking birds, schooling fish, herding beasts and even human crowds (Fig.~\ref{fig:1-1}a-c) were regarded as an orientationally ordered phase of living matter, in analogy with ferromagnetic spins
-\cite{Reynolds1987, Vicsek1995, Narayan2007, Ward2008, Ballerini2008, Silverberg2013}. This idea has since evoked enormous research interest. More recently, besides macroscopic systems, smaller and more laboratory accessible model systems have joined. As examples, actin filaments powered by motor proteins and bacteria exhibit turbulence-like swirling patterns, and synthetic active colloids form dynamic clusters
-\cite{Dunkel2013, Wensink2012, Buttinoni2013, Palacci2013, Sanchez2012, Schaller2010, Sokolov2007}. Observations have revealed that most patterns of collective motion are universal in different systems. As of today, these universal patterns can be qualitatively reproduced by simple models with collision rules and noise. And quantitative description is developing with more observations available, which is bound to have impactful applications, including understanding the reaction of panic crowd and predicting the migration of fish schools
-\cite{Vicsek2012}.
+There are two promising directions in active fluids. One is to get quantitative understanding of the novel properties.  These works will not only provide more accurate predictions on new systems, but also guide the engineering of artificial robots that can perform tasks in complex environment, such as drug delivery. Another direction is to invite chemistry and biology to collaborate on this highly interdisciplinary subject. A complete understanding of the behavior and properties of living systems will require the knowledge of biochemical signaling, which opens the door of an ambitious mission: elucidating tissue dynamics and developmental biology \cite{Marchetti2013, Curatolo2020}. The works that are to be described in Sec.~\ref{rheology-of-bacterial-suspensions-under-confinement},
+\ref{giant-number-fluctuations-in-3-dimensional-space} and \ref{the-emergence-of-active-turbulence} are along the first direction: seeking more quantitative understanding of rheology and active turbulence of active fluids.
 
 \begin{figure}[!htbp]
 	\begin{center}
@@ -76,7 +68,7 @@ The research on collective phenomena dates back to the 1980s, when flocking bird
   (a) Flocking birds, (b) people in a mosh pit at heavy metal converts, (c) schooling fish, (d) herding sheeps, (e) swarming bacteria (f) microtubule and (g) clustering active Janus particles.
   Scalebars in (e) and (g) are 10 \textmu m. Scalebar in (f) is 200 \textmu m. Images courtesy of Robert Wolstenhome (a), Ulrike Biets (b) \cite{Silverberg2013}, biographic (c, d), DeCamp (f) \cite{DeCamp2015} and Palacci (g) \cite{Palacci2013}.
 	}
-	\label{}
+	\label{fig:1-1}
 \end{figure}
 
 
@@ -86,13 +78,23 @@ The research on collective phenomena dates back to the 1980s, when flocking bird
 
 \section{Novel Properties}
 \label{emergent-properties}
-Active fluids exhibit novel properties such as enhanced diffusion and reduced viscosity \cite{Ramaswamy2010}. The enhanced diffusion is attributed to the interaction - steric collision or hydrodynamic perturbation - between tracer particles and active agents (swimmers)
+Active fluids exhibit novel properties such as reduced viscosity and enhanced diffusion  \cite{Ramaswamy2010}. The reduced viscosity is explained by hydrodynamic stress and swim stress \cite{Saintillan2010}. And the enhanced diffusion is attributed to the interaction - steric collision or hydrodynamic perturbation - between tracer particles and active agents (swimmers)
 \cite{Wu2000, Peng2016, Caspi2000, Morozov2014, Patteson2016, Leptos2009,
  Yang2016, Valeriani2011, Kurtuldu2011}.
-And the reduced viscosity is explained by hydrodynamic stress and swim stress \cite{}. In this section, the existing works regarding these novel properties are reviewed, and motivations for investigating the rheology of bacterial suspensions under confinement (Sec.~\ref{rheology-of-bacterial-suspensions-under-confinement}) will be discussed.
+In this section, the existing works regarding rheology and diffusion in active fluids are reviewed, and motivations for investigating the rheology of bacterial suspensions under confinement (Chap.~\ref{rheology-of-bacterial-suspensions-under-confinement}) will be discussed.
 
 
-\section{Rheology}
+\subsection{Rheology}
+\label{sec:rheology}
+
+
+\subsectoin{Diffusion}
+\label{sec:diffusion}
 Polystyrene spherical tracer particles, typically a few microns across, show higher diffusivity in bacterial suspensions and active microtubules \cite{Wu2000, Caspi2000}.
 
+
 \section{Collective motion}
+The research on collective phenomena dates back to the 1980s, when flocking birds, schooling fish, herding beasts and even human crowds (Fig.~\ref{fig:1-1}a-d) were regarded as an orientationally ordered phase of living matter, in analogy with ferromagnetic spins
+\cite{Reynolds1987, Vicsek1995, Narayan2007, Ward2008, Ballerini2008, Silverberg2013}. This idea has since evoked enormous research interest. More recently, besides macroscopic systems, smaller and more laboratory accessible model systems have joined. As examples, actin filaments powered by motor proteins and bacteria exhibit turbulence-like swirling patterns, and synthetic active colloids form dynamic clusters (Fig.~\ref{fig:1-1}e-g)
+\cite{Dunkel2013, Wensink2012, Buttinoni2013, Palacci2013, Sanchez2012, Schaller2010, Sokolov2007}. Observations have revealed that most patterns of collective motion are universal in different systems. As of today, these universal patterns can be qualitatively reproduced by simple models with collision rules and noise. And quantitative description is developing with more observations available, which is bound to have impactful applications, including understanding the reaction of panic crowd and predicting the migration of fish schools
+\cite{Vicsek2012}.
