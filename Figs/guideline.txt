@@ -1,0 +1,1 @@
+1. All raw material of images are put in the same folder as the final figure. They are named as "{number}{letter}". {number} is the figure number in a section. For raw materials, {letter} will be letters a-z, to differentiate one from others. For the final figure, {letter} will be omit. Thus, the final figure will always be named "1.pdf", "2.pdf", etc..

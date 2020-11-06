@@ -50,7 +50,7 @@ Active matter denotes a large group of active units which utilize ambient energy
 
 % such as abnormal rheology and emergent self-organized collective phenomena
 
-Active fluids are suspensions of active agents such as cells, particles and biological macromolecules that are capable of utilizing chemical energy to sustain their self-propulsion. "fluids" in the name suggests the important role of the viscous hydrodynamic interaction and stress in the systems of interest. The first glimmering of active fluids dates back to 1969, when Finlayson and Scriven found that motion could spontaneously set in a previously still material without the intervention of outside forces, due to composition-dependent stress \cite{Finlayson1969}. However, the study on active fluids did not bloom, until 26 year later, when the seminal paper on modeling collective flocks came out \cite{Vicsek1995}. From then on, physicists are getting unprecedentedly intereted in biological phenomena, leading to the emergence of a new field of study - active fluids.
+Active fluids, sometimes referred to as active gels, are suspensions of active agents such as cells, particles and biological macromolecules that are capable of utilizing chemical energy to sustain their self-propulsion. They are a subset of active matter, and the "fluids" in the name suggests the important role of the viscous hydrodynamic interaction and stress, in contrast to dry active matter \cite{Marchetti2013}. The first glimmering of active fluids dates back to 1969, when Finlayson and Scriven found that motion could spontaneously set in a previously still material without the intervention of outside forces, due to composition-dependent stress \cite{Finlayson1969}. However, the study on active fluids did not bloom, until 26 year later, when the seminal paper on modeling collective flocks came out \cite{Vicsek1995}. From then on, physicists are getting unprecedentedly intereted in biological phenomena, leading to the emergence of a new field of study - active fluids.
 
 Early accomplishments in the research of active fluids include two successful theoretical predictions on the abnormal rheology and the spontaneous active turbulence \cite{Hatwalne2004, Simha2002}, which were then demonstrated in quite a few experiments
 \cite{Dombrowski2004, Wensink2012, Rafai2010, Sokolov2009, Gachelin2013, Lopez2015}. From these beginnings, the field has been enjoying a vibrant interplay between experiment and theory, and more complex environment and geometrical constraints have been investigated \cite{Ramaswamy2019}. As of now, the study of active fluids has provided us with a good qualitative understanding of some biological processes, such as how active turbulence enhances nutrient transport.
@@ -63,22 +63,18 @@ There are two promising directions in active fluids. One is to get quantitative 
 	\includegraphics[width=5.5 in]{Figs/1-Intro/1.pdf}
 	%select pdftexify command to run jpg or pdf files
 	\end{center}
-	\caption[Figure 1.1: Examples of living matters and active fluids.]
+	\caption[Figure 1.1: ]
 	{
+	Examples of living matters and active fluids.
   (a) Flocking birds, (b) people in a mosh pit at heavy metal converts, (c) schooling fish, (d) herding sheeps, (e) swarming bacteria (f) microtubule and (g) clustering active Janus particles.
   Scalebars in (e) and (g) are 10 \textmu m. Scalebar in (f) is 200 \textmu m. Images courtesy of Robert Wolstenhome (a), Ulrike Biets (b) \cite{Silverberg2013}, biographic (c, d), DeCamp (f) \cite{DeCamp2015} and Palacci (g) \cite{Palacci2013}.
 	}
 	\label{fig:1-1}
 \end{figure}
 
-
-
-
-
-
 \section{Novel Properties}
 \label{emergent-properties}
-Active fluids exhibit novel properties such as reduced viscosity and enhanced diffusion  \cite{Ramaswamy2010}. The reduced viscosity is explained by hydrodynamic stress and swim stress \cite{Saintillan2010}. And the enhanced diffusion is attributed to the interaction - steric collision or hydrodynamic perturbation - between tracer particles and active agents (swimmers)
+Active fluids exhibit novel properties such as reduced viscosity and enhanced diffusion  \cite{Ramaswamy2010}. The reduced viscosity is induced by the force excerted by the swimming mechanisms of the active agents, such as bacteria and algae \cite{Saintillan2018}. And the enhanced diffusion is attributed to the interaction - steric collision or hydrodynamic perturbation - between tracer particles and swimmers
 \cite{Wu2000, Peng2016, Caspi2000, Morozov2014, Patteson2016, Leptos2009,
  Yang2016, Valeriani2011, Kurtuldu2011}.
 In this section, the existing works regarding rheology and diffusion in active fluids are reviewed, and motivations for investigating the rheology of bacterial suspensions under confinement (Chap.~\ref{rheology-of-bacterial-suspensions-under-confinement}) will be discussed.
@@ -86,14 +82,49 @@ In this section, the existing works regarding rheology and diffusion in active f
 
 \subsection{Rheology}
 \label{sec:rheology}
+Viscosity of a fluid can be understood as its resistence to flow. When flowing, fluid elements move relative to others, resulting in energy dissipation due to friction. The more energy is required, the more "viscous" the fluid is known to be. A suspension
+of passive particles is always more viscous than its suspending fluid, a fact that was first formulated by Einstein in 1906 \cite{Einstein1906}. Recently, the study of active fluids revealed that active particles modify the viscosity of their suspending fluids in a different and interesting way.
+
+In 2004, Hatwalne et al. predicted that micro-swimmers, depending on their self-propelling mechanisms, can modify the suspension viscosity in different ways \cite{Hatwalne2004}. Most common micro-swimmers, such as unicellular microorganisms, can be classified into two types: pushers and pullers, based on the far field flow they generate. Fig.~\ref{fig:1-2}b illustrates the most common pushers and pullers in nature: bacterium and algae. If one puts a elongated rod-like bacterium in a simple shear flow, as illustrated in Fig.~\ref{fig:1-2}a, the preferred orientation of the bacterium is along the extensile flow \cite{Forster1974}. Such an orientation makes the flow generate by the swimming bacterium coincide with the imposed shear flow, and thus compensating the viscous dissipation of energy, which effectively reduces the viscosity. In contrast, in the case of puller swimmers, such an orientation makes opposites the directions of swimming induced flow and imposed shear flow, which enhances the visocity.
+
+Their prediction was confirmed by numerical solutions of the theory \cite{Cates2008, Giomi2010} and experiments \cite{Sokolov2009, Gachelin2013, Lopez2015}. Cates et al. reached at the same conclusions as Hatwalne et al. did: while contractile gels exhibit a divergence of apparent viscosity, extensile gels show a zero-viscosity phase. Giomi et al., on top of these results, emphasized the important role of particle shape. They showed, in their numerical study, an rheological equivalence between rod-like pusher swimmers and disk-like puller swimmers (see Fig.~\ref{fig:1-2}c). In particular, they predicted a thickening effect of spherical puller swimmers (corresponds to the 0 shape parameter in Fig.~\ref{fig:1-2}c). This prediction was later on challenged by another theory in the framework of swim stress, which predicts a viscosity reduction of a spherical pusher swimmer suspension
+\cite{Takatori2017}. Due to the difficulty of synthesizing large amount of artificial swimmers, this debate has not been resolved yet. However, with the rapid development of synthesizing techniques \cite{Palacci2013, Bricard2013}, it is getting more promising that we will resolve it, and formulate a more complete understanding on how active swimmers modify the rheology.
+
+Experimental confirmation of these predictions posed challenges on traditional rheometries due to the tiny shear stress that is required to be measured. As a result, new rheometries are needed \cite{Marchetti2015}. In 2009, Sokolov and Aranson came up with an innovative way of measuring the such tiny stress \cite{Sokolov2009}. By moving a probe in a suspension of \textit{Bacillus subtilis} bacteria, a pusher type swimmer, they generated a large vortex. By studying the decay of the vortex, they got a measure of the viscosity. For the first time, they experimentally confirmed that pusher swimmers reduced the viscosity (see their results in Fig.~\ref{fig:1-2}d). In 2013, Gachelin et al. adopted a microfluidic viscometer to measure the viscosity of suspensions of \textit{Escherichia coli} bacteria, another pusher type swimmer \cite{Gachelin2013}. They confirmed again the viscosity reduction. A more remarkable finding is the non-newtonian behavior: the viscosity was reduced at low shear rate, but was enhanced at high shear rate. This observation suggested that it is the competation between bacterium intrinsic shear rate and the impose flow shear rate that determines how the viscosity is modified. In 2015, Lopez et al. published arguably the most important experimental work on the rheology of active fluids, which showed that the apparent viscosity of an \textit{E. coli} suspension can be reduced to zero if the swimming activity is sufficiently high \cite{Lopez2015}. The authors modified an old-fashioned Couette concentric cylinders, where the outer cylinder was set to rotate at a fixed rate and the torque on the inner cylinder was measured. The high sensitivity was achieved by using a string that was highly sensitive to torque to hang the inner cylinder, so that a stress, as small as that generated by bacterial suspensions, can be detected (see their rheometer and results in Fig.~\ref{fig:1-2}e-f). The authors termed their zero-viscosity suspensions ``superfluids''.
+
+Despite the great progress on the rheology of active fluids made so far, their remained complexity that are not readily understood. Confinement, or more generally boundary conditions or geometry, is one of the leading factors that contribute to this complexity. The behavior of active particles can be altered greatly by confinement. In 2005, Voituriez et al. showed theoretically that a spontaneous flow transition from a homogeneous immobile state could happen in active polar gel under confinement \cite{Voituriez2005}. Such spontaneous flow transition was confirmed in both numerical and experimental studies \cite{Ravnik2013, Wioland2016, Wu2017}. The complexity introduced by geometry was also manifested by the experiments where single bacterial vortex was stabilized by confinement \cite{Woodhouse2012, Wioland2013, Lushi2014} and where asymmetric gears were powered by swimming bacteria
+\cite{Sokolov2010, Hamby2018}. The effect of confinement on the rheology of active fluids was first studied theoretically based a kinetic theory \cite{Alonso-Matilla2016} and a generalized Navier-Stokes model \cite{Slomka2017}. In this thesis, I will present the first experimental study on active fluid rheology using bacterial suspensions
+(Chap.~\ref{rheology-of-bacterial-suspensions-under-confinement}). The fact that our experimental results agreed with neither theory manifested the complexity and the lack of understanding of active fluids. Together with the experimental results, we provided a heuristic model that qualitatively captured the rheological properties and hope to stimulate further theoretical studies on this matter.
+
+\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=5.5 in]{Figs/1-Intro/2.pdf}
+	%select pdftexify command to run jpg or pdf files
+	\end{center}
+	\caption[Figure 1.2: ]
+	{
+	Rheology of active fluids.
+	(a) The preferred orientation of the bacterium is along the extensile flow.
+	(b) The most common pushers and pullers in nature: bacterium and algae, and their corresponding far field flow.
+	(c) Rheological effect phase diagram of swimmer shape and swimming mechanism.
+	(d) Non-Newtonian behavior of \textit{E. coli} suspensions.
+	(e) Stress response of \textit{E. coli} suspensions in a modified Couette concentric cylinder rheometer.
+	(f) Viscosity of \textit{E. coli} suspensions at various volume fractions.
+	Image courtesy of Marchetti (a, b) \cite{Marchetti2015}, Giomi (c) \cite{Giomi2010}, Gachelin (d) \cite{Gachelin2013} and Lopez (e, f) \cite{Lopez2015}.
+	}
+	\label{fig:1-2}
+\end{figure}
 
 
-\subsectoin{Diffusion}
+\subsection{Diffusion}
 \label{sec:diffusion}
+
+
+
 Polystyrene spherical tracer particles, typically a few microns across, show higher diffusivity in bacterial suspensions and active microtubules \cite{Wu2000, Caspi2000}.
 
 
-\section{Collective motion}
+\section{Collective Motion}
 The research on collective phenomena dates back to the 1980s, when flocking birds, schooling fish, herding beasts and even human crowds (Fig.~\ref{fig:1-1}a-d) were regarded as an orientationally ordered phase of living matter, in analogy with ferromagnetic spins
 \cite{Reynolds1987, Vicsek1995, Narayan2007, Ward2008, Ballerini2008, Silverberg2013}. This idea has since evoked enormous research interest. More recently, besides macroscopic systems, smaller and more laboratory accessible model systems have joined. As examples, actin filaments powered by motor proteins and bacteria exhibit turbulence-like swirling patterns, and synthetic active colloids form dynamic clusters (Fig.~\ref{fig:1-1}e-g)
 \cite{Dunkel2013, Wensink2012, Buttinoni2013, Palacci2013, Sanchez2012, Schaller2010, Sokolov2007}. Observations have revealed that most patterns of collective motion are universal in different systems. As of today, these universal patterns can be qualitatively reproduced by simple models with collision rules and noise. And quantitative description is developing with more observations available, which is bound to have impactful applications, including understanding the reaction of panic crowd and predicting the migration of fish schools
