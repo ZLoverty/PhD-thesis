@@ -12,17 +12,89 @@
 \chapter{Experimental Background}
 \label{experimental-background}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+In this chapter, experimental techniques that are used in my research will be described briefly as a practical guide for those who want to test or perform some parts of the experiments in this thesis. The following aspects will be covered:
+\begin{itemize}
+\item \textit{Escherichia coli} (\textit{E. coli}) bacterial suspensions are the model throughout the whole thesis, so I will start talking about the preparation of motile bacterial sample in Sec.~\ref{motile-bacteria-sample-preparation}.
+\item A key approach I have been using to investigate the properties of bacterial suspensions is optical microscopy. It is used throughout all the experiments in this thesis as well, along with necessary image analysis techniques. Video microscopy and image analysis will be detailed in
+Sec.~\ref{video-microscopy-and-image-analysis-PIV-and-PTV}.
+\item When investigating the rheology of bacterial suspensions, we adopted a homemade microfluidic viscometer device. Details of the fabrication are shown in Sec.~\ref{micro-fabrication-and-microfluidics}.
+\item A light-powered \textit{E. coli} strain is used in the giant number fluctuations study and the emergence of active turbulence study
+(Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space} and Chap.~\ref{the-emergence-of-active-turbulence}). This special strain was obtained by transforming a wild-type strain with an exogenic plasmid which encodes a light-harvesting membrane protein. The discovery and working principles of the light-powering feature has been well documented by earlier works
+\cite{Beja2000, Subramanlam2000, DelaTorre2003, Walter2007, Claassens2013}. Following these works, I constructed a plasmid containing the gene and successfully transformed the wild-type \textit{E. coli} strain.
+In Sec.~\ref{light-controlled-E-coli-genetic-modification-culturing-and-trouble-shooting}, I will present the details on the materials and procedures I used to construct the mutant as a practical guide to those who need to further modify or trouble shoot the strain I made.
+\end{itemize}
 
 \section{Motile Bacteria Sample Preparation}
 \label{motile-bacteria-sample-preparation}
+Peritrichous \textit{E. coli} bacteria have been widely used as model micro-swimmers for active fluid studies. By bundling and unbundling their flagella, they achieve a so called ``run-and-tumble'' motion, allowing them to more efficiently explore their surrounding environment and to search for supplies. When swimming, all the flagella bundle together behind the cell and propel it forward \cite{Lauga2015}. Fig.~\ref{fig:2-1}a shows a simplified model of a swimming \textit{E. coli} bacterium model with a 2 \textmu m rod-shape body and a helical-shape flagellum of around 8 \textmu m.
+
+There are quite a few research groups over the world that are using \textit{E. coli} suspensions to study active fluids. To name a few, Yodh and Arratia at University of Pennsylvania, Wu at Cornell University, Poon at the University of Edinburgh and Clement at ESPCI all have published experimental works using \textit{E. coli} \cite{Chen2007, Patteson2016, Kasyap2014, Jepson2013, Mino2011}. Although the procedures of preparing motile \textit{E. coli} samples are similar across different groups' protocols, they show subtle differences from each other, which may be attributed to the specific strain of \textit{E. coli} and specific instrument conditions. Here, I describe the procedure that works best for me.
+
+\subsection{Background Information}
+\begin{description}
+  \item [Bacterial strains] We primarily work on two E. coli strains: \textit{AW804} and \textit{BW25113}. \textit{AW804} is light-sensitive. \textit{BW25113} is a wild type strain carrying a plasmid encoding green fluorescence protein, thus it is used when fluorescence / confocal microscopy is needed. Both strains have ampicillin resistance marker and thus require supplementing ampicillin to culturing media.
+  \item [Antibiotics] Bacteria are ubiquitous in the environment and can easily  contaminate our bacterial culture. In order to ensure the fidelity of the culture, we add antibiotic resistance markers to the bacteria we want to grow and meanwhile add antibiotics to the medium. The antibiotics inhibit the growth of contaminating species and allow our desired bacteria to grow normally.
+  \item [Medium] Various types of media (terrific broth, Luria broth, 2XYT and M9, etc.) are commonly used for bacterial culture. We use terrific broth. The recipe can be found in the protocol section.
+\end{description}
+
+\subsection{Protocol}
+
+\begin{enumerate}
+
+  \item Prepare a 2-ml \textit{E. coli} overnight culture.
+
+  \begin{enumerate}
+    \item Prepare liquid terrific broth (TB). For example, to make 1 L TB, weigh out the following into a 1 L glass bottle:
+    \begin{itemize}
+      \item 23.6 g Yeast extract (Sigma-Aldrich)
+      \item 11.8 g Tryptone plus (Sigma-Aldrich)
+      \item 4 ml Glycerol (XXX)
+      \item Add dI water to 1 L
+    \end{itemize}
+    Loosely close the cap on the bottle (do NOT close all the way or the bottle may explode!) and then loosely cover the top of the bottle with autoclave tape (stick cap and bottle body together to avoid cap popping off). Autoclave and allow to cool to room temperature. Now screw on the top of the bottle and store the TB at room temperature.
+    \item Using a sterile 10 ml pipette, transfer 2 ml TB to a sterile glass test tube.
+    \item Using a sterile pipette, add 2 microliter (0.1\% v/v) antibiotic solution to the TB in test tube.
+    \item Using a sterile pipette tip, pick a small chunk from our bacterial frozen stock (stored in the -80 °C freezer in 251) and carefully transfer the small chunk into the liquid TB + antibiotic.
+    \item Loosely cover the culture with sterile cap that is not air tight.
+    \item Incubate bacterial culture at 37 °C for 12-18 h in a shaking incubator.
+    \item After incubation, check growth, which is characterized by a cloudy haze in the media. This is the overnight culture.
+  \end{enumerate}
+
+  \item Dilute overnight culture and harvest motile bacteria at mid-late log phase.
+  \begin{enumerate}
+    \item Using a sterile 10 ml pipette, transfer 3 ml TB to a sterile glass test tube.
+    \item Using a sterile pipette, add 2 microliter (0.1\% v/v) antibiotic solution to the TB in test tube.
+    \item Transfer 30 microliter (1\% v/v) overnight culture into the liquid TB + antibiotic.
+    \item Incubate bacterial culture at 30 °C for 6-6.5 h in a shaking incubator.
+    \item After incubation, check for growth, which is characterized by a cloudy haze in the media. This is the log phase bacteria.
+  \end{enumerate}
+  \item Centrifuge for better motility and higher concentration bacterial sample.
+  \begin{enumerate}
+    \item Prepare motility buffer (MB), the following recipe is from Ref.~\cite{Peng2016}.
+    \begin{itemize}
+      \item 0.01 M potassium phosphate (combine monobasic and dibasic solutions, Sigma-Aldrich)
+      \item 10$^{-4}$ M EDTA (Sigma-Aldrich)
+      \item 0.002\% weight fraction Tween 20 (Sigma-Aldrich)
+      \item Adjust pH to 7.0
+    \end{itemize}
+    \item Take out the log phase bacteria from the shaking incubator, centrifuge for 5 min at 800 rcf.
+    \item Discard the supernatant quickly and transfer the left-over liquid to a new centrifuge tube.
+    \item Add 500-1000 ul MB (or water) to resuspend the bottom pellet (avoid bottom pellet) and centrifuge for a second time (5 min, 800 rcf).
+    \item Discard the supernatant and let the tubes sit for two minutes. The remaining left-over liquid should be now filled with the active \textit{E. coli}. Take the left-over solution in another capsule and use it for experiments.
+    \item To measure the concentration, transfer 10 microliter of the suspension into a 1 ml plastic cuvette and dilute 100 times (by adding 990 microliter water). Put the cuvette in the spectrophotometer in 251 and use the OD600 program. The resulting number times 100 will be the number density of your suspension in the unit of n$_0$ (8 x 10$^8$ cells/ml).
+  \end{enumerate}
 
 
-\section{Micro-fabrication and Microfluidics}
-\label{micro-fabrication-and-microfluidics}
+
+
+
+
 
 \section{Video Microscopy and Image Analysis: PIV and PTV}
 \label{video-microscopy-and-image-analysis-PIV-and-PTV}
+
+\section{Micro-fabrication and Microfluidics}
+\label{micro-fabrication-and-microfluidics}
 
 \section{Light-controlled E. coli: Genetic Modification, Culturing and Trouble Shooting}
 \label{light-controlled-E-coli-genetic-modification-culturing-and-trouble-shooting}
