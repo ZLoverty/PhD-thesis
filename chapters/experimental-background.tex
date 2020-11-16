@@ -3,8 +3,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Outline:
 % - Motile bacteria sample preparation
+% - Video microscopy and image analysis
 % - Micro-fabrication and microfluidics
-% - Video microscopy and image analysis: PIV and PTV
 % - Light-controlled E. coli: genetic modification, culturing and trouble shooting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -111,26 +111,91 @@ When I joined the Cheng group at the University of Minnesota in 2015, before Ref
     \item Discard the supernatant and let the tubes sit for two minutes. The remaining left-over liquid should be now filled with the active \textit{E. coli}. Take the left-over solution in another capsule and use it for experiments.
     \item To measure the concentration, transfer 10 microliter of the suspension into a 1 ml plastic cuvette and dilute 100 times (by adding 990 microliter water). Put the cuvette in the spectrophotometer in 251 and use the OD600 program. The resulting number times 100 will be the number density of your suspension in the unit of n$_0$ (8 x 10$^8$ cells/ml).
   \end{enumerate}
+\end{enumerate}
 
-	\begin{figure}[!htbp]
-		\begin{center}
-		\includegraphics[width=5.5 in]{Figs/2-Exp/2.pdf}
-		%select pdftexify command to run jpg or pdf files
-		\end{center}
-		\caption[Figure 2.2:]
-		{
-		\textbf{Graphical motile \textit{E. coli} sample preparation protocol.}
-		Image courtesy of Shashank Kamdar.
-		}
-		\label{fig:2-2}
-	\end{figure}
-
-
-
+\begin{figure}[!]
+	\begin{center}
+	\includegraphics[width=5.5 in]{Figs/2-Exp/2.pdf}
+	%select pdftexify command to run jpg or pdf files
+	\end{center}
+	\caption[Figure 2.2:]
+	{
+	\textbf{Graphical motile \textit{E. coli} sample preparation protocol.}
+	Image courtesy of Shashank Kamdar.
+	}
+	\label{fig:2-2}
+\end{figure}
 
 
-\section{Video Microscopy and Image Analysis: PIV and PTV}
-\label{video-microscopy-and-image-analysis-PIV-and-PTV}
+
+
+
+\section{Video Microscopy and Image Analysis}
+\label{video-microscopy-and-image-analysis}
+In my experimental research, a standard workflow is
+\begin{itemize}
+	\item Take videos of samples such as swimming bacteria
+	\item Analyze the videos, typically extracting particle position and velocity information from the videos
+	\item Calculate from the position and velocity information to obtain more complex information, such as flow field, kinetic energy and diffusivity
+\end{itemize}
+From this workflow, one can tell that the video microscopy and image analysis are the core skills that enable me to conduct the research.
+In this section, I will decribe how I overcome practical challenges when applying these skills in experiments. I want to note that the standard manuals are always the best reference for beginners who have just started to learn about a technique.
+In my case, the standard manuals are the Nikon inverted microscope Eclipse Ti-E Ti-E/B instructions \cite{NikonTiEManual}, OpenPIV official website \cite{OpenPIV-website, OpenPIV-paper} and trackpy official website \cite{trackpy-website}.
+Some related projects (listed in the websites mentioned) also provide valuable tutorials and ideas, for example the particle tracking routines in IDL by Crocker and Weeks \cite{IDL-tracking} and in Matlab by Blair and Dufresne
+\cite{Matlab-tracking}.
+
+\subsection{Video Microscopy}
+
+\subsubsection{Power \textit{E. coli} with Illumination Light}
+In the studies of the giant number fluctuations and the emergence of active turbulence, I used a light-powered \textit{E. coli} mutant, which changes its swimming speed according to the amount of light it receives (details of the light-powered \textit{E. coli} mutant can be found in Sec.~\ref{light-controlled-E-coli-genetic-modification-culturing-and-trouble-shooting}).
+
+I use the illumination light of the microscope as the power source of the bacteria, instead of using another light source, based on two considerations: 1) an additional light source shining on the sample will lead to additional unexpected light going into the objective, which often leads to bad image quality; 2) It is hard to construct a spatially uniform light, especially when it has to come in an angle not perpendicular to the specimen. Therefore, I use the illumination light of the microscope to power the \textit{E. coli}.
+
+The light-powered \textit{E. coli} mutant requires quite a high light intensity to move fast enough. Such a high intensity cannot be achieved in the normal microscopy conditions, where four light filters are applied for different purposes. Fig.~\ref{fig:2-3}a-b show the Nikon Ti-E inverted microscope and the illumination light filtering system with the four light filters designated as ND, D, NCB and PFS. The function of the filters are listed below:
+
+\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=5.5 in]{Figs/2-Exp/3.pdf}
+	%select pdftexify command to run jpg or pdf files
+	\end{center}
+	\caption[Figure 2.3:]
+	{
+	\textbf{Nikon Ti-E inverted microscope and its filters.}
+	(a) Nikon Ti-E inverted microscope model.
+	(b) Illumination light path filters.
+	(c) Filter block under objective.
+	(d) Adding additional ND filter under objective.
+	}
+	\label{fig:2-3}
+\end{figure}
+
+\begin{description}
+	\item [ND] Neutral density filter: adjust the brightness for normal microscopy or photomicroscopy
+	\item [D] Diffusion filter: made of frosted glass and will diffuse light, used for equalizing the illumination
+	\item [NCB] Neutral color balance: corrects the color temperature for mnormal microscopy or filming by daylight type color. Note: this filter is essential for optimal color reproducibility when taking color images, and it should be kept out of the optical path when filming in black and white.
+	\item [PFS] Perfect focusing system: a hardware solution to combat axial focus fluctuations in real time during long-term imaging investigations. Note - this filter should be kept out if one does not intend to use the perfect focusing system.
+\end{description}
+
+Removing some of those filters can make the illumination light strong enough to power the bacteria. According to the functions of the filters, the only necessary filter is the diffusion filter, given that one is not doing color imaging and is not using perfect focusing system, as it is in my experiment. Fig.~\ref{fig:2-4}a shows an image taken without the diffusion filter (D). Without diffusing the illumination light, the resulting image is clearly inhomogeneous in a large range, with a bright center and a dark bottom area. By putting the diffusion filter in the illumination light path, one can make the illumination light much more uniform, as shown in Fig.~\ref{fig:2-4}b. All the other filters (ND, NCB, PFS) are effectively reducing the overall intensity. Putting in or out these filters only results in globally dimmer or brighter images, without changing the detailed patterns in the image. Thus, these three filters are optional in my experiment. Since powering the light-powered \textit{E. coli} requires a very high light intensity, only the diffusion filter should be kept in the illumination light path.
+
+\begin{figure}[!]
+	\begin{center}
+	\includegraphics[width=5.5 in]{Figs/2-Exp/4.pdf}
+	%select pdftexify command to run jpg or pdf files
+	\end{center}
+	\caption[Figure 2.4:]
+	{
+	Image with (a) and without (b) the diffusion filter (D).
+	}
+	\label{fig:2-4}
+\end{figure}
+
+
+
+
+
+\subsection{Image Analysis}
+\subsubsection{Estimate depth of view}
 
 
 
