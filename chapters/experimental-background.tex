@@ -15,8 +15,8 @@
 In this chapter, experimental techniques that are used in my research will be described briefly as a practical guide for those who want to test or perform some parts of the experiments in this thesis. The following aspects will be covered:
 \begin{itemize}
 \item \textit{Escherichia coli} (\textit{E. coli}) bacterial suspensions are the model throughout the whole thesis, so I will start talking about the preparation of motile bacterial sample in Sec.~\ref{motile-bacteria-sample-preparation}.
-\item A key approach I have been using to investigate the properties of bacterial suspensions is optical microscopy. It is used throughout all the experiments in this thesis as well, along with necessary image analysis techniques. Video microscopy and image analysis will be detailed in
-Sec.~\ref{video-microscopy-and-image-analysis-PIV-and-PTV}.
+\item Optical microscopy along with digital imaging has been the key approach for investigating the properties of bacterial suspensions. Such approach naturally demands automated image analysis tools.
+In Sec.~\ref{video-microscopy-and-image-analysis}, I will describe in detail some new techniques I have been using that are associated with video microscopy and image analysis.
 \item When investigating the rheology of bacterial suspensions, we adopted a homemade microfluidic viscometer device. Details of the fabrication are shown in Sec.~\ref{micro-fabrication-and-microfluidics}.
 \item A light-powered \textit{E. coli} strain is used in the giant number fluctuations study and the emergence of active turbulence study
 (Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space} and Chap.~\ref{the-emergence-of-active-turbulence}). This special strain was obtained by transforming a wild-type strain with an exogenic plasmid which encodes a light-harvesting membrane protein. The discovery and working principles of the light-powering feature has been well documented by earlier works
@@ -144,15 +144,6 @@ In my case, the standard manuals are the Nikon inverted microscope Eclipse Ti-E 
 Some related projects (listed in the websites mentioned) also provide valuable tutorials and ideas, for example the particle tracking routines in IDL by Crocker and Weeks \cite{IDL-tracking} and in Matlab by Blair and Dufresne
 \cite{Matlab-tracking}.
 
-\subsection{Video Microscopy}
-
-\subsubsection{Power \textit{E. coli} with Illumination Light}
-In the studies of the giant number fluctuations and the emergence of active turbulence, I used a light-powered \textit{E. coli} mutant, which changes its swimming speed according to the amount of light it receives (details of the light-powered \textit{E. coli} mutant can be found in Sec.~\ref{light-controlled-E-coli-genetic-modification-culturing-and-trouble-shooting}).
-
-I use the illumination light of the microscope as the power source of the bacteria, instead of using another light source, based on two considerations: 1) an additional light source shining on the sample will lead to additional unexpected light going into the objective, which often leads to bad image quality; 2) It is hard to construct a spatially uniform light, especially when it has to come in an angle not perpendicular to the specimen. Therefore, I use the illumination light of the microscope to power the \textit{E. coli}.
-
-The light-powered \textit{E. coli} mutant requires quite a high light intensity to move fast enough. Such a high intensity cannot be achieved in the normal microscopy conditions, where four light filters are applied for different purposes. Fig.~\ref{fig:2-3}a-b show the Nikon Ti-E inverted microscope and the illumination light filtering system with the four light filters designated as ND, D, NCB and PFS. The function of the filters are listed below:
-
 \begin{figure}[!htbp]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/2-Exp/3.pdf}
@@ -169,13 +160,35 @@ The light-powered \textit{E. coli} mutant requires quite a high light intensity 
 	\label{fig:2-3}
 \end{figure}
 
-\begin{description}
-	\item [ND] Neutral density filter: adjust the brightness for normal microscopy or photomicroscopy
-	\item [D] Diffusion filter: made of frosted glass and will diffuse light, used for equalizing the illumination
-	\item [NCB] Neutral color balance: corrects the color temperature for mnormal microscopy or filming by daylight type color. Note: this filter is essential for optimal color reproducibility when taking color images, and it should be kept out of the optical path when filming in black and white.
-	\item [PFS] Perfect focusing system: a hardware solution to combat axial focus fluctuations in real time during long-term imaging investigations. Note - this filter should be kept out if one does not intend to use the perfect focusing system.
-\end{description}
 
+\subsection{Video Microscopy}
+
+\subsubsection{Power \textit{E. coli} with Illumination Light}
+In the studies of the giant number fluctuations and the emergence of active turbulence, I used a light-powered \textit{E. coli} mutant, which changes its swimming speed according to the amount of light it receives (details of the light-powered \textit{E. coli} mutant can be found in Sec.~\ref{light-controlled-E-coli-genetic-modification-culturing-and-trouble-shooting}).
+
+I use the illumination light of the microscope as the power source of the bacteria, instead of using another light source, based on two considerations: 1) an additional light source shining on the sample will lead to additional unexpected light going into the objective, which often leads to bad image quality; 2) It is hard to construct a spatially uniform light, especially when it has to come in an angle not perpendicular to the specimen. Therefore, I use the illumination light of the microscope to power the \textit{E. coli}.
+
+The light-powered \textit{E. coli} mutant requires quite a high light intensity to move fast enough. Such a high intensity cannot be achieved in the normal microscopy conditions, where four light filters are applied for different purposes. Fig.~\ref{fig:2-3}a-b show the Nikon Ti-E inverted microscope and the illumination light filtering system with the four light filters designated as ND, D, NCB and PFS. The functions of the filters are listed in Table.~\ref{table:2-1}:
+
+
+
+\begin{table}[h]
+	\centering
+	\spacerows{1.2}
+	\begin{tabular}{ | p{0.4in} | p{5in} |}
+		\hline
+		\textbf{ND} & Neutral density filter: adjust the brightness for normal microscopy or photomicroscopy \\
+		\hline
+		\textbf{D} & Diffusion filter: made of frosted glass and will diffuse light, used for equalizing the illumination \\
+		\hline
+		\textbf{NCB} & Neutral color balance: corrects the color temperature for mnormal microscopy or filming by daylight type color. Note: this filter is essential for optimal color reproducibility when taking color images, and it should be kept out of the optical path when filming in black and white. \\
+		\hline
+		\textbf{PFS} & Perfect focusing system: a hardware solution to combat axial focus fluctuations in real time during long-term imaging investigations. Note - this filter should be kept out if one does not intend to use the perfect focusing system.\\
+		\hline
+	\end{tabular}
+	\caption{Filters in the illumination light path and their functions.}
+	\label{table:2-1}
+\end{table}
 Removing some of those filters can make the illumination light strong enough to power the bacteria. According to the functions of the filters, the only necessary filter is the diffusion filter, given that one is not doing color imaging and is not using perfect focusing system, as it is in my experiment. Fig.~\ref{fig:2-4}a shows an image taken without the diffusion filter (D). Without diffusing the illumination light, the resulting image is clearly inhomogeneous in a large range, with a bright center and a dark bottom area. By putting the diffusion filter in the illumination light path, one can make the illumination light much more uniform, as shown in Fig.~\ref{fig:2-4}b. All the other filters (ND, NCB, PFS) are effectively reducing the overall intensity. Putting in or out these filters only results in globally dimmer or brighter images, without changing the detailed patterns in the image. Thus, these three filters are optional in my experiment. Since powering the light-powered \textit{E. coli} requires a very high light intensity, only the diffusion filter should be kept in the illumination light path.
 
 \begin{figure}[!]
@@ -205,7 +218,23 @@ Particle tracking is generally composed of two steps: particle detection (spatia
 
 \subsubsection{Anisotropic Particle Tracking}
 
-A challenge I encountered when working on the diffusion project was the detecting of the ellipsoidal particles surrounded by moving microorganisms (bacteria and algae). A local maxima finding method was applied previously to detect the center of an ellipsoidal particle \cite{Han2006}. Combined with intensity fitting around the cneter in different directions, the orientation of the particle can also be obtained. The same method, however, does not work well for my image because of the presence of microorganisms, which give rise to many more local maxima in the image (a typical image is shown in Fig.~\ref{fig:2-5}a). To overcome this challenge, I adapted a thresholding and connected group labeling based method from Ref.~\cite{custom-feature-detection, Suaret2015, Cappello2015}. The method has the following steps:
+A challenge I encountered when working on the diffusion project was the detecting of the ellipsoidal particles surrounded by moving microorganisms (bacteria and algae). A local maxima finding method was applied previously to detect the center of an ellipsoidal particle \cite{Han2006}. Combined with intensity fitting around the cneter in different directions, the orientation of the particle can also be obtained. The same method, however, does not work well for my image because of the presence of microorganisms, which give rise to many more local maxima in the image (a typical image is shown in Fig.~\ref{fig:2-5}a). To overcome this challenge, I adapted a thresholding and connected group labeling based method from Ref.~\cite{custom-feature-detection, Sauret2015, Cappello2015}. The method has the following steps:
+
+\begin{figure}[!]
+	\begin{center}
+	\includegraphics[width=5.5 in]{Figs/2-Exp/5.pdf}
+	%select pdftexify command to run jpg or pdf files
+	\end{center}
+	\caption[Figure 2.5:]
+	{
+	\textbf{Illustration of ellipsoidal particle detection by thresholding and group labeling.}
+	(a) The raw image: an ellipsoidal polystyrene particle surrounded by swimming algae in a suspension.
+	(b) Binarized raw image.
+	(c) Detection result of connected white regions.
+	(d) Final result after appropriate filtering.
+	}
+	\label{fig:2-5}
+\end{figure}
 
 \begin{itemize}
 	\item threshold the grayscale image (Fig.~\ref{fig:2-5}a) to a binary image (Fig.~\ref{fig:2-5}b)
@@ -214,28 +243,37 @@ A challenge I encountered when working on the diffusion project was the detectin
 	\item filter the parameters of the ellipses with appropriate criteria, so that only the desired ellipse is found, as indicated by the red ellipse in Fig.~\ref{fig:2-5}d
 \end{itemize}
 
-Fig.~\ref{fig:2-5} only illustrates the essential idea of the method. When applying the method, some necessary image preprocessing, including linear, nonlinear and frequency filters need to be used to make sure the desired features stand out, and the undesired noises are suppressed. The preprocessing techniques have been reviewed in Ref.~\ref{Dorn2008, Rohr2010}.
+Fig.~\ref{fig:2-5} only illustrates the essential idea of the method. When applying the method, some necessary image preprocessing, including linear, nonlinear and frequency filters need to be used to make sure the desired features stand out, and the undesired noises are suppressed. The preprocessing techniques have been reviewed in Ref.~\cite{Dorn2008, Rohr2010}. This method was used to obtain the trajectories of ellipsoidal particles in algal suspensions, which was then used to calculate the diffusivity for my first collaborative project, reported in Ref.~\cite{Yang2016}.
 
-This method was used to obtain the trajectories of ellipsoidal particles in algal suspensions, which was then used to calculate the diffusivity \cite{Yang2016}.
-
-\subsubsection{Manual Particle Tracking Software}
+\subsubsection{Manual Particle Tracking Software: \textit{manTrack}}
 Despite the great advances of particle tracking techniques, the accuracy suffers much from poor image quality and mutual touching of objects in images, especially when imaging dense suspensions of microorganisms \cite{Meijering2009}. A very challenging particle detecting task is manifested by a dense suspension of collectively moving bacteria, as shown in Fig.~\ref{fig:2-6}a. Despite the use of confocal microscopy, most bacteria are seen to be overlapping with others and are in very different shapes, making it impossible for existing tools to detect all the desired features. In a scenario like this, human eyes are the most powerful complementary tool to machines.
 
-Manually marking the positions of particles is feasible when one image only contains one or several particles. When particle numbers get large, however, it is no longer feasible (a typical video I take contains hundreds of particles). I combined the automated tracking and the manual tracking together in order to take the advantages of both: fast and reliable.  by implementing a manual tracking software \textit{manTrack} . The workflow for using \textit{manTrack} is:
+Manually marking the positions of particles is feasible when one image only contains one or several particles. When particle numbers get large, however, it is no longer feasible (a typical video I take contains hundreds of particles). I combined the automated tracking and the manual tracking together in order to take the advantages of both: fast and reliable, by implementing a manual tracking software \textit{manTrack} with graphical user interface (GUI). The workflow for using \textit{manTrack} is:
 
 \begin{itemize}
-	\item use an automated method to do a preliminary particle tracking (or detection)
-	\item load the preliminary result into \textit{manTrack}
-	\item
+	\item Use an automated method to do a preliminary particle tracking (or detection).
+	\item Load the preliminary automated detection result into \textit{manTrack}. The result will be displayed in \textit{manTrack} GUI as elliptical contours, as shown in Fig.~\ref{fig:2-6}b.
+	\item When ``delete mode'' is enabled, one can delete one entry from the result by clicking on the elliptical contour. In Fig.~\ref{fig:2-6}c, the entry at the tip of the red arrow has been deleted.
+	\item When ``track mode'' is enabled, one can add an entry to the current result by drawing an ellipse in the image, as shown by the black contour in Fig.~\ref{fig:2-6}d.
 \end{itemize}
 
+\textit{manTrack} provides a user friendly GUI for efficient modification of preliminary automated particle detection results. The combination of machine automated detection and human eye detection makes possible good accuracy and an acceptable execution speed. This software was used for analyzing the orientation of bacteria in active turbulence (Chap.~\ref{the-emergence-of-active-turbulence}).
 
+Several new tools have been developed in recent years, such as \textit{TrackMate} and \textit{tTt} \cite{Tinevez2017, Hilsenbeck2016}. The fast growth of technologies in other fields, especially artificial intelligence, has stimulate the development of new tracking techniques \cite{Newby2018, Moen2019}.
 
-
-
-
-
-\subsubsection{Image Orientation Analysis}
+\begin{figure}[!htbp]
+	\begin{center}
+	\includegraphics[width=5.5 in]{Figs/2-Exp/6.pdf}
+	%select pdftexify command to run jpg or pdf files
+	\end{center}
+	\caption[Figure 2.6:]
+	{
+	\textbf{A challenging particle detection task and the manual tracking software.}
+	(a) Confocal microscopy image of \textit{E. coli} collective motion ($\phi=6.4\%$).
+	(b)-(d) Snapshots of the manTrack software, demonstrating color-coded orientation, manual deleting and manual adding.
+	}
+	\label{fig:2-6}
+\end{figure}
 
 
 
