@@ -52,12 +52,12 @@
 
 % Compile only the chapters listed here
 \includeonly{
-    title/title,
-    chapters/introduction,
-    chapters/experimental-background,
-    chapters/rheology-of-bacterial-suspensions-under-confinement,
-    chapters/giant-number-fluctuations-in-3-dimensional-space,
-    chapters/the-emergence-of-active-turbulence,
+    Title/title,
+    Chapters/introduction,
+    Chapters/experimental-background,
+    Chapters/rheology-of-bacterial-suspensions-under-confinement,
+    Chapters/giant-number-fluctuations-in-3-dimensional-space,
+    Chapters/the-emergence-of-active-turbulence,
     % chapters/conclusion,
     % appendix/particle_synthesis,
     % appendix/fluorescent_label,
@@ -67,7 +67,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title and other sections that come before the body of the document
-% \include{title/title}
+\include{Title/title}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -76,15 +76,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Now lets include the body of the document...
 %Base Chapters
-% \include{chapters/introduction}
-\include{chapters/experimental-background}
+\include{Chapters/introduction}
+\include{Chapters/experimental-background}
 
 % Results
-\include{chapters/rheology-of-bacterial-suspensions-under-confinement}
+\include{Chapters/rheology-of-bacterial-suspensions-under-confinement}
 
-\include{chapters/giant-number-fluctuations-in-3-dimensional-space}
+\include{Chapters/giant-number-fluctuations-in-3-dimensional-space}
 
-\include{chapters/the-emergence-of-active-turbulence}
+\include{Chapters/the-emergence-of-active-turbulence}
 
 %Conclusion
 % \include{chapters/conclusion}
@@ -95,9 +95,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography, uncomment for final version
 \bibliographystyle{hunsrt} % style of bibliography
-\bibliography{Thesis_Refs, ref2, tracking_ref}
+\bibliography{Refs/tracking,
+              Refs/rheology,
+              Refs/diffusion,
+              Refs/collective_motion,
+              Refs/GNF,
+              Refs/reviews,
+              Refs/confinement,
+              Refs/general,
+              Refs/genetic_modifications}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% Thesis_Refs,
+% Refs/ref2,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendices
