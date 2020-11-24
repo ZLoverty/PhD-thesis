@@ -1,0 +1,10 @@
+Experimental realizations of active systems showing giant number fluctuations
+-------------------------------------------------------------------------------------
+\textbf{Experimental realizations of active systems showing giant number fluctuations.}
+(a) Granular rods driven by a vibrating surface underneath them.
+(b) Swarming \textit{B. subtilis} bacteria on semi-solid media.
+(c) Vibrated disks.
+(d) Actin filaments powered by motor proteins.
+(e) Janus particles powered by chemical reactions.
+(f) Swimming \textit{E. coli} confined in quasi-2D glass chambers.
+Image courtesy of Narayan \cite{Narayan2007}, Zhang \cite{Zhang2010}, Deseigne \cite{Deseigne2010}, Schaller \cite{Schaller2013}, Palacci \cite{Palacci2013} and Nishiguchi \cite{Nishiguchi2017}.
