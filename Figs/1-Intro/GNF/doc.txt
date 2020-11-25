@@ -1,5 +1,5 @@
-Experimental realizations of active systems showing giant number fluctuations
--------------------------------------------------------------------------------------
+GNF-experiments.pdf
+------------------------
 \textbf{Experimental realizations of active systems showing giant number fluctuations.}
 (a) Granular rods driven by a vibrating surface underneath them.
 (b) Swarming \textit{B. subtilis} bacteria on semi-solid media.
@@ -8,3 +8,11 @@ Experimental realizations of active systems showing giant number fluctuations
 (e) Janus particles powered by chemical reactions.
 (f) Swimming \textit{E. coli} confined in quasi-2D glass chambers.
 Image courtesy of Narayan \cite{Narayan2007}, Zhang \cite{Zhang2010}, Deseigne \cite{Deseigne2010}, Schaller \cite{Schaller2013}, Palacci \cite{Palacci2013} and Nishiguchi \cite{Nishiguchi2017}.
+
+
+GNF-illustration.pdf
+----------------------
+\textbf{Illustrations of giant number fluctuations.}
+(a)-(b) a 2-particle system and a 3-particle system, along with the probabilities and the standard deviations of each configuration.
+(c) The most extreme configuration of 2-particle and 3-particle systems.
+(d) Number fluctuation curves, where standard deviation of number of particles rescaled by the square root of mean number $\Delta N/\sqrt N$ is plotted against the mean number $N$. The scaling exponent of these curves, denoted as $\alpha$, measures the magnitude of GNF. 
