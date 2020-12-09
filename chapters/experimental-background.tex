@@ -291,7 +291,7 @@ After deciding on using the Y-shaped channel viscometer (Fig.~\ref{fig:experimen
 
 To produce masters for the various channel heights, different photoresists need to be used. I chose the SU-8 3000 series photoresists due to their good adhesion property and reduced coating stress, as well as their ready avaliability in the MNC labs. SU-8 3025 was used for channel heights from 25 to 50 $\mu$m. SU-8 3050 was used for channel heights from 50 to 128 $\mu$m. Following the procedures described in the photoresist manual, which includes substrate preparation, spin coating, soft bake, exposure, post exposure bake and develop, a photoresist patterned silicon wafer can be produced (Fig.~\ref{fig:experiment-microfluidics}b).
 
-\begin{figure}[!]
+\begin{figure}[!h]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/2-Exp/7.pdf}
 	%select pdftexify command to run jpg or pdf files
@@ -314,11 +314,26 @@ The elastomeric stamp is fabricated by pouring the Sylgard 184 Silicone Elastome
 
 To use the microfluidic viscometer, we connected it with a precision syringe pump (Harvard Apparatus, Elite 11) through elastic tubes, as shown in Fig.~\ref{fig:experiment-microfluidics}. The two syringes contained two different fluids: one was the bacterial suspension with viscosity to be measured, and the other was a reference fluid with known viscosity, typically water. The two fluids were pumped into the viscometer at the same volumetric flow rate $Q$.
 
-The working principle of the viscometer is based on an idea that thicker fluids flow slower than thinner ones.
-
-More formally, if we examine a
-
-
+The working principle of the viscometer is based on an idea that thicker fluids flow slower than thinner ones. More formally, if we examine a fluid with viscosity $\eta$, driven by a pressure gradient $\frac{\diff p}{\diff x}$ to flow in the $x$ direction between two parallel no-slip boundaries at $z=\pm \frac{h}{2}$, as shown in Fig.~\ref{fig:experiment-microfluidics}a. At low $Re$ limit, the flow rate regime of interest, the flow is governed by Navier-Stokes equation
+\begin{equation}
+	0 = -\frac{\diff P}{\diff x} + \eta \frac{\diff^2 u_x}{\diff z^2}
+\end{equation}
+The resulting flow is parabolic in $x$-$z$ plane and is approximately constant in $y$-direction, and can be described by Eq.~\ref{eq:parabolic-flow}
+\begin{equation}
+	\label{eq:parabolic-flow}
+	u_x(z) = \frac{1}{2\eta}\frac{\diff P}{\diff x} (\frac{y^2}{h^2}-\frac{1}{4})
+\end{equation}
+For two different fluids with viscosities $\eta_1$ and $\eta_2$, the mean flow velocity in $x$-direction $\langle u_1 \rangle$ and $\langle u_2 \rangle$ are related to each other by
+\begin{equation}
+	\label{eq:velocity-viscosity}
+	\frac{\langle u_1 \rangle}{\langle u_2 \rangle} = \frac{\eta_2}{\eta_1}
+\end{equation}
+noting that the flow rate $Q=\langle u \rangle dh$, where $d$ is the width ($y$-direction) of the flow, we can substitue the velocities $\langle u_1 \rangle$ and $\langle u_2 \rangle$ in Eq.~\ref{eq:velocity-viscosity} to get
+\begin{equation}
+	\label{eq:working-principle}
+	\frac{d_1}{d_2} = \frac{\eta_1}{\eta_2}
+\end{equation}
+Eq.~\ref{eq:working-principle} is the working equation of the microfluidic viscometer. By imaging and measuring the width $d_1$ and $d_2$ of the two fluids in the channel, and combining the known viscosity of the reference fluid $\eta_2$, we can measure $\eta_1$.
 
 
 \section{Light-controlled E. coli: Genetic Modification, Culturing and Trouble Shooting}
