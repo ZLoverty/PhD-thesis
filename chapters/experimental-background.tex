@@ -184,7 +184,7 @@ The light-powered \textit{E. coli} mutant requires quite a high light intensity 
 		\textbf{PFS} & Perfect focusing system: a hardware solution to combat axial focus fluctuations in real time during long-term imaging investigations. Note - this filter should be kept out if one does not intend to use the perfect focusing system.\\
 		\hline
 	\end{tabular}
-	\caption{Filters in the illumination light path and their functions.}
+	\caption[Filters in the illumination light path and their functions.]{Filters in the illumination light path and their functions.}
 	\label{table:2-1}
 \end{table}
 
@@ -338,3 +338,29 @@ Eq.~\ref{eq:working-principle} is the working equation of the microfluidic visco
 
 \section{Light-controlled E. coli: Genetic Modification, Culturing and Trouble Shooting}
 \label{light-controlled-E-coli-genetic-modification-culturing-and-trouble-shooting}
+Controlling the swimming speed of swimmers can enormously expand the capability of experimental active fluid investigations. Our lab used to exploit a ``negative phototaxis'' property of a mutant \textit{E. coli} strain to control its swimming speed. The mutant strain carries a \textit{hemH} gene knockout, so that it accumulates protoporhyrin IX. When exposed to blue light, protoporhyrin IX catalyzes the production of H$_2$O$_2$, which causes the ``negative chemotaxis'' tumbling response of the \textit{E. coli} mutant \cite{Yang1995}. Although this mutant strain enables us to reduce the swimming speed, the recovery of swimming speed remains challenging due to the excessive production and accumulation of toxic H$_2$O$_2$. Hence, some important experiments, such as the study of the onset of active turbulence, which will be detailed in Chap.~\ref{the-emergence-of-active-turbulence}, cannot be done with this strain.
+
+An alternative mechanism that can be exploited to control bacterial swimming speed is a light-driven proton pump protein, proteorhodopsin (PR). PR protein has been found in some marine micro-organisms \cite{Beja2000, DelaTorre2003}, and has recently been successfully expressed in \textit{E. coli} \cite{Walter2007}. In contrast to the \textit{hemH} knockout mutant, PR is much less harmful and provides better recovery of swimming speed. Therefore, I transformed the wildtype \textit{E. coli} K-12 strain BW25113 (Ref.~\cite{Datsenko2000}) with a plasmid pZE-PR containing the gene that encoded the PR protein. The sequence of the PR gene was found in Ref.~\cite{DelaTorre2003} and was sythesized by Eurofins Scientific.
+The plasmid was constructed by the standard protocol consisting of PCR, enzymatic digestion and ligation. The PCR was carried out with Phusion High-Fidelity DNA polymerase (New England BioLabs) according to the manufacturer's instructions. Both the plasmid vector pZE and the PR gene were digested with Acc651-Xba1, and were subsequently ligated. XL10-Gold \textit{E. coli} strain was used for cloning the plasmid. Finally, the wildtype strain BW25113 was transformed with the plasmid by electro-poration and the light-controlled \textit{E. coli} mutant strain was constructed. The details of bacterial strains, plasmids and primers used in this work are listed in Table.~\ref{table:genetics}.
+
+\begin{table}[!ht]
+	\centering
+	\spacerows{1.2}
+	\begin{tabular}{  lp{3.5in} m }
+		\toprule
+		Name                & Relevant genotype or sequence     & Reference         \\\midrule
+		\textit{Strains}    &                       & \\
+		BW25113 & $rrnB_{T14}$ $\Delta$lacZ$_{WJ16}hsdR514$ $\Delta araBAD_{AH33}$ $\Delta rhaBAD_{LD78}$ &  \cite{Datsenko2000} \\
+		XL10-Gold     & Tet$^R$ $\Delta(mcrA)183$ $\Delta(mcrCB$-$hsaSMR$-$mrr)173$ $endAlsupE44$ $thi$-$l$ $recAl$ &  Stratagene     \\
+		\textit{Plasmids} \\
+		pZE-PR     & ColE1 origin, Amp$^R$, P$_LlacO_1$: $PR$ &  This work     \\
+		\textit{Primers} \\
+		PR-Acc651-F       & CCCGGGGGTACCATGAAGTTGTTGTTGATCTTGGGAT        &      \\
+	  PR-Xba1-R         & CCCGGGTCTAGATTATGCGTTCGATGACTCTTTCACG        &     \\
+		\bottomrule
+	\end{tabular}
+	\caption[Strains, plasmids and primers.]{Strains, plasmids and primers.}
+	\label{table:genetics}
+\end{table}
+
+The chromophore retinal molecule is essential for the PR protein to function as a proton pump. The retinal is isomerized upon illumination, and in this way it drives the proton transportation across cell membrane \cite{Subramaniam2000}. \textit{E. coli} does not synthesize such molecules. In order to activate the function of PR in \textit{E. coli}, we need to supplement the culturing media of \textit{E. coli} with retinal, in the form of ethanol solution of all-trans-retinal (Sigma-Aldrich). Typically, a 10 mM all-trans-retinal solution is prepared as a stock solution. When supplementing the culturing media, 1/1000 volume of retinal solution is used to achieve a final concentration 10 $\mu$M. To trigger the expression of PR gene under a P$_Llac$ operon, we also need to supplement the culturing media with another chemical Isopropyl $\beta$-D-1-thiogalactopyranoside (IPTG) at a final concentration 1 mM. Therefore, when culturing the light-controlled \textit{E. coli}, an additional step needs to be added to the standard protocol between step 2(c) and 2(d). Typically, 3 hours after step 2(c), retinal and IPTG are supplemented to the culturing media.
