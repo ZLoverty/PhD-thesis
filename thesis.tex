@@ -8,7 +8,7 @@
 \usepackage{url} % URL handling
 \usepackage{longtable} % Tables that continue onto multiple pages
 \usepackage{mathrsfs} % Support for \mathscr script
-\usepackage{multirow} % Span rows in tables
+% \usepackage{multirow} % Span rows in tables
 \usepackage{bigstrut} % Space struts in tables up and down
 \usepackage{amssymb} % AMS math symbols and helpers
 \usepackage{graphicx} % Enhanced graphics support
@@ -19,12 +19,17 @@
 \usepackage{booktabs} % Enhanced tables with \toprule, etc.
 \usepackage{hyperref} % Add clickable links to other parts of the document
 \usepackage[noabbrev]{cleveref} % Automatically determine \cref type
-\usepackage{epstopdf}
+% \usepackage{epstopdf}
 \usepackage{pdfpages}
 \usepackage{textcomp}
+\usepackage{bm}
+\usepackage{appendix}
 \usepackage[symbol]{footmisc}  % to use * footage
+\usepackage{seqsplit}
+
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 \newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
 
 
 % Configure the siunitx package
@@ -41,8 +46,8 @@
 %4   section symbol  �   5   paragraph   �   6   parallel lines  \\
 %7   two asterisks   **  8   two daggers ??  9   two double daggers  ??
 
-\definecolor{codegray}{gray}{0.9}
-\newcommand{\code}[1]{\colorbox{codegray}{\texttt{#1}}}
+% \definecolor{codegray}{gray}{0.9}
+% \newcommand{\code}[1]{\colorbox{codegray}{\texttt{#1}}}
 % this \code command allows for typing inline code snippet with gray background
 % and tt font family
 
@@ -62,7 +67,7 @@
     Chapters/giant-number-fluctuations-in-3-dimensional-space,
     Chapters/the-emergence-of-active-turbulence,
     % chapters/conclusion,
-    % appendix/particle_synthesis,
+    appendix/appendix-A,
     % appendix/fluorescent_label,
 }
 
@@ -79,8 +84,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Now lets include the body of the document...
 %Base Chapters
-% \include{Chapters/introduction}
-\include{Chapters/experimental-background}
+\include{Chapters/introduction}
+% \include{Chapters/experimental-background}
 
 % Results
 % \include{Chapters/rheology-of-bacterial-suspensions-under-confinement}
@@ -89,32 +94,37 @@
 %
 % \include{Chapters/giant-number-fluctuations-in-3-dimensional-space}
 %Conclusion
-% \include{chapters/conclusion}
+% \include{chapters/summary-and-outlook}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography, uncomment for final version
-\bibliographystyle{hunsrt} % style of bibliography
-\bibliography{Refs/tracking,
-              Refs/rheology,
-              Refs/diffusion,
-              Refs/collective_motion,
-              Refs/GNF,
-              Refs/reviews,
-              Refs/confinement,
-              Refs/general,
-              Refs/genetic_modifications}
+% \bibliographystyle{hunsrt} % style of bibliography
+% \bibliography{Refs/tracking,
+%               Refs/rheology,
+%               Refs/diffusion,
+%               Refs/collective_motion,
+%               Refs/GNF,
+%               Refs/reviews,
+%               Refs/confinement,
+%               Refs/general,
+%               Refs/genetic_modifications}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Thesis_Refs,
 % Refs/ref2,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Appendices
-% \appendix
-% \include{appendix/particle_synthesis}
+\appendix
+
+\chapter{Light-controlled \textit{E. coli}}
+\section{A}
+
+\include{appendix/appendix-A}
+% \include{appendix/appendix-c}
 % \include{appendix/fluorescent_label}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
