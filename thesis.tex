@@ -8,7 +8,7 @@
 \usepackage{url} % URL handling
 \usepackage{longtable} % Tables that continue onto multiple pages
 \usepackage{mathrsfs} % Support for \mathscr script
-% \usepackage{multirow} % Span rows in tables
+\usepackage{multirow} % Span rows in tables
 \usepackage{bigstrut} % Space struts in tables up and down
 \usepackage{amssymb} % AMS math symbols and helpers
 \usepackage{graphicx} % Enhanced graphics support
@@ -25,7 +25,8 @@
 \usepackage{bm}
 \usepackage{appendix}
 \usepackage[symbol]{footmisc}  % to use * footage
-\usepackage{seqsplit}
+\usepackage{dnaseq}
+\usepackage[cache=false]{minted} % python code syntax highlight
 
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 \newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
@@ -66,9 +67,10 @@
     Chapters/rheology-of-bacterial-suspensions-under-confinement,
     Chapters/giant-number-fluctuations-in-3-dimensional-space,
     Chapters/the-emergence-of-active-turbulence,
-    % chapters/conclusion,
-    appendix/appendix-A,
-    % appendix/fluorescent_label,
+    Chapters/summary-and-outlook,
+    Appendix/Appendix-A,
+    Appendix/Appendix-B,
+    Appendix/Appendix-C,
 }
 
 \begin{document}
@@ -84,7 +86,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Now lets include the body of the document...
 %Base Chapters
-\include{Chapters/introduction}
+% \include{Chapters/introduction}
 % \include{Chapters/experimental-background}
 
 % Results
@@ -116,13 +118,11 @@
 % Refs/ref2,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+adf
 \appendix
 
-\chapter{Light-controlled \textit{E. coli}}
-\section{A}
-
-\include{appendix/appendix-A}
-% \include{appendix/appendix-c}
+\include{Appendix/Appendix-A}
+\include{Appendix/Appendix-B}
 % \include{appendix/fluorescent_label}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
