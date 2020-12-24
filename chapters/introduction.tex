@@ -51,7 +51,7 @@ Active matter denotes a large group of active units which utilize ambient energy
 	\includegraphics[width=5.5 in]{Figs/1-Intro/1.pdf}
 	%select pdftexify command to run jpg or pdf files
 	\end{center}
-	\caption[Figure 1.1: ]
+	\caption[Examples of living matters and active fluids]
 	{
 	\textbf{Examples of living matters and active fluids.}
   (a) Flocking birds, (b) people in a mosh pit at heavy metal converts, (c) schooling fish, (d) herding sheeps, (e) swarming bacteria (f) microtubule and (g) clustering active Janus particles.
@@ -83,7 +83,7 @@ In this section, the existing works regarding rheology and diffusion in active f
 	\includegraphics[width=5.5 in]{Figs/1-Intro/2.pdf}
 	%select pdftexify command to run jpg or pdf files
 	\end{center}
-	\caption[Figure 1.2: ]
+	\caption[Rheology of active fluids]
 	{
 	\textbf{Rheology of active fluids.}
 	(a) The preferred orientation of the bacterium is along the extensile flow.
@@ -121,7 +121,7 @@ Despite the great progress on the rheology of active fluids made so far, there r
 	\includegraphics[height=5.5 in]{Figs/1-Intro/3.pdf}
 	%select pdftexify command to run jpg or pdf files
 	\end{center}
-	\caption[Figure 1.3:]
+	\caption[Diffusion of passive tracers in an active bath]
 	{
 	\textbf{Diffusion of passive tracers in an active bath.}
 	(a) 10 \textmu m diameter PS particles suspended in a bath of \text{E. coli}
@@ -158,7 +158,7 @@ In this section, we first review recent progresses on understanding the collecti
 	\includegraphics[width=5.5 in]{Figs/1-Intro/4.pdf}
 	%select pdftexify command to run jpg or pdf files
 	\end{center}
-	\caption[Figure 1.4:]
+	\caption[Illustrations of existing models and theories of collective motions]
 	{
 	\textbf{Illustrations of existing models and theories of collective motions.}
 	(a)-(c) Reynolds’ “boids” model obeying the rules of separation (a), alignment (b) and cohesion (c).
@@ -213,7 +213,7 @@ Tu1998, Simha2002, Ramaswamy2003, Saintillan2008a, Saintillan2008b, Ramaswamy201
 \cite{Narayan2007, Aranson2008, Zhang2010, Deseigne2010, Schaller2013, Palacci2013,
 Kawaguchi2017, Nishiguchi2017, Karani2019}. Over the past two decades, GNF has been shown to be universal across multiple length scales and is now being regarded as a landmark of collectively moving active particle systems. Despite the many studies on this universal phenomenon, a quantitative understanding is still lacking. Specifically, the scaling exponent of the variance of the number of particles on the mean number has not been measured in a definite way. In this section, I will review the attempts that have been made to fill these gaps and motivate our reseach on GNF, which will be described in detail in Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space}.
 
-A particle system in thermal equilibrium obeys central limit theorem, which states that when the size of a system gets very large, the fluctuation of particle number is negligible. More quantitatively, the number fluctuations represented by the standard deviation $\Delta N$ scales with the square root mean number $N^{0.5}$. From a statistical mechanics point of view, the configuration of a particle system in equilibrium can be determined by randomly assigning states to each particle and find the most probable configuration. Fig.~\ref{fig:GNF-illustration}a-b shows all the possible configures of a 2-particle system and a 3-particle system, with corresponding probability of each configuration shown on the side. Each particle has only two possible states: ``left'' and ``right''. If we keep increasing the particle number $N$ and calculte the emsemble average of the standard deviation $\Delta N$, the resulting number fluctuation curve ($\Delta N/\sqrt N$ vs. $N$) will be a flat line, as shown by the blue line in Fig.~\ref{fig:GNF-illustration}d. This curve describes the number fluctuations in equilibrium systems.
+A particle system in thermal equilibrium obeys central limit theorem, which states that when the size of a system gets very large, the fluctuation of particle number is negligible. More quantitatively, the number fluctuations represented by the standard deviation $\Delta N$ scales with the square root mean number $N^{0.5}$. From a statistical mechanics point of view, the configuration of a particle system in equilibrium can be determined by randomly assigning states to each particle and find the most probable configuration. Fig.~\ref{fig:GNF-illustration}a-b shows all the possible configurations of a 2-particle system and a 3-particle system, with corresponding probability of each configuration shown on the side. Each particle has only two possible states: ``left'' and ``right''. If we keep increasing the particle number $N$ and calculte the emsemble average of the standard deviation $\Delta N$, the resulting number fluctuation curve ($\Delta N/\sqrt N$ vs. $N$) will be a flat line, as shown by the blue line in Fig.~\ref{fig:GNF-illustration}d. This curve describes the number fluctuations in equilibrium systems.
 
 \begin{figure}[htbp]
  \begin{center}
@@ -285,19 +285,6 @@ As suggested by Bratanov et al., who investigated numerically and analytically a
 Although this distinction has been predicted by a number of theories and simulations, a systematic measurement of energy spectra in active turbulence is lacking.
 Moreover importantly, we notice that both energy spectra and GNF describe the scale-dependent properties of an active system. Such analogy indicates connections between the two quantities.
 In Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space}, I present a systematic study on both GNF and energy spectra in active suspensions of various volume fractions. I will show that a close connection between GNF and energy spectra indeed exists, which hints the microscopic origin of GNF.
-
-% \subsubsection{Driving force}
-%
-% The driving force of GNF, especially in wet systems, remains unclear. Elucidating the behavior of collectively moving bacteria has proved to be challenging, because it involves many active constituents interacting with each other and it is impossible to analytically solve for the motions of every single particle. As a result, the advancement of understanding collective motions relies on mesoscopic coarse-graining approaches
-% \cite{Simha2002, Ramaswamy2003, Aranson2005, Bertin2006, Aranson2007,
-% Baskaran2008, Saintillan2008a, Saintillan2008b, Baskaran2009}
-% and agent-based simulations
-% \cite{Vicsek1974, Gregoire2004, Mishra2006, Hernandez-Ortiz2005, Chate2008,
-% Ginelli2010, Saintillan2012, Dey2012, Ngo2014, Mahault2019}. By comparing the theoretical and computational predictions with experimental observations, we have a chance to find out some correct or close enough assumptions.
-%
-% Successful comparisons have been made
-% Long time tail of concentration autocorrelation (Toner 1998 and Ramaswamy 2003): Narayan 2007 and Schaller 2013
-% alpha = 1/d (Ramaswamy 2003): Narayan 2007
 
 
 

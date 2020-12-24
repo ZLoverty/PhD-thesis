@@ -1,14 +1,14 @@
 % thesis.tex: Primary TeX control file for thesis.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt, oneside]{mnthesis}
-\usepackage{epsfig} % Allows the inclusion of eps files
-\usepackage{epic} % Enhanced picture mode
-\usepackage{eepic} % Extensions for epic
+% \usepackage{epsfig} % Allows the inclusion of eps files
+% \usepackage{epic} % Enhanced picture mode
+% \usepackage{eepic} % Extensions for epic
 \usepackage{units} % SI unit typesetting
 \usepackage{url} % URL handling
-\usepackage{longtable} % Tables that continue onto multiple pages
+% \usepackage{longtable} % Tables that continue onto multiple pages
 \usepackage{mathrsfs} % Support for \mathscr script
-\usepackage{multirow} % Span rows in tables
+% \usepackage{multirow} % Span rows in tables
 \usepackage{bigstrut} % Space struts in tables up and down
 \usepackage{amssymb} % AMS math symbols and helpers
 \usepackage{graphicx} % Enhanced graphics support
@@ -70,7 +70,7 @@
     Chapters/summary-and-outlook,
     Appendix/Appendix-A,
     Appendix/Appendix-B,
-    Appendix/Appendix-C,
+    % Appendix/Appendix-C,
 }
 
 \begin{document}
@@ -87,13 +87,13 @@
 % Now lets include the body of the document...
 %Base Chapters
 % \include{Chapters/introduction}
-% \include{Chapters/experimental-background}
+\include{Chapters/experimental-background}
 
 % Results
 % \include{Chapters/rheology-of-bacterial-suspensions-under-confinement}
-%
+
 % \include{Chapters/the-emergence-of-active-turbulence}
-%
+
 % \include{Chapters/giant-number-fluctuations-in-3-dimensional-space}
 %Conclusion
 % \include{chapters/summary-and-outlook}
@@ -103,26 +103,25 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography, uncomment for final version
-% \bibliographystyle{hunsrt} % style of bibliography
-% \bibliography{Refs/tracking,
-%               Refs/rheology,
-%               Refs/diffusion,
-%               Refs/collective_motion,
-%               Refs/GNF,
-%               Refs/reviews,
-%               Refs/confinement,
-%               Refs/general,
-%               Refs/genetic_modifications}
+\bibliographystyle{hunsrt} % style of bibliography
+\bibliography{Refs/tracking,
+              Refs/rheology,
+              Refs/diffusion,
+              Refs/collective_motion,
+              Refs/GNF,
+              Refs/reviews,
+              Refs/confinement,
+              Refs/general,
+              Refs/genetic_modifications}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Thesis_Refs,
 % Refs/ref2,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-adf
 \appendix
 
-\include{Appendix/Appendix-A}
-\include{Appendix/Appendix-B}
+% \include{Appendix/Appendix-A}
+% \include{Appendix/Appendix-B}
 % \include{appendix/fluorescent_label}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

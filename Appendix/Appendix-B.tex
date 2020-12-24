@@ -9,15 +9,7 @@
 
 \section{Code Vectorization}
 \subsection{Vectorized Code for Spatial Correlation Function}
-\begin{minted}
-[
-frame=lines,
-framesep=2mm,
-baselinestretch=1.1,
-linenos,
-]
-{python}
-
+\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.1,linenos,]{python}
 def corrS(X, Y, U, V):
     row, col = X.shape
     vsqrt = (U ** 2 + V ** 2) ** 0.5
@@ -30,8 +22,10 @@ def corrS(X, Y, U, V):
     for xin in range(0, col):
         for yin in range(0, row):
             if xin != 0 or yin != 0:
-                CA[yin, xin] = (Ax[0:row-yin, 0:col-xin] * Ax[yin:row, xin:col] + Ay[0:row-yin, 0:col-xin] * Ay[yin:row, xin:col]).mean()
-                CV[yin, xin] = (U[0:row-yin, 0:col-xin] * U[yin:row, xin:col] + V[0:row-yin, 0:col-xin] * V[yin:row, xin:col]).mean() / (U.std()**2+V.std()**2)
+                CA[yin, xin] = (Ax[0:row-yin, 0:col-xin] * Ax[yin:row, xin:col] +
+                                Ay[0:row-yin, 0:col-xin] * Ay[yin:row, xin:col]).mean()
+                CV[yin, xin] = (U[0:row-yin, 0:col-xin] * U[yin:row, xin:col] +
+                                V[0:row-yin, 0:col-xin] * V[yin:row, xin:col]).mean() / (U.std()**2+V.std()**2)
     return CA, CV
 \end{minted}
 
@@ -99,20 +93,10 @@ The result is shown in Fig.~\ref{fig:vectorization-performance}b. Although in th
 \section{Energy Spectrum Calculation}
 The following code is used for calculating the energy spectra in Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space}.
 
-\begin{minted}
-[
-frame=lines,
-framesep=2mm,
-baselinestretch=1.1,
-linenos,
-]
-{python}
+\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.1,linenos]{python}
 def compute_energy_density(pivData, d=25*0.33, MPP=0.33):
     """
-    Compute kinetic energy density in k space from piv data. The unit of the return value is [velocity] * [length],
-    where [velocity] is the unit of pivData, and [length] is the unit of sample_spacing parameter.
-    Note, the default value of sampling_spacing does not have any significance. It is just the most convenient value for my first application,
-    and should be set with caution when a different magnification and PIV are used.
+    Compute kinetic energy density in k space from piv data.
 
     Args:
     pivData -- piv data
@@ -138,7 +122,6 @@ def compute_energy_density(pivData, d=25*0.33, MPP=0.33):
 def compute_wavenumber_field(shape, d):
     """
     Compute the wave number field Kx and Ky, and magnitude field k.
-    Note that this function works for even higher dimensional shape.
 
     Args:
     shape -- shape of the velocity field and velocity fft field, tuple
@@ -175,8 +158,7 @@ def energy_spectrum(pivData, d=25*0.33):
 
     Args:
     pivData -- piv data
-    d -- sample spacing. This is the distance between adjacent samples, for example, velocities in PIV.
-        The resulting frequency space has the unit which is inverse of the unit of d. The default unit of d is um.
+    d -- sample spacing.
 
     Returns:
     es -- energy spectrum, DataFrame (k, E)
@@ -201,9 +183,6 @@ def energy_spectrum(pivData, d=25*0.33):
 \label{cross-correlation-tracking-method}
 This is designed for tracking colloidal chains. We show here the basic working principle and the code here. The advantage of this method is that it does not require the feature to be very bright or dark, like traditional particle detecting methods. As long as the features share similar characteristics, i.e. spatial patterns, this method can work well.
 
-\subsection{Working principle}
-From raw images, we crop out a single feature which we are looking for as a target mask, as shown in Fig.~\ref{fig:corr-track}a inset. Then, we do a 2D correlation between the target mask and an image (Fig.~\ref{fig:corr-track}a). The resulting correlation map is shown in Fig.~\ref{fig:corr-track}b, where bright pixels stand for high correlation and dark pixels stand for low correlation. The last step is to look for the pixel intensity peaks in the correlation map, as in traditional particle detecting methods.
-
 \begin{figure}[h]
 	\begin{center}
 	\includegraphics[width=5.5in]{Figs/A-2/corrTrack.pdf}
@@ -218,6 +197,11 @@ From raw images, we crop out a single feature which we are looking for as a targ
 	\label{fig:corr-track}
 \end{figure}
 
+\subsection{Working principle}
+From raw images, we crop out a single feature which we are looking for as a target mask, as shown in Fig.~\ref{fig:corr-track}a inset. Then, we do a 2D correlation between the target mask and an image (Fig.~\ref{fig:corr-track}a). The resulting correlation map is shown in Fig.~\ref{fig:corr-track}b, where bright pixels stand for high correlation and dark pixels stand for low correlation. The last step is to look for the pixel intensity peaks in the correlation map, as in traditional particle detecting methods.
+
+
+
 \subsection{Code}
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.1,linenos]{python}
 import numpy as np
@@ -226,7 +210,8 @@ from math import exp
 
 def normxcorr2(template, image, mode="full"):
     if np.ndim(template) > np.ndim(image) or \
-            len([i for i in range(np.ndim(template)) if template.shape[i] > image.shape[i]]) > 0:
+            len([i for i in range(np.ndim(template)) \
+             if template.shape[i] > image.shape[i]]) > 0:
         print("normxcorr2: TEMPLATE larger than IMG. Arguments may be swapped.")
     template = template - np.mean(template)
     image = image - np.mean(image)
@@ -234,7 +219,8 @@ def normxcorr2(template, image, mode="full"):
     ar = np.flipud(np.fliplr(template))
     out = fftconvolve(image, ar.conj(), mode=mode)
     image = fftconvolve(np.square(image), a1, mode=mode) - \
-            np.square(fftconvolve(image, a1, mode=mode)) / (np.prod(template.shape))
+            np.square(fftconvolve(image, a1, mode=mode)) \
+            / (np.prod(template.shape))
     image[np.where(image < 0)] = 0
     template = np.sum(np.square(template))
     out = out / np.sqrt(image * template)
@@ -266,7 +252,8 @@ def FastPeakFind(data):
     thresholded = np.multiply(bw, conv)
     edg = 3
     shape = data.shape
-    idx = np.nonzero(thresholded[edg-1: shape[0]-edg-1, edg-1: shape[1]-edg-1])
+    idx = np.nonzero(thresholded[edg-1: shape[0]-edg-1, \
+                    edg-1: shape[1]-edg-1])
     idx = np.transpose(idx)
     cent = []
     for xy in idx:
@@ -323,4 +310,138 @@ def track_spheres(img, mask, num_particles):
 \section{Fourier Transform Based Orientation Analysis}
 \label{fourier-transform-based-orientation-analysis}
 
+The orientation of patterns in an image can be found by calculating the Fourier transform of the image. The idea is that in the direction of predominant pattern orientation (Fig.~\ref{fig:oft-illustration}a, the vertical direction), the signal frequency is smaller compared to the perpendicular direction. Such feature manifests in the frequency domain as anisotropic patterns (Fig.~\ref{fig:oft-illustration}b, horizontal orientation). This method is used in the study of the emergence of active turbulence in Chap.~\ref{the-emergence-of-active-turbulence}.
+
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=5.5in]{Figs/A-2/orientationFT.pdf}
+	%select pdftexify command to run jpg or pdf files
+	\end{center}
+	\caption[Fourier transform based orientation analysis illustration]
+	{
+	\textbf{Fourier transform based orientation analysis illustration.}
+  (a) Raw image.
+  (b) Fourier transformed image.
+  (c) Smoothing.
+  (d) Binarization.
+  (e) Despeckling.
+  (f) Pattern detection.
+	}
+	\label{fig:oft-illustration}
+\end{figure}
+
+The procedures are illustrated in Fig.~\ref{fig:oft-illustration}. We first perform Fourier transform on the raw image (Fig.~\ref{fig:oft-illustration}a), then smooth this transformed image (Fig.~\ref{fig:oft-illustration}b) using a Gaussian filter to get Fig.~\ref{fig:oft-illustration}c, which is then binarized using a ``isodata'' threshold, yielding Fig.~\ref{fig:oft-illustration}d. A median filter is applied on the binarized image to remove small noise, known as despeckling, to obtain Fig.~\ref{fig:oft-illustration}e. Finally, we detect the anisotropic pattern in Fig.~\ref{fig:oft-illustration}e using a Python function \texttt{skimage.measure.regionprops}. Red circles in Fig.~\ref{fig:oft-illustration}f indicate all the patterns detected in the image, and we take the biggest one to examine the orientation. The Python implementation of these procedures is shown in Sec.~\ref{sec:oft-code}. Some example results are shown in Sec.~\ref{sec:oft-gallery}.
+
+\subsection{Code}
+\label{sec:oft-code}
+
+\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.1,linenos]{python}
+from skimage import measure, filters
+import pandas as pd
+from scipy.ndimage import gaussian_filter, median_filter
+
+def sectionWindow(imgShape, windowShape):
+    Xnum = math.floor(imgShape[0]/windowShape[0])
+    Ynum = math.floor(imgShape[1]/windowShape[1])
+    Xrem = imgShape[0]%windowShape[0]
+    Yrem = imgShape[1]%windowShape[1]
+    Xstart = math.floor(Xrem/2)
+    Ystart = math.floor(Yrem/2)
+    Xend = imgShape[0] - Xstart + 1
+    Yend = imgShape[1] - Ystart + 1
+    X = np.asarray(range(Xstart, Xend, windowShape[0]))
+    Y = np.asarray(range(Ystart, Yend, windowShape[1]))
+    return X, Y
+
+def getOrientation(bw_img):
+    label_img = measure.label(thres)
+    prop = measure.regionprops_table(label_img,
+                    properties=['area', 'major_axis_length',
+                    'minor_axis_length', 'orientation'])
+    prop_df = pd.DataFrame(prop)
+    if len(prop_df) == 0:
+        return 0, 0
+    else:
+        main_feature = prop_df.sort_values(by='area', ascending=False).iloc[0]
+        return main_feature.orientation,
+              main_feature.major_axis_length/main_feature.minor_axis_length
+
+# test code
+windowShape = (50, 50)
+img = io.imread(r'..\img\testFT_4.jpg', as_gray=True)
+X, Y = sectionWindow(img.shape, windowShape)
+y = X[0:X.size-1] + windowShape[0]/2
+x = Y[0:Y.size-1] + windowShape[1]/2
+x, y = np.meshgrid(x, y)
+u_ori = x.copy()
+v_ori = y.copy()
+for i in range(0, x.shape[0]):
+    for j in range(0, y.shape[1]):
+        window = img[X[i]:X[i+1], Y[j]:Y[j+1]]
+        fft = np.log(abs(np.fft.fft2(window)))
+        fft = np.fft.fftshift(fft) ## step 1, Fourier transform
+        smooth = gaussian_filter(fft, 5) ## step 2, smoothing
+        thres = smooth > filters.threshold_isodata(smooth) ## step 3, thresholding
+        despeck = median_filter(thres, size=5) ## step 4, despeckling
+        ori, orim = getOrientation(despeck) ## step 5, detect the largest pattern
+        u_ori[i, j] = orim*math.cos(ori)
+        v_ori[i, j] = orim*math.sin(ori)
+
+plt.figure(dpi=300)
+plt.imshow(img, cmap='gray')
+plt.quiver(x, y, u_ori, v_ori, color='red')
+plt.axis('off')
+\end{minted}
+
+\subsection{Some examples}
+\label{sec:oft-gallery}
+Some example applications of this method is shown in Fig.~\ref{fig:oft-gallery}
+
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=5.5in]{Figs/A-2/oft-gallery.pdf}
+	%select pdftexify command to run jpg or pdf files
+	\end{center}
+	\caption[Fourier transform based orientation analysis examples]
+	{
+	\textbf{Fourier transform based orientation analysis examples.}
+  Orientations of
+  (a) a synthesized pattern,
+  (b) an image of bacterial suspensions and
+  (c) a photo of me.
+	}
+	\label{fig:oft-gallery}
+\end{figure}
+
 \section{Density Fluctuation Calculation}
+The principles of density fluctuation calculation has already been described in Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space}. Here, I show the Python implementation of the calculation.
+
+\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.1,linenos]{python}
+def df2(img_stack, boxsize=None, size_min=5, step=250):
+    """
+    Compute number fluctuations of an image stack (3D np.array, frame*h*w)
+
+    Args:
+    img_stack -- a stack of image, a 3D array
+    boxsize -- a list-like of integers, specify the subsystem size to look at.
+    size_min -- the smallest box size
+    step -- step used when dividing image into windows
+
+    Returns:
+    df -- DataFrame of n and d,
+          where n is box area (px^2) and
+          d is total number fluctuations (box_area*dI)
+    """
+    L = min(img_stack.shape[1:3])
+    if boxsize == None:
+        boxsize = np.unique(np.floor(
+                np.logspace(np.log10(size_min), np.log10(L/2), 100)))
+
+    dI_list = []
+    for bs in boxsize:
+        I = divide_stack(img_stack, winsize=[bs, bs], step=step)
+        dI = I.std(axis=0).mean() * bs ** 2
+        dI_list.append(dI)
+
+    return pd.DataFrame({'n': np.array(boxsize)**2, 'd': dI_list})
+\end{minted}
