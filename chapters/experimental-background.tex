@@ -1,14 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% experimental_background.tex: experimental background
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Outline:
-% - Motile bacteria sample preparation
-% - Video microscopy and image analysis
-% - Micro-fabrication and microfluidics
-% - Light-controlled E. coli: genetic modification, culturing and trouble shooting
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \chapter{Experimental Background}
 \label{experimental-background}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -185,9 +174,9 @@ Removing some of those filters can make the illumination light strong enough to 
 	\label{fig:2-4}
 \end{figure}
 
-\subsection{Avoid over exposure}
+\subsection{Adding Filters to Avoid Overexposure}
 
-While high enough light intensity is achieved to power the light-controlled bacteria, the light is so strong that the camera is over exposed and does not record any meaningful signal. In order to power the bacteria, the illumination light intensity cannot be reduced. The only way to avoid the over exposure is to add neutral density filters between the specimen and the camera, so that the light goes to the camera gets dimmer. Fig.~\ref{fig:2-3}c and d show how I placed the filters between the specimen and the camera. I took out one of the filter cube from the turret under the objective, which is originally used for fluorescence microscopy. Then I put a piece of neutral density filter on top of the cube and put the cube back to the turret. This additional filter allows for the imaging under strong illumination light.
+While high enough light intensity is achieved to power the light-controlled bacteria, the light is so strong that the camera is overexposed and does not record any meaningful signal. In order to power the bacteria, the illumination light intensity cannot be reduced. The only way to avoid the overexposure is to add neutral density filters between the specimen and the camera, so that the light goes to the camera gets dimmer. Fig.~\ref{fig:2-3}c and d show how I placed the filters between the specimen and the camera. I took out one of the filter cube from the turret under the objective, which is originally used for fluorescence microscopy. Then I put a piece of neutral density filter on top of the cube and put the cube back to the turret. This additional filter allows for the imaging under strong illumination light.
 
 \section{Image Analysis}
 \label{sec:image-analysis}
@@ -303,14 +292,14 @@ Although the definition is clear, the programming implementation can be quite di
 	\textbf{Code vectorization illustration.}
 	The correlation function at a certain distance $\bm{R}$, $C(\bm{R})$ can be calculated without using a \texttt{for} loop. Two subspaces are identified from the whole space, as indicated by purple and yellow shaded regions, which are $\bm{R}$ away from each other. $C(\bm{R})$ can be calculated by taking the product of these two subspaces and then taking the mean of this product.
 	}
-	\label{fig:PIV}
+	\label{fig:vectorization}
 \end{figure}
 
 
-The calculation of the correlation function in Eq.~\ref{eq:correlation-function} requires going over the whole space twice: for each point $\bm{r}$ in the space, all possible distance $\bm{R}$ needs to be examined. In two dimensional space, this procedure leads to four \texttt{for} loops. The basic idea of code vectorization is to avoid the extensive use of \texttt{for} loops. In this specific case, for every possible distance $\bm{R}$, the correlation can be calculated without using a \texttt{for} loop, by directly calculating the product of two subspaces and the taking average, as illustrated in Fig.~\ref{fig:vectorization}. Two subspaces are identified from the whole space, which are $\bm{R}$ away from each other, as indicated by purple and yellow shaded regions. Note that matrix product calculation is well optimized in almost all programming languages and is much faster than looping over every element in a matrix. Using this trick, only two \texttt{for} loops are necessary, which go over all possible distances $\bm{R}$. The Python implementations of spatial and temporal correlation functions, as well as a speed comparison between non-vectorized and vectorized programs, can be found in the \textcolor{red}{Appendix}.
+The calculation of the correlation function in Eq.~\ref{eq:correlation-function} requires going over the whole space twice: for each point $\bm{r}$ in the space, all possible distance $\bm{R}$ needs to be examined. In two dimensional space, this procedure leads to four \texttt{for} loops. The basic idea of code vectorization is to avoid the extensive use of \texttt{for} loops. In this specific case, for every possible distance $\bm{R}$, the correlation can be calculated without using a \texttt{for} loop, by directly calculating the product of two subspaces and the taking average, as illustrated in Fig.~\ref{fig:vectorization}. Two subspaces are identified from the whole space, which are $\bm{R}$ away from each other, as indicated by purple and yellow shaded regions. Note that matrix product calculation is well optimized in almost all programming languages and is much faster than looping over every element in a matrix. Using this trick, only two \texttt{for} loops are necessary, which go over all possible distances $\bm{R}$. The Python implementations of spatial and temporal correlation functions, as well as a speed comparison between non-vectorized and vectorized programs, can be found in Appendix.~\ref{sec:A-vectorization}.
 
 \subsection{Energy Spectrum Calculation}
-As is discussed in Sec.~\ref{sec:intro-GNF}, energy spectra have been widely used for studying the flow structure of classic turbulent flows, by revealing the kinetic energy disctribution over different length scales. Here, we show the details in the method of calculating energy spectra of the flow in bacterial suspensions at various volume fractions, using the velocity fields obtained from PIV analysis. This calculation will be used in Chap.~\ref{the-emergence-of-active-turbulence} and Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space}.
+As discussed in Sec.~\ref{sec:intro-GNF}, energy spectra have been widely used for studying the flow structure of classic turbulent flows, by revealing the kinetic energy disctribution over different length scales. Here, we show the details in the method of calculating energy spectra of the flow in bacterial suspensions at various volume fractions, using the velocity fields obtained from PIV analysis. This calculation will be used in Chap.~\ref{the-emergence-of-active-turbulence} and Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space}.
 
 The energy spectra of bacterial suspensions are calculated as the following
 %
@@ -331,14 +320,14 @@ The fourier transform of real space velocity $u_k$ and $v_k$ are computed as the
   \item the wavenumber field $k$ corresponding to $v_k(k_x, k_y)$ is obtained by applying the \texttt{numpy.fft.fftfreq} function. Since the definition of FFT introduces a prefactor $2\pi$ to the wavenumber, an additional $2\pi$ is also multiplied to $k$
 \end{itemize}
 
-The calculation described above is implemented in a Python code, which can be found in \textcolor{red}{Appendix}.
+The calculation described above is implemented in a Python code, which can be found in Appendix.\ref{sec:A-energy-spectra}.
 
 \subsection{Other Image Analysis Tools}
 
 \begin{itemize}
-	\item Particle tracking based on image cross-correlation
-	\item Orientation tracking based on Fast Fourier Transform (FFT)
-	\item Density fluctuation calculations
+	\item Particle tracking based on image cross-correlation (Appendix.\ref{sec:A-cross-correlation-tracking-method})
+	\item Orientation tracking based on Fast Fourier Transform (FFT) (Appendix.\ref{sec:A-fourier-transform-based-orientation-analysis})
+	\item Density fluctuation calculations (Appendix.\ref{sec:A-df-calculation})
 \end{itemize}
 
 
@@ -397,7 +386,7 @@ noting that the flow rate $Q=\langle u \rangle dh$, where $d$ is the width ($y$-
 Eq.~\ref{eq:working-principle} is the working equation of the microfluidic viscometer. By imaging and measuring the width $d_1$ and $d_2$ of the two fluids in the channel, and combining the known viscosity of the reference fluid $\eta_2$, we can measure $\eta_1$.
 
 
-\section{Light-controlled E. coli: Genetic Modification and Culturing}
+\section{Light-controlled \textit{E. coli}: Genetic Modification and Culturing}
 \label{light-controlled-E-coli-genetic-modification-culturing-and-trouble-shooting}
 Controlling the swimming speed of swimmers can enormously expand the capability of experimental active fluid investigations. Our lab used to exploit a ``negative phototaxis'' property of a mutant \textit{E. coli} strain to control its swimming speed. The mutant strain carries a \textit{hemH} gene knockout, so that it accumulates protoporhyrin IX. When exposed to blue light, protoporhyrin IX catalyzes the production of H$_2$O$_2$, which causes the ``negative chemotaxis'' tumbling response of the \textit{E. coli} mutant \cite{Yang1995}. Although this mutant strain enables us to reduce the swimming speed, the recovery of swimming speed remains challenging due to the excessive production and accumulation of toxic H$_2$O$_2$. Hence, some important experiments, such as the study of the onset of active turbulence, which will be detailed in Chap.~\ref{the-emergence-of-active-turbulence}, cannot be done with this strain.
 
@@ -406,20 +395,38 @@ The plasmid was constructed by the standard protocol consisting of PCR, enzymati
 
 \begin{table}[!ht]
 	\centering
-	% \spacerows{1.2}
-	\begin{tabular}{lp{3.5in}m}
-		\toprule
-		Name                & Relevant genotype or sequence     & Reference         \\
-		\midrule
-		\textit{Strains}   & & \\
-		BW25113 & $rrnB_{T14}$ $\Delta lacZ_{WJ16}hsdR514$ $\Delta araBAD_{AH33}$ $\Delta rhaBAD_{LD78}$ &  \cite{Datsenko2000} \\
-		XL10-Gold     & Tet$^R$ $\Delta(mcrA)183$ $\Delta(mcrCB$-$hsaSMR$-$mrr)173$ $endAlsupE44$ $thi$-$l$ $recAl$ &  Stratagene     \\
-		\textit{Plasmids} & & \\
-		pZE-PR     & ColE1 origin, Amp$^R$, P$_LlacO_1$: $PR$ &  This work     \\
-		\textit{Primers} & & \\
-		PR-Acc651-F       & CCCGGGGGTACCATGAAGTTGTTGTTGATCTTGGGAT        &      \\
-	  PR-Xba1-R         & CCCGGGTCTAGATTATGCGTTCGATGACTCTTTCACG        &     \\
-		\bottomrule
+	\spacerows{1.2}
+	\begin{tabular}{lcl}
+		% \toprule
+		% Name                & Relevant genotype or sequence     & Reference         \\
+		% \midrule
+		% \textit{Strains}   & & \\
+		% BW25113 & $rrnB_{T14}$ $\Delta lacZ_{WJ16}hsdR514$ $\Delta araBAD_{AH33}$ $\Delta rhaBAD_{LD78}$ &  \cite{Datsenko2000} \\
+		% XL10-Gold     & Tet$^R$ $\Delta(mcrA)183$ $\Delta(mcrCB$-$hsaSMR$-$mrr)173$ $endAlsupE44$ $thi$-$l$ $recAl$ &  Stratagene     \\
+		% \textit{Plasmids} & & \\
+		% pZE-PR     & ColE1 origin, Amp$^R$, P$_LlacO_1$: $PR$ &  This work     \\
+		% \textit{Primers} & & \\
+		% PR-Acc651-F       & CCCGGGGGTACCATGAAGTTGTTGTTGATCTTGGGAT        &      \\
+	  % PR-Xba1-R         & CCCGGGTCTAGATTATGCGTTCGATGACTCTTTCACG        &     \\
+		% \bottomrule
+		\hline
+		name  &  Relevant genotype or sequence  &  Reference  \\
+		\hline
+		\emph{Strains}  &  &  \\
+	  \multirow{2}{1em}{BW25113}  &  $rrnB_{T14}$ $\Delta lacZ_{WJ16}hsdR514$ $\Delta$  &  \multirow{2}{1em}{\cite{Datsenko2000}}  \\
+															  &  $araBAD_{AH33}$ $\Delta rhaBAD_{LD78}$             &                          \\
+
+		\multirow{2}{5em}{XL10-Gold}  &  Tet$^R$ $\Delta(mcrA)183$ $\Delta(mcrCB$-$hsaSMR$  &  \multirow{2}{1em}{\emph{Stratagene}}  \\
+															    & -$mrr)173endAlsupE44$ $thi$-$l$ $recAl$             &                                 \\
+	  \emph{Plasmids}  &  &  \\
+	  pZE-PR  &  ColE1 origin, Amp$^R$, P$_LlacO_1$: $PR$  &  This work  \\
+	  \textit{Primers} & & \\
+ 		\multirow{2}{8em}{PR-Acc651-F}  &  CCCGGGGGTACCATGAAGTT  &  \\
+																	  &  GTTGTTGATCTTGGGAT     &  \\
+
+	  \multirow{2}{8em}{PR-Xba1-R}   &  CCCGGGTCTAGATTATGCG  &  \\
+																   &  TTCGATGACTCTTTCACG   &  \\
+		\hline
 	\end{tabular}
 	\caption[Strains, plasmids and primers]
 	{Strains, plasmids and primers.}

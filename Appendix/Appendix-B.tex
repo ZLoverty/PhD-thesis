@@ -9,6 +9,7 @@
 
 \section{Code Vectorization}
 \subsection{Vectorized Code for Spatial Correlation Function}
+\label{sec:A-vectorization}
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.1,linenos,]{python}
 def corrS(X, Y, U, V):
     row, col = X.shape
@@ -30,14 +31,7 @@ def corrS(X, Y, U, V):
 \end{minted}
 
 \subsection{Non-vectorized Code for Spatial Correlation Function}
-\begin{minted}
-[
-frame=lines,
-framesep=2mm,
-baselinestretch=1.1,
-linenos,
-]
-{python}
+\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.1,linenos]{python}
 def corrS(X, Y, U, V):
     row, col = X.shape
     vsq = 0
@@ -91,6 +85,7 @@ The result is shown in Fig.~\ref{fig:vectorization-performance}b. Although in th
 
 
 \section{Energy Spectrum Calculation}
+\label{sec:A-energy-spectra}
 The following code is used for calculating the energy spectra in Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space}.
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.1,linenos]{python}
@@ -180,7 +175,7 @@ def energy_spectrum(pivData, d=25*0.33):
 \end{minted}
 
 \section{Cross-Correlation Based Particle Detecting Method}
-\label{cross-correlation-tracking-method}
+\label{sec:A-cross-correlation-tracking-method}
 This is designed for tracking colloidal chains. We show here the basic working principle and the code here. The advantage of this method is that it does not require the feature to be very bright or dark, like traditional particle detecting methods. As long as the features share similar characteristics, i.e. spatial patterns, this method can work well.
 
 \begin{figure}[h]
@@ -212,7 +207,6 @@ def normxcorr2(template, image, mode="full"):
     if np.ndim(template) > np.ndim(image) or \
             len([i for i in range(np.ndim(template)) \
              if template.shape[i] > image.shape[i]]) > 0:
-        print("normxcorr2: TEMPLATE larger than IMG. Arguments may be swapped.")
     template = template - np.mean(template)
     image = image - np.mean(image)
     a1 = np.ones(template.shape)
@@ -308,7 +302,7 @@ def track_spheres(img, mask, num_particles):
 
 
 \section{Fourier Transform Based Orientation Analysis}
-\label{fourier-transform-based-orientation-analysis}
+\label{sec:A-fourier-transform-based-orientation-analysis}
 
 The orientation of patterns in an image can be found by calculating the Fourier transform of the image. The idea is that in the direction of predominant pattern orientation (Fig.~\ref{fig:oft-illustration}a, the vertical direction), the signal frequency is smaller compared to the perpendicular direction. Such feature manifests in the frequency domain as anisotropic patterns (Fig.~\ref{fig:oft-illustration}b, horizontal orientation). This method is used in the study of the emergence of active turbulence in Chap.~\ref{the-emergence-of-active-turbulence}.
 
@@ -362,9 +356,11 @@ def getOrientation(bw_img):
     if len(prop_df) == 0:
         return 0, 0
     else:
-        main_feature = prop_df.sort_values(by='area', ascending=False).iloc[0]
+        main_feature = prop_df.sort_values(by='area', \
+                                ascending=False).iloc[0]
         return main_feature.orientation,
-              main_feature.major_axis_length/main_feature.minor_axis_length
+              main_feature.major_axis_length / \
+              main_feature.minor_axis_length
 
 # test code
 windowShape = (50, 50)
@@ -379,11 +375,11 @@ for i in range(0, x.shape[0]):
     for j in range(0, y.shape[1]):
         window = img[X[i]:X[i+1], Y[j]:Y[j+1]]
         fft = np.log(abs(np.fft.fft2(window)))
-        fft = np.fft.fftshift(fft) ## step 1, Fourier transform
-        smooth = gaussian_filter(fft, 5) ## step 2, smoothing
-        thres = smooth > filters.threshold_isodata(smooth) ## step 3, thresholding
-        despeck = median_filter(thres, size=5) ## step 4, despeckling
-        ori, orim = getOrientation(despeck) ## step 5, detect the largest pattern
+        fft = np.fft.fftshift(fft) ## 1, Fourier transform
+        smooth = gaussian_filter(fft, 5) ## 3, smoothing
+        thres = smooth > filters.threshold_isodata(smooth) ## thresholding
+        despeck = median_filter(thres, size=5) ## 4, despeckling
+        ori, orim = getOrientation(despeck) ## 5, detect the largest pattern
         u_ori[i, j] = orim*math.cos(ori)
         v_ori[i, j] = orim*math.sin(ori)
 
@@ -413,7 +409,8 @@ Some example applications of this method is shown in Fig.~\ref{fig:oft-gallery}
 	\label{fig:oft-gallery}
 \end{figure}
 
-\section{Density Fluctuation Calculation}
+\section{Density Fluctuation Calculations}
+\label{sec:A-df-calculation}
 The principles of density fluctuation calculation has already been described in Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space}. Here, I show the Python implementation of the calculation.
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.1,linenos]{python}
