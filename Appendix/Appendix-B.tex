@@ -23,10 +23,15 @@ def corrS(X, Y, U, V):
     for xin in range(0, col):
         for yin in range(0, row):
             if xin != 0 or yin != 0:
-                CA[yin, xin] = (Ax[0:row-yin, 0:col-xin] * Ax[yin:row, xin:col] +
-                                Ay[0:row-yin, 0:col-xin] * Ay[yin:row, xin:col]).mean()
-                CV[yin, xin] = (U[0:row-yin, 0:col-xin] * U[yin:row, xin:col] +
-                                V[0:row-yin, 0:col-xin] * V[yin:row, xin:col]).mean() / (U.std()**2+V.std()**2)
+                CA[yin, xin] = (Ax[0:row-yin, 0:col-xin] *
+                                Ax[yin:row, xin:col] +
+                                Ay[0:row-yin, 0:col-xin] *
+                                Ay[yin:row, xin:col]).mean()
+                CV[yin, xin] = (U[0:row-yin, 0:col-xin] *
+                                U[yin:row, xin:col] +
+                                V[0:row-yin, 0:col-xin] *
+                                V[yin:row, xin:col]).mean() /
+                                (U.std()**2+V.std()**2)
     return CA, CV
 \end{minted}
 
@@ -51,7 +56,8 @@ def corrS(X, Y, U, V):
                     va = V[j, i]
                     ub = U[j+yin, i+xin]
                     vb = V[j+yin, i+xin]
-                    CAt += (ua*ub+va*vb)/((ua**2+va**2)*(ub**2+vb**2))**.5
+                    CAt += (ua*ub+va*vb) / ((ua**2+va**2) *
+                            (ub**2+vb**2))**.5
                     CVt += ua*ub + va*vb
                     count += 1
             CA[yin, xin] = CAt / count
@@ -65,9 +71,9 @@ def corrS(X, Y, U, V):
 	\includegraphics[width=5.5in]{Figs/A-2/vectorization.pdf}
 	%select pdftexify command to run jpg or pdf files
 	\end{center}
-	\caption[Compare the performance of vectorized and non-vectorized code]
+	\caption[The performance of vectorized and non-vectorized code]
 	{
-	\textbf{Compare the performance of vectorized and non-vectorized code.}
+	\textbf{The performance of vectorized and non-vectorized code.}
   (a) Sample velocity field.
   (b) Velocity correlation functions obtained from the vectorized and non-vectorized code.
 	}
@@ -120,8 +126,7 @@ def compute_wavenumber_field(shape, d):
 
     Args:
     shape -- shape of the velocity field and velocity fft field, tuple
-    d -- sample spacing. This is the distance between adjacent samples, for example, velocities in PIV.
-        The resulting frequency space has the unit which is inverse of the unit of d. The preferred unit of d is um.
+    d -- sample spacing.
 
     Returns:
     k -- wavenumber magnitude field
@@ -192,7 +197,7 @@ This is designed for tracking colloidal chains. We show here the basic working p
 	\label{fig:corr-track}
 \end{figure}
 
-\subsection{Working principle}
+\subsection{Working Principle}
 From raw images, we crop out a single feature which we are looking for as a target mask, as shown in Fig.~\ref{fig:corr-track}a inset. Then, we do a 2D correlation between the target mask and an image (Fig.~\ref{fig:corr-track}a). The resulting correlation map is shown in Fig.~\ref{fig:corr-track}b, where bright pixels stand for high correlation and dark pixels stand for low correlation. The last step is to look for the pixel intensity peaks in the correlation map, as in traditional particle detecting methods.
 
 
@@ -303,7 +308,7 @@ def track_spheres(img, mask, num_particles):
 
 \section{Fourier Transform Based Orientation Analysis}
 \label{sec:A-fourier-transform-based-orientation-analysis}
-
+\subsection{Working Principle}
 The orientation of patterns in an image can be found by calculating the Fourier transform of the image. The idea is that in the direction of predominant pattern orientation (Fig.~\ref{fig:oft-illustration}a, the vertical direction), the signal frequency is smaller compared to the perpendicular direction. Such feature manifests in the frequency domain as anisotropic patterns (Fig.~\ref{fig:oft-illustration}b, horizontal orientation). This method is used in the study of the emergence of active turbulence in Chap.~\ref{the-emergence-of-active-turbulence}.
 
 \begin{figure}[h]
@@ -375,11 +380,11 @@ for i in range(0, x.shape[0]):
     for j in range(0, y.shape[1]):
         window = img[X[i]:X[i+1], Y[j]:Y[j+1]]
         fft = np.log(abs(np.fft.fft2(window)))
-        fft = np.fft.fftshift(fft) ## 1, Fourier transform
-        smooth = gaussian_filter(fft, 5) ## 3, smoothing
-        thres = smooth > filters.threshold_isodata(smooth) ## thresholding
-        despeck = median_filter(thres, size=5) ## 4, despeckling
-        ori, orim = getOrientation(despeck) ## 5, detect the largest pattern
+        fft = np.fft.fftshift(fft) ## 1
+        smooth = gaussian_filter(fft, 5) ## 2
+        thres = smooth > filters.threshold_isodata(smooth) ## 3
+        despeck = median_filter(thres, size=5) ## 4
+        ori, orim = getOrientation(despeck) ## 5
         u_ori[i, j] = orim*math.cos(ori)
         v_ori[i, j] = orim*math.sin(ori)
 
@@ -389,7 +394,7 @@ plt.quiver(x, y, u_ori, v_ori, color='red')
 plt.axis('off')
 \end{minted}
 
-\subsection{Some examples}
+\subsection{Some Examples}
 \label{sec:oft-gallery}
 Some example applications of this method is shown in Fig.~\ref{fig:oft-gallery}
 
@@ -416,11 +421,11 @@ The principles of density fluctuation calculation has already been described in 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.1,linenos]{python}
 def df2(img_stack, boxsize=None, size_min=5, step=250):
     """
-    Compute number fluctuations of an image stack (3D np.array, frame*h*w)
+    Compute number fluctuations of an image stack.
 
     Args:
     img_stack -- a stack of image, a 3D array
-    boxsize -- a list-like of integers, specify the subsystem size to look at.
+    boxsize -- the subsystem size to look at.
     size_min -- the smallest box size
     step -- step used when dividing image into windows
 

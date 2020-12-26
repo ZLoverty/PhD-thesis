@@ -59,7 +59,7 @@ with motility buffer MB (0.01 M potassium phosphate, 0.067 M NaCl, 10 M EDTA, pH
 
 \subsection{Sample preparation and video microscopy}
 For the wild-type bacteria, oxygen is necessary to maintain the swimming of bacteria. We deposit a 2 $\mu$l wild-type bacterial suspension on a microscope coverslip, which forms a free suspension-air interface on the top. The droplet is millimetric in the lateral directions ($x$-$y$) normal to the imaging plane and about 150 $\mu$m in height ($z$). The coverslip and the suspension are further enclosed in a humid chamber of $\sim 1000$
-mm$^3$ to reduce evaporation as well as perturbation due to ambient air flows. An inverted microscope is used to image bacterial motions 70 $\mu$m above the coverslip, where the effect of oxygen gradients is weak and bacterial activity is uniform. No system-wide persistent flow associated with aerotaxis is observed in our experiments. The microscopy videos show bacterial flows in the 2D $x$-$y$ plane inside the 3D suspension (Movie S1).
+mm$^3$ to reduce evaporation as well as perturbation due to ambient air flows. An inverted microscope is used to image bacterial motions 70 $\mu$m above the coverslip, where the effect of oxygen gradients is weak and bacterial activity is uniform. No system-wide persistent flow associated with aerotaxis is observed in our experiments. The microscopy videos show bacterial flows in the 2D $x$-$y$ plane inside the 3D suspension (Supplementary Movie S2 \cite{suppMovies}).
 
 For the light-powered bacteria, it is important to shut down the metabolic pathway of aerobic respiration, so that the locomotion of bacteria is solely controlled by the PR pump. We inject a suspension of light-powered bacteria into a sealed cell of $18 \times 3 \times 0.17$ mm$^3$. For concentrated bacterial suspensions above $\phi = 0.062$, bacteria stop swimming after a few minutes in the cell due to the depletion of oxygen. Microscope illumination is then used to switch on/off and control the activity of the PR pump for bacterial swimming. 2D bacterial flows are imaged 80 $\mu$m above the bottom wall.
 
@@ -76,7 +76,7 @@ spectrum $E(k)$ is obtained by summing up $E(k_x,k_y)$ at a constant $k=(k_x^2+k
 
 To extract bacterial nematic order, we perform Fast Fourier transformation (FFT) on the local regions ($20 \times 20$ $\mu$m$^2$) of confocal images.
 The FFT patterns are first smoothed with 3 neighboring pixels (0.15 $\mu$m$^{-1}$) and then fitted with ellipses. The aspect ratio of the ellipses, $a/b$, quantifies the local nematic order of bacteria (Fig.~\ref{fig:4-microscopic}B inset).
-The average of the aspect ratio is finally taken over the whole field of view, $F = \langle a/b \rangle$. To calibrate our method, we show numerically that the anisotropy of the FFT pattern of local regions, $a/b$, is approximately linearly proportional to the local nematic order parameter of bacteria $S=\frac{1}{N}\sum_{j=1}^N(3\cos^2\alpha_j - 1)/2$ within the range of our experiments \textcolor{red}{(Fig. S5)}, where $\alpha_j$ is the angle between the orientation of bacterium $j$ with respect to the mean orientation of all the $N$ bacteria in a local region in 3D.
+The average of the aspect ratio is finally taken over the whole field of view, $F = \langle a/b \rangle$. To calibrate our method, we show numerically that the anisotropy of the FFT pattern of local regions, $a/b$, is approximately linearly proportional to the local nematic order parameter of bacteria $S=\frac{1}{N}\sum_{j=1}^N(3\cos^2\alpha_j - 1)/2$ within the range of our experiments, where $\alpha_j$ is the angle between the orientation of bacterium $j$ with respect to the mean orientation of all the $N$ bacteria in a local region in 3D.
 
 \begin{figure}[!ht]
 	\begin{center}
@@ -86,7 +86,7 @@ The average of the aspect ratio is finally taken over the whole field of view, $
 	{
 	\textbf{Bacterial turbulence.}
   (A) The flow field of a suspension of wild-type \textit{E. coli} at volume fraction $\phi=0.14$. The arrows indicate local velocities from PIV. Scale bar: 20 $\mu$m.
-  (B) The corresponding streamlines and the vorticity field ($\omega$), highlighting the characteristic features of bacterial turbulence including intermittent jets and vortices (see also Movie S1).
+  (B) The corresponding streamlines and the vorticity field ($\omega$), highlighting the characteristic features of bacterial turbulence including intermittent jets and vortices (see also Supplementary Movie S2 \cite{suppMovies}).
   (C) The corresponding velocity orientational correlation field $c$. The area fraction of red regions with $c \ge 0.9$, $M$, is used to quantify the transition to bacterial turbulence. $M < 1$ even for this highly turbulent state due to the presence of vortex cores and interstices.
 	}
 	\label{fig:4-turbulence}
@@ -109,7 +109,7 @@ We use  \textit{E. coli} as our model bacteria. In order to examine a large cont
 \end{figure}
 
 \subsection{Transition to bacterial turbulence}
-The collective motion of bacteria leads to bacterial turbulence with characteristic intermittent jets and whirls, whose lengths and speeds are much larger than those of individual bacteria (Figs.~\ref{fig:4-turbulence}a, b and \textcolor{red}{Movie S1}). To quantify bacterial turbulence, we calculate the orientational correlation of local velocities, $c_i=\min_{j=1..4}(\hat{v_i}\cdot\hat{v_j})$, where $\hat{v_i}$ is the unit vector along the direction of the local velocity at position $i$ and $\hat{v_j}$ is the direction of the velocity in one of its four neighboring boxes adopted in Particle Imaging Velocimetry (PIV).
+The collective motion of bacteria leads to bacterial turbulence with characteristic intermittent jets and whirls, whose lengths and speeds are much larger than those of individual bacteria (Figs.~\ref{fig:4-turbulence}a, b and Supplementary Movie S2 \cite{suppMovies}). To quantify bacterial turbulence, we calculate the orientational correlation of local velocities, $c_i=\min_{j=1..4}(\hat{v_i}\cdot\hat{v_j})$, where $\hat{v_i}$ is the unit vector along the direction of the local velocity at position $i$ and $\hat{v_j}$ is the direction of the velocity in one of its four neighboring boxes adopted in Particle Imaging Velocimetry (PIV).
 Note that our PIV measures 2D in-plane flows $\vec{v}=(v_x, v_y)$ in 3D bacterial suspensions (Methods). We identify a local region with high velocity orientational correlation when $c \ge 0.9$. The area fraction of these highly correlated regions, $M$, is used in our study as the order parameter quantifying the rise of bacterial turbulence (Fig.~\ref{fig:4-turbulence}c). This choice is similar to that used in previous studies \cite{Cisneros2011}. In addition to the velocity orientational order, we also measure the strength of bacterial flows via kinetic energy per unit mass, $E=\langle v_x^2 + v_y^2 \rangle / 2$.
 Although the definition of kinetic energy density is the same as that used for classical turbulent flows, the inertia of bacterial swimming in our experiments is negligible with the Reynolds number on the order of $10^{-4}$.
 
@@ -140,7 +140,7 @@ It should be emphasized that, although the transition to bacterial turbulence ha
 
 We first estimate the phase boundary between disordered and turbulent phases using a simple hydrodynamic model proposed in Ref.~\cite{Drescher2011}, where the pairwise hydrodynamic interaction that promotes local bacterial alignment competes with the rotational relaxation that disorientates bacteria. Although these
 two competing factors also form the basic ingredients of the kinetic theories \cite{Koch2011, Saintillan2015}, this simple model considers the interaction between two bacteria, instead of mean-field particle probability distributions. Specifically, we calculate the rotation of a bacterium in a flow field induced by the swimming of its neighbor at distance $r$. A critical distance $r_c$ is determined when the flow-driven rotation of the bacterium balances the reorientation of the bacterium due to random tumbling and rotational diffusion. The transition volume fraction is then given as $\phi_c=V_b/r_c^3$, where $V_b = 2\pi ab^2 = 2.20$ $\mu$m$^3$ is the volume of a single bacterium. Here, we approximate the bacterial body as a cylinder with an average length $2a = 2.8$ $\mu$m and
-radius $b = 0.5$ $\mu$m. The volume of bacterial flagella is too small to be considered when calculating $V_b$. To incorporate the presence of immobile bacteria, we extend the original model and include the higher-order hydrodynamic interaction due to reflection flows in the calculation. \textcolor{red}{The detail of the model derivation can be found in Supplementary Materials.} The model predicts the transition concentration $\phi_c$ in the bulk limit
+radius $b = 0.5$ $\mu$m. The volume of bacterial flagella is too small to be considered when calculating $V_b$. To incorporate the presence of immobile bacteria, we extend the original model and include the higher-order hydrodynamic interaction due to reflection flows in the calculation. The model predicts the transition concentration $\phi_c$ in the bulk limit
 \begin{equation}
   \label{eq:4-model}
   \phi_c-\frac{r_0^3}{V_b}\phi_c^2 = \frac{v_0}{fv},
@@ -190,14 +190,14 @@ Lastly, it is worth noting that the size of samples in our experiments is fixed 
 
 \begin{figure}[!htbp]
 	\begin{center}
-	\includegraphics[height=5.5 in]{Figs/4-Emergence/3.pdf}
+	\includegraphics[height=5.2 in]{Figs/4-Emergence/3.pdf}
 	\end{center}
 	\caption[Transition kinetics]
 	{
 	\textbf{Transition kinetics.}
-  (a) Velocity orientational order $M$ and kinetic energy $E$ as a function of time through the turbulent transition. $t = 0$ corresponds to the time when light intensity is ramped up. Bacterial volume fraction $\phi = 0.071$, speed $v = 10.5$ $\mu$m/s and swimmer fraction $f = 1$, which is near the phase boundary shown by the blue cross in Fig.~\ref{fig:4-transition}d (see also Movie S2).
+  (a) Velocity orientational order $M$ and kinetic energy $E$ as a function of time through the turbulent transition. $t = 0$ corresponds to the time when light intensity is ramped up. Bacterial volume fraction $\phi = 0.071$, speed $v = 10.5$ $\mu$m/s and swimmer fraction $f = 1$, which is near the phase boundary shown by the blue cross in Fig.~\ref{fig:4-transition}d.
   (b) Spatiotemporal evolution of the local velocity orientational correlation $c$ and the local kinetic energy $E$ over the transition shown in (a). The spatial coordinates are shown in the $x$-$y$ plane. The height indicates the value of $E$, whereas the color shows the value of $c$.
-  (c) $M$ and $E$ as a function of $t$ for $\phi = 0.18$, $v = 10.5$ $\mu$m/s and $f = 1$ deep inside the turbulent phase shown by the red cross in Fig.~\ref{fig:4-transition}d (see also Movie S3).
+  (c) $M$ and $E$ as a function of $t$ for $\phi = 0.18$, $v = 10.5$ $\mu$m/s and $f = 1$ deep inside the turbulent phase shown by the red cross in Fig.~\ref{fig:4-transition}d (see also Supplementary Movie S2 \cite{suppMovies}).
   (d) Spatiotemporal evolution of $c$ and $E$ over the transition shown in (c).
 	}
 	\label{fig:4-kinetics}
@@ -206,11 +206,11 @@ Lastly, it is worth noting that the size of samples in our experiments is fixed 
 
 
 \subsection{Transition kinetics}
-Next, using the phase diagram as a roadmap, we explore the kinetics of bacterial turbulent transition, which reveals the mode of instability and the transient structure of bacterial suspensions through the transition. To study the kinetics, we trigger the onset of bacterial turbulence by suddenly ramping up light intensity at $t = 0$, which increases the swimming speed of light-powered bacteria from that below the phase boundary to high $v$ above the boundary at a given combination of $\phi$ and $f$ (Movies S2 and S3). Although individual bacteria in dilute suspensions recover their swimming speeds within a couple of seconds (Fig.~\ref{fig:4-motility}), the emergence of collective flows can take much longer times depending on the specific control parameters. In the region above but close to the phase boundary, the transition exhibits a surprisingly long incubation period with low velocity orientational order $M$ and kinetic energy $E$ ($\sim 100$ s in Fig.~\ref{fig:4-kinetics}a and Movie S2). During incubation, localized regions with relatively large velocity orientational correlation (high $c$) and large kinetic energy (high $E$) nucleate within the disordered phase (Fig.~\ref{fig:4-kinetics}b).
+Next, using the phase diagram as a roadmap, we explore the kinetics of bacterial turbulent transition, which reveals the mode of instability and the transient structure of bacterial suspensions through the transition. To study the kinetics, we trigger the onset of bacterial turbulence by suddenly ramping up light intensity at $t = 0$, which increases the swimming speed of light-powered bacteria from that below the phase boundary to high $v$ above the boundary at a given combination of $\phi$ and $f$. Although individual bacteria in dilute suspensions recover their swimming speeds within a couple of seconds (Fig.~\ref{fig:4-motility}), the emergence of collective flows can take much longer times depending on the specific control parameters. In the region above but close to the phase boundary, the transition exhibits a surprisingly long incubation period with low velocity orientational order $M$ and kinetic energy $E$ ($\sim 100$ s in Fig.~\ref{fig:4-kinetics}a). During incubation, localized regions with relatively large velocity orientational correlation (high $c$) and large kinetic energy (high $E$) nucleate within the disordered phase (Fig.~\ref{fig:4-kinetics}b).
 
 The incubation period witnesses the slow growth and the fluctuation of these high-$c$ and high-$E$ regions. After incubation, the high-$c$ and high-$E$ regions grow quickly and eventually percolate the entire system.
 $M$ and $E$ are directly coupled and increase simultaneously during the transition. The incubation period becomes increasingly short as we move away from the phase boundary.
-Far above the boundary, the increase of the velocity orientational correlation is almost instantaneous across the entire system after the light ramp (Fig.~\ref{fig:4-kinetics}c, d and Movie S3), whereas the kinetic energy remains low at beginning and grows to a steady-state plateau only at a later time.
+Far above the boundary, the increase of the velocity orientational correlation is almost instantaneous across the entire system after the light ramp (Fig.~\ref{fig:4-kinetics}c, d and Supplementary Movie S2 \cite{suppMovies}), whereas the kinetic energy remains low at beginning and grows to a steady-state plateau only at a later time.
 The growths of $M$ and $E$ are decoupled in this case.
 The system exhibits a transient state with high velocity orientational order but low kinetic energy (the middle two pictures at $t = 10$ and $30$ s in Fig.~\ref{fig:4-kinetics}d).
 
@@ -262,7 +262,7 @@ Hence, our measurements of transition kinetics provide experimental evidence con
 The observation of the long incubation period near the phase boundary is, however, not captured by the kinetic theories. Although the growth rate of the long wavelength instability also approaches to zero near the phase boundary within the framework of the kinetic theories, one would expect to see the initial increase of $E(k)$ at small k near the phase boundary. This prediction contradicts our k-space analysis (Fig.~\ref{fig:4-spectra}a), as well as the real-space observation shown in Fig.~\ref{fig:4-kinetics}b, where the collective turbulent phase initiates locally at small scales and coalesces into large-scale structures only after the prolonged incubation period. Beyond the kinetic theories, the presence of two different transition kinetics is reminiscent of a theoretical phase diagram on the motility-induced phase separation of active fluids, where binodal and spinodal regions have been predicted based on the concept of swim pressures \cite{Takatori2015}.
 
 
-\begin{figure}[!ht]
+\begin{figure}[!htbp]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/4-Emergence/6.pdf}
 	\end{center}

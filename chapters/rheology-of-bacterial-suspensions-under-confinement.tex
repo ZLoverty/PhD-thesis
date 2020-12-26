@@ -53,14 +53,14 @@ Thus, our study provides not only systematic experimental results on the rheolog
 \end{figure}
 
 \section{Methods}
-\subsection{\textit{E. coli} suspensions}
+\subsection{\textit{E. coli} Suspensions}
 In our experiments, we use a fluorescently tagged \textit{E. coli} K-12 strain (BW25113) as our microswimmers, which carry the
 PKK PdnaA-GFP plasmid. These fluorescent cells allow us to image suspension flows with fluorescence and confocal microscopy. To prepare a motile E. coli suspension, bacteria are first cultured overnight at 37 °C in a terrific broth (TB) culture medium (tryptone 11.8 g/L, yeast extract 23.6 g/L, and glycerol 4 ml/L) supplemented with a 0.1\% (v/v) selective antibiotic (ampicillin 100 mg/L). A small volume of the overnight culture is then diluted in a fresh TB culture medium (1:100) and grown at 30 °C in a shaker at 220 rpm for 6.5 h. The culture is finally washed with a motility buffer via centrifuging (5 min, 800 g) and set to a desired concentration of $n = 1.6 \times 10^{10}$ cells/ml. At this dilute concentration, bacteria do not show strong collective swarming \cite{Guo2018}. For an isolated wild-type \textit{E. coli}, it executes the so-called run-andtumble motion \cite{Berg2004}. In the ``run'' phase, the cell is propelled forward by a flagellar bundle at a constant speed $v \approx 22$ $\mu$m/s. The straight ``run'' is punctuated by a sudden and rapid ``tumble'' at a rate $f$ on the order of 1 Hz, which randomizes the orientation of the cell. The run length of bacteria
 is thus given by $L = v/f$. For the wild-type bacteria, we have $L = 33.1 \pm 8.1$ $\mu$m.
 
 For control experiments, we also culture a mutant strain of \textit{E. coli}, which exhibits only tumbling motions without run. The tumbler strain we use is RP1616 ($\Delta cheZ$), which is a derivative from RP437, a strain commonly used in chemotaxis study \cite{Parkinson1978} (Parkinson 1978). Phospho-CheYand CheZ are the two primary emzymatic complexes governing bacterial chemotactic behaviors. Phospho-CheY enhances the clockwise rotation of the flagellar motors that enables the tumbling of bacteria. CheZ promotes the dephosphorylation rate of phospho-CheY to make the bacteria stop tumbling and transition into the ``run'' phase. Thus, the function of CheZ ensures that bacterial tumbling is short and the locomotor responses to changes in chemicals are rapid. By knocking out $cheZ$, we slow down the dephosphorylation rate of phospho-CheY, which leads to the accumulation of phospho-CheY in bacteria. The excessive phospho-CheY makes the bacteria keep tumbling instead of performing a run-and-tumble motion. The culturing procedure of tumblers is the same as the one for the swimmers described above. Lastly, we test the rheology of the dead bacteria as control. Bacteria are neutralized by adding 10 mM sodium azide in the suspensions.
 
-\subsection{Microfluidic viscometer}
+\subsection{Microfluidic Viscometer}
 We use a microfluidic viscometer for viscosity measurement. The same technique has been used in studying the rheology of bulk bacterial suspensions \cite{Gachelin2013}. As sketched
 in Fig.~\ref{fig:3-viscometer}a, the viscometer consists of a symmetric Y-shape microfluidic channel with height $h$ and width $w$ in the main channel. In order to investigate the effect of confinement, we
 fabricate channels of different $h$ ranging from 25 up to 128 $\mu$m, whereas w is fixed at 600 $\mu$m. The two side branches have the same height $h$ but half of the width of the main
@@ -77,7 +77,7 @@ the velocity profiles of suspensions are parabolic following the Hagen-Poiseuill
 rheological response of bacterial suspensions at different $\dot\gamma$. At an even lower $Q$, the interface between the suspensions and the suspending fluid becomes unstable and displays nonplanar
 longitudinal variations, which prevents us from measuring the width ratio of the two fluids accurately. Such instability may indicate nonzero normal stress differences in bacterial suspensions \cite{Hinch1992, Brady2002, Saintillan2010}.
 
-\subsection{Image acquisition and analysis}
+\subsection{Image Acquisition and Analysis}
 Florescence microscopy is used to take movies of the microfluidic flows at the center of the channel at $y = 0$. Movies are acquired at 30 frames per second (fps) with a sCMOS camera (Andor, Zyla) through an inverted microscope (Nikon, Ti-E) using a 10X objective. Raw images are first processed by a variance filter to enhance the contrast between bacterial suspensions and the suspending fluid
 (Fig.~\ref{fig:3-viscometer}b). For each image, we calculate the sum of the pixelintensity in each row and then obtain an intensity profile of the image along the width of the channel ($z$) (Fig.~\ref{fig:3-viscometer}b, red curve). By fitting the intensity profile with an error function (Fig.~\ref{fig:3-viscometer}b, white curve), we identify the position of the interface between the two fluids as the reflection point of the error function. This image analysis routine is implemented using a custom Matlab program.
 
@@ -100,7 +100,7 @@ The number of bacteria at each height can also be estimated from these movies th
 \end{figure}
 
 \section{Results}
-\subsection{Confinement effect}
+\subsection{Confinement Effect}
 Fig.~\ref{fig:3-rheology}a shows the relative viscosity of bacterial suspensions, $\eta/\eta_0$, as a function of shear rates for channels of different heights. Here, $\eta$ is the viscosity of bacterial suspensions and $\eta_0$ is the viscosity of the suspending fluid. For channels with $h > 60$ $\mu$m, the flow curves of different heights collapse into a master curve, giving the rheological response of bulk bacterial suspensions. At low shear rates, suspensions show strong shear thickening. When $\dot\gamma < 10$ s$^{-1}$, the viscosity of bacterial suspensions is below that of the suspending fluid, a defining feature of the rheology of pusher suspensions. At the lowest
 shear rate of our experiments $\dot\gamma=1$ s$^{-1}$ , the viscosity is about half of the viscosity of the suspending fluid, quantitatively agreeing with previous experiments \cite{Gachelin2013}. However, for channels with $h < 60$ $\mu$m, the flow curves separate from each other at low shear rates, indicating a strong confinement effect at a small $h$. At high shear rates, the relative viscosity at different heights approaches to a plateau independent of $h$. This absence of the confinement effect at high shear rates suggests that the effect is linked to bacterial motility. In the limit of high shear rates, the active stress arising from the hydrodynamic stresslet and the diffusive stress is negligible compared with the passive stress induced by the rigid elongated body of \textit{E. coli} on the fluid \cite{Takatori2017, Saintillan2018}. Thus, the viscosity of active suspensions in
 the limit of high shear rates should be the same as that of suspensions of passive elongated particles of the same shape, which does not show an obvious confinement effect. We also observe weak shear thinning in this regime, presumably arising from the shear-induced alignment of elongated particles \cite{Egres2006}. The degree of shear thinning, however, is weaker than that reported in the previous study \cite{Gachelin2013}.
@@ -112,11 +112,8 @@ to the reorientation of bacteria need to be considered in order to fully interpr
 The confinement effect is even better illustrated in Fig.~\ref{fig:3-rheology}c, where the relative viscosity of bacterial suspensions as a function of channel heights is directly plotted at three different shear rates. At the lowest shear rate, the viscosity increases by a factor of three when the confinement length increases from 25 to 60 $\mu$m. Above $h \approx 60$ $\mu$m comparable with the run length of bacteria, the viscosity plateaus and becomes
 independent of $h$. At the moderate shear rate, the increasing trend is less pronounced. At the highest shear rate, the height dependence completely vanishes. To further demonstrate that the confinement effect arises from bacterial motility, we also conduct control experiments comparing the viscosity of suspensions of active swimmers, tumblers, and immobile bacteria. The viscosities of the three types of suspensions are examined in both bulk and confined systems. Fig.~\ref{fig:3-rheology}d shows that the viscosity of active swimmers exhibits strong shear thickening in both bulk and confined channels, whereas the viscosity of tumblers and immobile bacteria weakly depends on shear rates. As expected, the viscosity reduction originates from the motility of bacteria. More importantly, the confinement effect disappears for suspensions of tumblers and immobile bacteria. The flow curves at $h = 100$ $\mu$m and 25 $\mu$m are quantitatively the same within experimental errors. Hence, we confirm that the motility of bacteria is the direct cause of the confinement effect.
 
-\subsection{Microscopic dynamics}
-Hydrodynamic interactions between bacteria and external shear flows can profoundly modify the swimming behaviors
-of bacteria, leading to interesting phenomena such as rheotaxis \cite{Marcos2012}, heterogeneous bacterial distributions \cite{Rusconi2014}, and upstream swimming along confining walls \cite{Hill2007, Nash2010, Costanzo2012, Kaya2012}. These microscopic bacterial dynamics may strongly affect the macroscopic rheology of
-bacterial suspensions. Hence, we also investigate the microdynamics of bacterial suspensions at microscopic scales
-in microfluidic channels of different heights.
+\subsection{Microscopic Dynamics}
+Hydrodynamic interactions between bacteria and external shear flows can profoundly modify the swimming behaviors of bacteria, leading to interesting phenomena such as rheotaxis \cite{Marcos2012}, heterogeneous bacterial distributions \cite{Rusconi2014}, and upstream swimming along confining walls \cite{Hill2007, Nash2010, Costanzo2012, Kaya2012}. These microscopic bacterial dynamics may strongly affect the macroscopic rheology of bacterial suspensions. Hence, we also investigate the microdynamics of bacterial suspensions at microscopic scales in microfluidic channels of different heights.
 
 \begin{figure}[!ht]
 	\begin{center}
@@ -134,7 +131,7 @@ in microfluidic channels of different heights.
 	\label{fig:3-velocity-profile}
 \end{figure}
 
-\subsubsection{Velocity profiles}
+\subsubsection{Velocity Profiles}
 First, we measure the velocity profiles of bacterial suspensions along $y$ in microfluidic channels of different heights at low shear rates (Fig.\ref{fig:3-velocity-profile}), where the confinement effect is most pronounced. Near the center of the channels, the velocity profiles of fluid flows, $V(y)$, are parabolic, consistent with the Hagen-Poiseuille law. However, near the bottom and top walls, the velocity of fluid flows measured from passive colloidal tracers noticeably deviates from the parabolic profile and is significantly higher than the velocity of bacteria, $V_{bac}(y)$. Thus, there exists a boundary layer near the confining walls, where bacteria swim against the background flow and exhibit strong relative motions. The thickness of these boundary layers, where strong relative motions of bacteria can be observed, is about 5 $\mu$m, independent of $h$. Thus, as $h$ decreases, the boundary layer plays a more important role in suspension flows. Interestingly, the velocity profiles of bacteria, $V_{bac}(y)$, remain parabolic for different $h$, satisfying the no-slip condition at the walls. Such a feature is
 crucial for \textit{E. coli} in natural environments, where they need to maintain their locations in the lower intestine of their hosts against expelling flows.
 
@@ -144,15 +141,16 @@ crucial for \textit{E. coli} in natural environments, where they need to maintai
 	\end{center}
 	\caption[Upstream swimming bacteria in a microfludic viscometer]
 	{
-	\textbf{Upstream swimming bacteria.}
+	\textbf{Upstream swimming bacteria in a microfludic viscometer.}
    (a) Trajectories of a passive colloidal tracer and bacteria. The maximal intensity of 54 frames over a time interval of 17.5 s is projected onto a single image to show the trajectories. While the spherical passive tracer is transported by the fluid flow, many bacteria swim against the flow and exhibit only transverse motions. The channel height $h = 30$ $\mu$m. The shear rate $\dot\gamma = 24$ s$^{-1}$.
    (b) Bacteria near the side wall, locating at the bottom of the image. The channel height $h = 50$ $\mu$m. The shear rate $\dot\gamma = 7.8$ s$^{-1}$. The direction of the flow is indicated in the images. The orientation of a single bacterium at $\theta = 33$° is indicated.
    (c) Distribution of the orientation of bacteria next to the side wall. The total number of bacteria counted is 42.
+	 Also see Supplementary Movie S1 \cite{suppMovies} for the upstream swimming behavior of \textit{E. coli}.
 	}
 	\label{fig:3-upstream}
 \end{figure}
 
-\subsubsection{Upstream swimming bacteria}
+\subsubsection{Upstream Swimming Bacteria}
 The difference in the velocity profiles of fluid flows and bacteria indicates the existence of boundary layers near the confining walls consisting of upstream swimming bacteria against imposed shear flows, an observation in agreement with previous experiments \cite{Hill2007, Kaya2012} and simulations \cite{Costanzo2012, Chilukuri2014, Ezhilan2015, Nash2010}. To illustrate the phenomenon directly, Fig.~\ref{fig:3-upstream}a shows the trajectories of colloidal and bacterial tracers near the bottom wall. The relative motions between bacteria and the background fluid can be
 clearly identified. The orientation of bacteria against the bottom and top walls can be estimated from the images showing the bacteria near the side walls (Fig.~\ref{fig:3-upstream}b). We plot the distribution of the orientation angle of bacteria against the side walls (Fig.~\ref{fig:3-upstream}c), which strongly biases toward acute angles with the mean at 20°.
 
@@ -168,12 +166,12 @@ clearly identified. The orientation of bacteria against the bottom and top walls
 	\label{fig:3-density}
 \end{figure}
 
-\subsubsection{Bacterial density distributions}
+\subsubsection{Bacterial Density Distributions}
 Finally, we also measure the number density of bacteria in microfluidic channels. Fig.~\ref{fig:3-density}a shows the density distribution of bacterial suspensions along y at a low shear rate. In consistency with previous experiments \cite{Hill2007, Berke2008, Li2009}, we find that bacteria accumulate near the confining walls, an effect arising from the coupling between self-propulsion and steric interactions \cite{Ezhilan2015}. Hydrodynamic interactions between bacteria and solid surfaces also enhance the accumulation \cite{Berke2008}. Furthermore, Fig.~\ref{fig:3-density}b shows bacterial concentrations at the bottom confining wall as a function of shear rates. The concentration decreases with increasing shear rates, leading to more uniform density profiles at high shear rates \cite{Ezhilan2015}.
 
 
 \section{Discussion and Conclusion}
-\subsection{Data analysis}
+\subsection{Data Analysis}
 We performa simple data analysis to better illustrate the origin of the unusual rheology of bacterial suspensions under confinement.
 First, we shall recapitulate the calculation for the viscosity ratio of the two miscible fluids in a bulk Y-shaped microfluidic channel. Within the Hele-Shaw approximation, the average velocities of fluid 1 and fluid 2 over the channel height $y$ are given by \cite{Lamb1932}
 \begin{equation}
@@ -259,14 +257,14 @@ We fit our experimental results using the above equation, where $\eta_b/\eta_0$ 
 $\langle V_d \rangle$ obtained from the fitting quantitatively agrees with direct measurements based on the velocity profiles (Fig.~\ref{fig:3-velocity-profile}), where the disturbance flow can be extracted by subtracting the parabolic bacterial flow from the total fluid flow, $V_d(y) = V(y) - V_{bac}(y)$. Using $\langle V_d \rangle$, a good collapse of data can be achieved by plotting the viscosity ratio $\eta/\eta_b$ versus the inverse dimensionless shear rate $\langle V_d \rangle / h\dot\gamma$ (Fig.~\ref{fig:3-scaling}b).
 A linear trend predicted by Eq.~\ref{eq:3-9} can be clearly identified. We shall discuss the possible origin of $\langle V_d \rangle$ below.
 
-\subsection{Effect of active hydrodynamic and diffusive stresses}
+\subsection{Effect of Active Hydrodynamic and Diffusive Stresses}
 
 Using a kinetic theory with active hydrodynamic stresslets, Alonso-Matilla and co-workers studied the effect of confinement
 on the rheology of bacterial suspensions \cite{Alonso-Matilla2016}. Since bacterial density is higher near the confining walls (Fig.~\ref{fig:3-density}a), as the system size reduces, the regions with higher bacterial density near the walls start to overlap near the center of microfluidic channels. As a result, relatively fewer bacteria are subject to the high shear near the walls, mitigating the effect of shear alignment and viscosity reduction. Hence, the viscosity of confined bacterial suspensions was predicted
 to be higher than that of bulk suspensions at the same shear rate, which is opposite to our experimental observations.
 
 The effect of diffusive stresses in confined systems is more complicated. The hydrodynamic stress from active stresslet scales as $\sigma^H \sim n\zeta v a$, which therefore does not directly depend on the confinement except via bacterial density $n$ as discussed
-above. Here, $\zeta$ is the drag coefficient and a is the characteristic size of the bacteria. In comparison, the diffusive stress scales as $\sigma^S \sim n \zeta v L$, where $L$ is the run length of bacteria \cite{Takatori}. In confined systems, bacterial run length is determined by the size of a system. In a simple picture, $L$ should be replaced by the size of system h as $\sigma^S \sim n \zeta v h$, which gives rise to a direct system-size dependence. The magnitude of $\sigma^S$ decreases with increasing confinement. Whether the viscosity of bacterial suspensions increases or decreases with $h$ depends on the sign of $\sigma^S$. In the low Peclet number (Pe) limit where the diffusive stress dominates, $\sigma^S$ is negative. As a result, when h decreases, the magnitude of $\sigma^S$ decreases and the viscosity of suspensions increases with the decreasing $h$, opposite to our experiments.
+above. Here, $\zeta$ is the drag coefficient and a is the characteristic size of the bacteria. In comparison, the diffusive stress scales as $\sigma^S \sim n \zeta v L$, where $L$ is the run length of bacteria \cite{Takatori2017}. In confined systems, bacterial run length is determined by the size of a system. In a simple picture, $L$ should be replaced by the size of system h as $\sigma^S \sim n \zeta v h$, which gives rise to a direct system-size dependence. The magnitude of $\sigma^S$ decreases with increasing confinement. Whether the viscosity of bacterial suspensions increases or decreases with $h$ depends on the sign of $\sigma^S$. In the low Peclet number (Pe) limit where the diffusive stress dominates, $\sigma^S$ is negative. As a result, when h decreases, the magnitude of $\sigma^S$ decreases and the viscosity of suspensions increases with the decreasing $h$, opposite to our experiments.
 However, for intermediate Pe that is more relevant to our experiments, $\sigma^S$ becomes positive (see Fig. 2 of Ref.~\cite{Takatori2017}), which leads to the reduction of viscosity in confined systems, consistent with our experiments. Nevertheless, for suspensions of spherical particles, where the analytical solution of the viscosity is available (Eq. 5 of Ref.~\cite{Takatori2017}), the decrease of viscosity is less than a factor of 1.1 when we decrease $h$ from 50 to 25 $\mu$m even at the optimal shear rates of 2.1 s$^{-1}$ that leads to the largest viscosity reduction. In comparison, the viscosity decreases by more than a factor of 3 over the same range of $h$ in our experiments. Although the analytical solution for suspensions of active ellipsoids appropriate for the bacteria is not available, numerical solutions show that the magnitude of $\sigma^S$ of active ellipsoids is smaller than that of active spheres \cite{Takatori2017}. Hence, we expect that the effect of the confinement-induced viscosity reduction is even weaker for suspensions of active ellipsoids.
 This conclusion is supported by the failure of our attempt to collapse data using a dimensionless shear rate with the characteristic run-time of bacteria (Fig.~\ref{fig:3-rheology}b). Thus, other factor(s) need to be considered to fully explain the experimental observations.
 
@@ -284,7 +282,7 @@ This conclusion is supported by the failure of our attempt to collapse data usin
 \end{figure}
 
 
-\subsection{Effect of upstream swimming bacteria at boundary}
+\subsection{Effect of Upstream Swimming Bacteria near Boundaries}
 
 A possible origin of $\langle V_d \rangle$ is the boundary layer of upstream swimming bacteria. To estimate their effect, we numerically calculate $\langle V_d \rangle$ by assuming a smectic layer of upstream swimming bacteria in a 2D channel with a line density $n$ randomly distributed along the top and bottom walls (Fig.~\ref{fig:3-model}a). Since a bacterium is force-free at low Reynolds numbers, the far-field disturbance flow induced by the bacterium is a hydrodynamic dipolar flow.
 The flow of a single force dipole near the walls can be constructed by superposition of two Stokeslets of strength $F$ at position $\mathbf{r_0} + \mathbf{u}d/2$ and $\mathbf{r_0} - \mathbf{u}d/2$, respectively, where $\mathbf{r_0} = (x_0, y_0)$ is the center of the force dipole (Fig.~\ref{fig:3-model}b inset). We fix $y_0$ at 1 $\mu$m away from the walls in our calculation.
