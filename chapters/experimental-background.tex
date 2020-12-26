@@ -7,10 +7,7 @@ In this chapter, experimental techniques that are used in my research will be de
 \item Optical microscopy along with digital imaging has been the key approach for investigating how the microscopic dynamics lead to macroscopic property difference. The standard operations of imaging equipments have been documented by the equipment manufacturer already. In Sec.~\ref{sec:optical-microscopy}, I describe some practical challenges I have encountered when performing the experiments in this thesis and how I overcame them.
 \item The imaging approach we adopt naturally demands automated image analysis tools. In Sec.~\ref{sec:image-analysis}, I will describe the image analysis techniques I used.
 \item When investigating the rheology of bacterial suspensions, we adopted a homemade microfluidic viscometer device. Details of the fabrication are shown in Sec.~\ref{micro-fabrication-and-microfluidics}.
-\item A light-powered \textit{E. coli} strain is used in the giant number fluctuations study and the emergence of active turbulence study
-(Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space} and Chap.~\ref{the-emergence-of-active-turbulence}). This special strain was obtained by transforming a wild-type strain with an exogenic plasmid which encodes a light-harvesting membrane protein. The discovery and working principles of the light-powering feature has been well documented by earlier works
-\cite{Beja2000, Subramaniam2000, DelaTorre2003, Walter2007, Claassens2013}. Following these works, I constructed a plasmid containing the gene and successfully transformed the wild-type \textit{E. coli} strain.
-In Sec.~\ref{light-controlled-E-coli-genetic-modification-culturing-and-trouble-shooting}, I will present the details on the materials and procedures I used to construct the mutant as a practical guide to those who need to further modify or trouble shoot the strain I made.
+\item A light-powered \textit{E. coli} strain is used in the giant number fluctuations study and the emergence of active turbulence study (Chap.~\ref{the-emergence-of-active-turbulence} and Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space}). This special strain was obtained by transforming a wild-type strain with an exogenic plasmid which encodes a light-harvesting membrane protein. The discovery and working principles of the light-powering feature has been well documented by earlier works \cite{Beja2000, Subramaniam2000, DelaTorre2003, Walter2007, Claassens2013}. Following these works, I constructed a plasmid containing the gene and successfully transformed the wild-type \textit{E. coli} strain. In Sec.~\ref{light-controlled-E-coli-genetic-modification-culturing-and-trouble-shooting}, I will present the details on the materials and procedures I used to construct the mutant as a practical guide to those who need to further modify or trouble shoot the strain I made.
 \end{itemize}
 
 \section{Motile Bacteria Sample Preparation}
@@ -37,10 +34,7 @@ Peritrichous \textit{E. coli} bacteria have been widely used as model micro-swim
 	\label{fig:2-1}
 \end{figure}
 
-There are quite a few research groups over the world that are using \textit{E. coli} suspensions to study active fluids. To name a few, Yodh and Arratia at University of Pennsylvania, Wu at Cornell University, Poon at the University of Edinburgh and Clement at ESPCI all have published experimental works using \textit{E. coli} \cite{Chen2007, Patteson2016, Kasyap2014, Jepson2013, Mino2011}. Although the protocols of preparing motile \textit{E. coli} samples are similar across different groups' protocols, they have subtle differences from each other, which may be attributed to the specific strain of \textit{E. coli}, ingredients of media and specific instrument conditions. Schwarz-Linek et al. proposed a sample preparation protocol based on standard bioscience manuals \cite{Bonner2011}
-and Berg's \textit{E. coli} protocol. If one wants to learn how to prepare motile \textit{E. coli} from scratch, it is recommended to follow the protocol in Ref.~\cite{Schwarz-Linek2016}.
-
-When I joined the Cheng group at the University of Minnesota in 2015, before Ref.~\cite{Schwarz-Linek2016} was published, there was already a protocol in our lab that worked pretty well for us. I learned the protocol from previous lab members Yi Peng and Devranjan Samanta, and have made some modifications over the years  to optimize the motility and concentration of samples and to include the additional procedures for preparing light-powered \textit{E. coli}. Below I describe the protocol that works the best in Cheng lab.
+In this section, the standard \textit{E. coli} culturing and sample preparation protocol is shown.
 
 \subsection{Background Information}
 \begin{description}
@@ -117,7 +111,7 @@ When I joined the Cheng group at the University of Minnesota in 2015, before Ref
 \section{Optical Microscopy}
 \label{sec:optical-microscopy}
 
-In this section, I will decribe how I overcome practical challenges when applying optical microscopy on bacterial suspensions. I want to note that the standard manuals are always the best reference for beginners who have just started to learn about a technique. In my case, the standard manuals are the Nikon inverted microscope Eclipse Ti-E Ti-E/B instructions \cite{NikonTiEManual}, OpenPIV official website \cite{OpenPIV-website, OpenPIV-paper} and trackpy official website \cite{trackpy-website}. Some related projects (listed in the websites mentioned) also provide valuable tutorials and ideas, for example the particle tracking routines in IDL by Crocker and Weeks \cite{IDL-tracking} and in Matlab by Blair and Dufresne \cite{Matlab-tracking}.
+In this section, I will decribe how I overcome practical challenges when applying optical microscopy on bacterial suspensions. Note that I will be describing some specific issues I encountered in my research. Foir beginners, the standard manuals are always the best reference \cite{NikonTiEManual}.
 
 \begin{figure}[!htbp]
 	\begin{center}
@@ -351,7 +345,7 @@ To produce masters for the various channel heights, different photoresists need 
 	\textbf{Microfluidic viscometer fabrication and setup.}
 	(a) A sketch of the Y-shaped channel microfluidic viscometer.
 	(b) Master mold of the channel.
-	(c) PDMS Y-shaped channel microfluidic viscometer.
+	(c) PDMS channel.
 	(d) Viscometer connected to a syringe pump by plastic tubes, placed on Nikon inverted microscope specimen stage.
 	}
 	\label{fig:experiment-microfluidics}
