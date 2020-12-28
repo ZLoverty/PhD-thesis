@@ -329,7 +329,7 @@ The orientation of patterns in an image can be found by calculating the Fourier 
 	\label{fig:oft-illustration}
 \end{figure}
 
-The procedures are illustrated in Fig.~\ref{fig:oft-illustration}. We first perform Fourier transform on the raw image (Fig.~\ref{fig:oft-illustration}a), then smooth this transformed image (Fig.~\ref{fig:oft-illustration}b) using a Gaussian filter to get Fig.~\ref{fig:oft-illustration}c, which is then binarized using a ``isodata'' threshold, yielding Fig.~\ref{fig:oft-illustration}d. A median filter is applied on the binarized image to remove small noise, known as despeckling, to obtain Fig.~\ref{fig:oft-illustration}e. Finally, we detect the anisotropic pattern in Fig.~\ref{fig:oft-illustration}e using a Python function \texttt{skimage.measure.regionprops}. Red circles in Fig.~\ref{fig:oft-illustration}f indicate all the patterns detected in the image, and we take the biggest one to examine the orientation. The Python implementation of these procedures is shown in Sec.~\ref{sec:oft-code}. Some example results are shown in Sec.~\ref{sec:oft-gallery}.
+The procedures are illustrated in Fig.~\ref{fig:oft-illustration}. We first perform Fourier transform on the raw image (Fig.~\ref{fig:oft-illustration}a), then smooth this transformed image (Fig.~\ref{fig:oft-illustration}b) using a Gaussian filter to get Fig.~\ref{fig:oft-illustration}c, which is then binarized using a \emph{isodata} threshold, yielding Fig.~\ref{fig:oft-illustration}d. A median filter is applied on the binarized image to remove small noise, known as despeckling, to obtain Fig.~\ref{fig:oft-illustration}e. Finally, we detect the anisotropic pattern in Fig.~\ref{fig:oft-illustration}e using a Python function \texttt{skimage.measure.regionprops}. Red circles in Fig.~\ref{fig:oft-illustration}f indicate all the patterns detected in the image, and we take the biggest one to examine the orientation. The Python implementation of these procedures is shown in Sec.~\ref{sec:oft-code}. Some example results are shown in Sec.~\ref{sec:oft-gallery}.
 
 \subsection{Code}
 \label{sec:oft-code}
@@ -396,7 +396,7 @@ plt.axis('off')
 
 \subsection{Some Examples}
 \label{sec:oft-gallery}
-Some example applications of this method is shown in Fig.~\ref{fig:oft-gallery}
+Some example applications of this method are shown in Fig.~\ref{fig:oft-gallery}
 
 \begin{figure}[h]
 	\begin{center}

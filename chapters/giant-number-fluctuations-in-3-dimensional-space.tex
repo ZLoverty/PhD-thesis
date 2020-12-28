@@ -23,7 +23,7 @@ Imported from the study of classical turbulence, energy spectra are frequently m
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=5.5in]{figs/5-GNF/1.pdf}
-\caption[Images of bacterial active turbulence and its flow fields]
+\caption[Images of Bacterial Active Turbulence and Its Flow Fields]
 {
 \textbf{Images of bacterial active turbulence and its flow fields.}
 (a) and (b) are active turbulence in a dense bacterial suspension (1.6\%) displaying constantly varying concentration inhomogeneity and the corresponding flow field.
@@ -53,7 +53,7 @@ It is challenging to directly count the number of bacteria in a 3D suspension of
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=3.5in]{figs/5-GNF/2.pdf}
-\caption[Relation between image intensity and concentration]
+\caption[Relation between Image Intensity and Concentration]
 {
 \textbf{Relation between image intensity and concentration.}
 (a) Images of bacterial suspensions of different volume fractions under the same illumination conditions.
@@ -77,7 +77,7 @@ where $I_0$ is the original light intensity, $I$ is the transmission light inten
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{figs/5-GNF/GNF-calculations.pdf}
-\caption[GNF calculations]
+\caption[GNF Calculations]
 {
 \textbf{GNF calculations.}
 (a) Varying subsystem sizes.
@@ -107,24 +107,6 @@ where $\Delta N$ is the standard deviation of the bacterial number in the subsys
 
 Based on the linear relation between $\Delta N$ and $\Delta I$, we calculate the density fluctuations at different length scales. We first crop square-shape subsystems of increasing sizes, as shown in Fig.~\ref{GNF-calculation}. For each subsystem size $l$, the standard deviation of the average pixel intensity of the subsystem is calculated over 50 frames (1.67 s or 8.35$\tau_b$), which is longer than the saturated density correlation time of $4\tau_b = 0.8$ s (Fig.~\ref{fig:spatiotemporal-correlations}f). To improve statistics, we choose 20 subsystems of the same size evenly distributed in the field of view and obtain a spatial average of the temporal standard deviation of the average pixel intensity $\Delta I$ (Fig.~\ref{GNF-calculation}). This averaged $\Delta I$ is then multiplied by $l^2$ to give the number density fluctuations $\Delta N$ at the length scale $l$. Note that a second method has also been proposed for calculating number fluctuations, where the standard deviation of particle numbers is computed first spatially over different locations in a single time frame and is then averaged over time of different frames \cite{Aranson2008}.  Although the two methods lead to the same results when spatial and temporal correlations are small compared with the system size and experiment duration \cite{Aranson2008}, the second method is subject to potential systematic errors in our study due to time-independent non-uniform light illumination and intrinsic stationary density variations in non-motile suspensions at $t=0$ in the kinetic measurements. Using the first method, any stable non-uniform light illumination or stationary non-uniform density variations would result in zero temporal standard deviations of $I$ and, therefore, would not affect our measurements of true density fluctuations of motile bacterial suspensions.
 
-% The basic principle of measuring GNF is to get the scaling exponent of the standard deviation of the number of particles $\Delta N$ against the mean number $N$. We adopt the temporal variance \& spatial average (TVSA) method to do the calculation.
-%
-% Two methods have been used to quantify giant number fluctuations. Both divide the whole system into many small subsystems. Then, one of them calculates the mean number $N$ and standard deviation $\Delta N$ over time, and then average spatially (temporal variance -\> spatial average, TVSA) \cite{Narayan2007}. The other calculates $N$ and $\Delta N$ over all the small subsystems in one frame, then takes an average over time (spatial variance -\> temporal average, SVTA) \cite{Aranson2008}.
-%
-% Urbach 2008 futher stated that when a system is homogeneous, where spatial and temporal correlations are small compared with the system size and experiment duration, two methods give the same result. Our experimental system, \textit{E. coli} suspensions, has a correlation length ($\sim 30$ \textmu m) much smaller than the system size ($\sim 140$ \textmu m), and is thus a spatially homogeneous system. If observed over a sufficiently long time (longer than the autocorrelation time), the system can be regarded as being temporally homogeneous as well.
-%
-% In real experiment, we rely on image pixel intensity to measure local concentrations. The illumination light in our microscope system, and probably all microscope systems, presents a slight inhomogeneity which is quite stable and long-standing. This has caused trouble when we tried to use the second method (SVTA) to measure GNF (show a figure of GNF in stationary samples). In principle, such inhomogeneity can be removed by a removing the background preprocessing. However, without enough images for a sample, such a preprocessing may lead to larger errors. As a result, we adopt the TVSA method, which is not sensitive to the long-standing spatial inhomogeneity and works more robustly in our measurement. A way to understand the fact that TVSA is not sensitive to illumination inhomogeneity is to think of it as adding a constant image to each frame, which does not affect the temporal variation calculation.
-%
-% The TVSA method starts by cropping square-shape subsystems of various sizes from the original image time series, as shown in Fig.~\ref{GNF-calculation}a. For each size $l$, a standard deviation $\Delta N$ and a mean $N$ are calculated over the time series. In order to add more statistics to the data extracted from a time series, we choose 20 evenly distributed spots (Fig.~\ref{GNF-calculation}b) as the seeds of the subsystems and average the results calculated from all these subsystems to give the result for a video. We vary the subsystem size $l$ from 10 \textmu m to 30 \textmu m, and examine the temporal variations (standard deviations) of bacterial concentrations $\Delta N_{ij}$ in the $i^{th}$ frame for each box size $l_j$. The temporal variations are then averaged in space (over $i$) to give a single value variation $\Delta N_{j}$.
-% Then number fluctuations in the system is captured by the dependence of $\Delta N_{j}$ on $l_j$. In an equilibrium system, $\Delta N_{j}\propto l_j$ (this follows from $\Delta N_{j}\propto \sqrt{N_j}$ and $N_j\propto l_j^2$).
-% Thus, the deviation from $\Delta N_{j}\propto l_j$ quantifies the giant number fluctuation in the system.
-% In the main paper, we plot $\Delta N_{j}/l_j$ as a function of $l_j^2/l_b^2$, where $l_b$ is the length scale of single bacterial body length, chosen to be 3 \textmu m.
-% To be consistent with the notations in literatures, we get rid of the subscript $j$, and write $l_j$ as $\sqrt{N}$.
-% Note that the subscript $j$ denotes different choices of box sizes.
-%
-% Without a more careful calibration, we are not able to obtain the exact number of particles using this Beer's law based method. Fortunately, the calculations of GNF does not require the exact number, but only the relative number. In the main paper, we show that the volume fractions $\phi$ and average pixel intensities $I$ follow a pretty linear relation. Such a relation entails that $\Delta I \propto \Delta N$, which is followed by $\Delta I/\sqrt N \propto \Delta N/\sqrt N$. The proportionality allows us to get the scaling exponents of $\Delta N/\sqrt N$ against $N$, without having to measure the exact particle numbers.
-
-
 
 \subsection{Normalization of GNF at Different Volume Fractions}
 
@@ -133,7 +115,7 @@ Practically, to optimize image qualities, we adjust the exposure time of imaging
 \begin{figure}[ht]
   \begin{center}
     \includegraphics[width=4.5in]{Figs/5-GNF/GNF-normalization.pdf}
-    \caption[Normalization of GNF at different volume fractions]
+    \caption[Normalization of GNF at Different Volume Fractions]
     {
     Calibration of the standard deviation of bacterial number $\Delta N \sim l^2\Delta I$ at different volume fractions $\phi$. $\Delta N$ versus the dimensionless subsystem size $\tilde{l}^2 = l^2/l_b^2$ for bacterial suspensions at different $\phi$. The images are taking under the same illumination with the same imaging condition.
     }
@@ -156,7 +138,7 @@ where $\bar A$ indicates the mean of variable $A$, $\sigma_A$ indicates the stan
 \begin{figure}[!]
 	\begin{center}
 		\includegraphics[width=3.5in]{Figs/5-GNF/local-correlation.pdf}
-		\caption[Density autocorrelation]
+		\caption[Local Correlation between Density Fluctuations and Kinetic Energies]
 		{
 			Diagram showing the procedure to calculate the correlation between local density fluctuations and kinetic energies. (a) The raw image of a bacterial suspension at a given time $t$. (b) The coarse-grained image with a pixel size of $l=2.75l_b$. (c) The velocity field from PIV. (d) The field of local density fluctuations, obtained by calculating the standard deviation of the intensity of coarsen-grained pixels shown in (b) over a short time interval. (e) The field of local kinetic energy, obtained by calculating $E = \bm{v}^2/2$ from the velocity field shown in (c).
  		}
@@ -175,8 +157,8 @@ The simple linear relation allows us to measure the spatiotemporal evolution of 
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width=3.5in]{figs/5-GNF/3.pdf}
-\caption[Spatial and temporal correlation functions in active turbulence]
+\includegraphics[width=4in]{figs/5-GNF/3.pdf}
+\caption[Spatial and Temporal Correlation Functions in Active Turbulence]
 {
 \textbf{Spatial and temporal correlations functions of density and velocity in active turbulence.}
 (a) Two-point density correlations at different bacterial volume fractions $\phi$. Radial position $r$ is normalized by the average length of bacteria $l_b = 3$ $\mu$m.
@@ -200,7 +182,7 @@ Fig.~\ref{fig:spatiotemporal-correlations}f shows the density and velocity corre
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=4.5in]{figs/5-GNF/4.pdf}
-\caption[Giant number fluctuations in active turbulence]
+\caption[Giant Number Fluctuations in Active Turbulence]
 {
 Density fluctuations of bacterial suspensions of different volume fractions $\phi$. The standard deviation of bacterial number $\Delta N$ in a subsystem of length $l$ as a function of the area of the subsystem $l^2$. $\Delta N$ is normalized by the length of the subsystem $l$, which is proportional to the square root of bacterial number in the subsystem $\sqrt N$. $l$ is presented in a dimensionless form, $\tilde{l} = l/l_b$, where $l_b = 3$ $\mu$m is the average length of bacteria. Dark green triangles indicate the density correlation lengths $\lambda(\phi)$ from Fig.~\ref{fig:spatiotemporal-correlations}e. The black dashed line indicates a power-law scaling of 0.33.
 Inset: Scaling exponent $\alpha$ versus $\phi$. $\alpha$ are extracted by fitting the experimental data from 0.3$l_b$ to $\lambda(\phi)$. The dashed line in the inset indicates the theoretical prediction of $\alpha=1/3$.
@@ -209,8 +191,8 @@ Inset: Scaling exponent $\alpha$ versus $\phi$. $\alpha$ are extracted by fittin
 \end{center}
 \end{figure}
 
-We further examine GNF by calculating the standard deviation of bacterial number $\Delta N$ and the mean bacterial number $N$ in subsystems of increasing sizes. $\Delta N / \sqrt N$ as a function of $l^2/l_b^2$ for bacterial suspensions of different $\phi$ is plotted in Fig.~\ref{fig:GNF}, where $l$ is the side length of square subsystems.
-Note that the area of the subsystem $l^2$ is linearly proportional to mean particle number $N$ at given $\phi$. At small length scale, when $l\le\lambda_n$, bacterial suspensions of all volume fractions examined in this study (1.2\% to 14.4\%) exhibit GNF, with $\Delta N/\sqrt N$ increasing with subsystem size $l^2$. When the size of subsystems is much larger than the density correlation length $\lambda$, the giant fluctuation diminishes due to the spatial average over multiple dense and dilute regions.
+We further examine GNF by calculating the standard deviation of bacterial number $\Delta N$ and the mean bacterial number $N$ in subsystems of increasing sizes. The normalized $\Delta N$ as a function of rescaled subsystem size $\tilde{l}^2=l^2/l_b^2$ for bacterial suspensions of different $\phi$ is plotted in Fig.~\ref{fig:GNF}, where $l$ is the side length of square subsystems.
+Note that the area of the subsystem $l^2$ is linearly proportional to mean particle number $N$ at given $\phi$. At small length scale, when $l\le\lambda_n$, bacterial suspensions of all volume fractions examined in this study (0.8\% to 9.6\%) exhibit GNF, with $\Delta N$ increasing with subsystem size $l^2$. When the size of subsystems is much larger than the density correlation length $\lambda$, the giant fluctuation diminishes due to the spatial average over multiple dense and dilute regions.
 
 The degree of GNF can be quantified by the scaling exponent $\alpha$ following $\Delta N/\sqrt{N} \sim N^\alpha$. $\alpha=0$ for equilibrium systems obeying the central limit theorem, whereas the upper bound $\alpha = 0.5$ corresponds to a system with maximal density fluctuations.
 We extract $\alpha$ by fitting the experimental curves with power-law relations only below the density correlation length $\lambda$. The inset of Fig.~\ref{fig:GNF} shows $\alpha$ as a function of $\phi$.
@@ -225,7 +207,7 @@ The observation of GNF at volume fractions lower than $\phi_c$ suggests that eve
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=4.5in]{figs/5-GNF/5.pdf}
-\caption[Energy spectra in active turbulence]
+\caption[Energy Spectra in Active Turbulence]
 {
 Energy spectra $E(k)$ of bacterial suspensions of different volume fractions $\phi$. Shaded region indicates the range over which the scaling exponent $\beta$ is fitted. The black dashed line indicates a power-law scaling of $-3$. The red dashed line is a fitting of $E(k)$ at $\phi=0.8\%$ using Eq.~\ref{eq:energy-spectra}. In the fitting, the bacterial number density $n=\phi V_b$ and the dipole length $l_d = 1.9$ $\mu$m are from experiments, whereas the dipole strength $\kappa = 100$ $\mu$m$^3$/s and the regularization length $\epsilon = 14$ $\mu$m are taken as fitting parameters. In comparison, $\kappa = 300.8$ $\mu$m$^3$/s from experiments (see text).
 Inset: Scaling exponent of $E(k)$, $\beta$, as a function of $\phi$. Dashed line indicates $\beta = 3.3$.
@@ -256,7 +238,7 @@ where $C_d k^{d-1}$ is the surface area of $(d-1)$-sphere and $\langle \mathbf{v
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=4in]{figs/5-GNF/6.pdf}
-\caption[The coupling between GNF and kinetic energy spectra]
+\caption[The Coupling between GNF and Kinetic Energy Spectra]
 {
 The coupling between density fluctuations and kinetic energies in the steady state.
 (a) Energy spectra $E(k)$ plotted against number density fluctuations $\Delta N$ at each corresponding length scale for bacterial suspensions of different volume fractions $\phi$. Gray symbols are used for low-$\phi$ suspensions without active turbulence. The black dashed line is a polynomial fitting of the master curve, serving as a guide for the eye. The black arrow indicates the direction of increasing lengths.
@@ -271,8 +253,8 @@ The coupling between density fluctuations and kinetic energies in the steady sta
 
 Both GNF and energy spectra probe the scale dependence of active turbulence. The former measures density fluctuations at different scales, whereas the latter considers flow energies across scales. Although both properties have been extensively studied, the coupling between the two has not been explicitly examined so far.
 The GNF curves and energy spectra shown in Fig.~\ref{fig:GNF} and \ref{fig:energy-spectra} show similar characteristics, including the rapid increase at small length scale and plateaus at large length scale. Such similarity suggests that a density-independent correlation between density fluctuations and kinetic energies may exist across all different length scales.
-Indeed, when we plot density fluctuations $\Delta N/\sqrt N$ against the corresponding kinetic energies $E$ at the same scale in Fig.~\ref{fig:GNF-energy-spectra-correlation}a, all the $\Delta N/\sqrt N$-$E$ pairs fall onto a universal curve over two orders of magnitude in scales extending from the size of single PIV boxes to the vortex size in the turbulent regime, regardless of the specific volume fractions of the samples.
-In contrast, $\Delta N/\sqrt N$-$E$ shows much larger scattering for low $\phi$ suspensions with random swimming bacteria.
+Indeed, when we plot density fluctuations $\Delta N$ against the corresponding kinetic energies $E$ at the same scale in Fig.~\ref{fig:GNF-energy-spectra-correlation}a, all the $\Delta N$-$E$ pairs fall onto a universal curve over two orders of magnitude in scales extending from the size of single PIV boxes to the vortex size in the turbulent regime, regardless of the specific volume fractions of the samples.
+In contrast, $\Delta N$-$E$ shows much larger scattering for low $\phi$ suspensions with random swimming bacteria.
 Although it is not surprising that density fluctuations correlate with kinetic energies in general as both measure different aspects of the same active turbulence, the collapse of data from samples of different volume fractions is still quite unexpected.
 The results show that the coupling between density fluctuations and turbulent flows occur at every scale of active turbulence in a quantitative same fashion. Such a scale-invariant coupling is independent of the volume fraction of bacterial suspensions. A phenomenological fitting of the universal coupling between density fluctuations and kinetic energy is shown in Fig.~\ref{fig:GNF-energy-spectra-correlation}a by a black dashed line.
 
@@ -282,9 +264,9 @@ The normalized correlation between $\delta N(\mathbf{r},t)$ and $E(\mathbf{r},t)
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=4.5in]{figs/5-GNF/7.pdf}
-\caption[Temporal evolution of $\alpha$, overall flow energy $E$ and fraction of aligned flow region $M$]
+\caption[Temporal Evolution of $\alpha$, Flow Kinetic Energy $\langle \bm{v}^2 \rangle/2$ and Fraction of Aligned Flow Region $M$]
 {
-\textbf{Temporal evolution of $\alpha$, overall flow energy $E$ and fraction of aligned flow region $M$.}
+\textbf{Temporal evolution of $\alpha$, flow kinetic energy $\langle \bm{v}^2 \rangle/2$ and fraction of aligned flow region $M$.}
 (a) Snapshots of density fluctuation evolution during the transition towards active turbulence, overlaid with velocity fields obtained from PIV analysis. At $t=0$ s, we turn on the illumination light and the bacteria start to gain speed. Time are labeled in corresponding images ($\phi=6.4\%$).
 (b) Temporal evolution of scaling exponent $\alpha$, total kinetic energy $E$ and the region fraction of aligned velocity $M$ in the same sample.
 }
@@ -299,7 +281,7 @@ The temporal evolution of density fluctuations and turbulent flows in a bacteria
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=5.5in]{figs/5-GNF/8.pdf}
-\caption[Evolution of GNF and energy spectra during the turbulent transition]
+\caption[Evolution of GNF and Energy Spectra during the Turbulent Transition]
 {
 \textbf{Evolution of GNF and energy spectra during the turbulent transition.} (a) Number density fluctuations $\Delta N$ and (b) energy spectra $E(k)$ as functions of subsystem size $l^2$ at different times over the turbulence transition of the same bacterial suspension. $\Delta N$ is normalized by the length of subsystems $l$, similar to that in Fig.~\ref{fig:GNF}. $\tilde{l} = l/l_b$. This particular sample has a volume fraction $\phi=6.4$. $t$ is indicated by the legends, in unit of seconds.
 }
@@ -307,16 +289,16 @@ The temporal evolution of density fluctuations and turbulent flows in a bacteria
 \end{center}
 \end{figure}
 
-In Fig.~\ref{fig:alpha-kinetics}b, the evolution of the scaling exponent $\alpha$ is shown as a function of $t$. It grows relatively fast at the beginning and shows a saturation at $\sim 60$ s. The growth of both $\alpha$ and the large scale kinetic energy $E$ are significantly delayed compared with the formation of collective flows, which is quantified by the area fraction of the regions with strong alignment of local velocities $M$ \cite{Peng2020}.
+In Fig.~\ref{fig:alpha-kinetics}b, the evolution of the scaling exponent $\alpha$ is shown as a function of $t$. It grows relatively fast at the beginning and shows a saturation at $\sim 60$ s. The growth of both $\alpha$ and the large scale kinetic energy $\langle \bm{v}^2 \rangle/2$ are significantly delayed compared with the formation of collective flows, which is quantified by the area fraction of the regions with strong alignment of local velocities $M$ \cite{Peng2020}.
 The finding provides strong experimental support to an important prediction of the kinetic theory of active fluids \cite{Saintillan2008a,Saintillan2008b}, where the density fluctuation arises due to the nonlinear coupling between collective flows and particle densities. At the onset of hydrodynamic instability in the linear regime, when velocities are largely aligned but flow strength is low, GNF is not very pronounced, as confirmed by our experiments at early times.
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=4.5in]{figs/5-GNF/9.pdf}
-\caption[Density flow coupling during the transition towards active turbulence]
+\caption[Density Flow Coupling during the Transition towards Active Turbulence]
 {
 \textbf{Density flow coupling during the transition towards active turbulence.}
-Kinetic energy $E$ at various length scales is plotted against number fluctuations $\Delta N/\sqrt N$ at corresponding length scales for bacterial suspensions at volume fractions ranging from 2.4\% to 9.6\% at different times. Different colors indicates samples of different volume fractions. The size and the shape of the markers indicate the time. Small markers stand for early times and large markers stand for late times. The black dashed line is the fitting of the master curve shown in Fig.~\ref{fig:GNF-energy-spectra-correlation}a. In this plot, length scale and time are hidden variables, and their direction of evolving is indicated by a black arrow.
+Kinetic energy $E(k)$ at various length scales is plotted against number fluctuations $\Delta N$ at corresponding length scales for bacterial suspensions at volume fractions ranging from 2.4\% to 9.6\% at different times. Different colors indicates samples of different volume fractions. The size and the shape of the markers indicate the time. Small markers stand for early times and large markers stand for late times. The black dashed line is the same master curve as shown in Fig.~\ref{fig:GNF-energy-spectra-correlation}a. In this plot, length scale and time are hidden variables, and their direction of evolving is indicated by a black arrow.
 }
 \label{fig:GNF-energy-spectra-correlation-transient}
 \end{center}
