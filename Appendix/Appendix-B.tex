@@ -8,8 +8,8 @@
 \chapter{Image Analysis Code}
 
 \section{Code Vectorization}
-\subsection{Vectorized Code for Spatial Correlation Function}
 \label{sec:A-vectorization}
+\subsection{Vectorized Code for Spatial Correlation Function}
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.1,linenos,]{python}
 def corrS(X, Y, U, V):
     row, col = X.shape
@@ -71,7 +71,7 @@ def corrS(X, Y, U, V):
 	\includegraphics[width=5.5in]{Figs/A-2/vectorization.pdf}
 	%select pdftexify command to run jpg or pdf files
 	\end{center}
-	\caption[The performance of vectorized and non-vectorized code]
+	\caption[The Performance of Vectorized and Non-vectorized Code]
 	{
 	\textbf{The performance of vectorized and non-vectorized code.}
   (a) Sample velocity field.
@@ -82,7 +82,7 @@ def corrS(X, Y, U, V):
 
 
 \subsection{Performance Comparison}
-We notice that the vectorized code has two less nested \texttt{for} loops compared to the non-vectorized code. As a result, the vectorized one runs much faster for the same task. To quantify this performance difference, we perform the spatial correlation function calculation using both code on the same velocity field, shown in Fig.~\ref{fig:vectorization-performance}a. The times taken for the two functions are:
+We notice that the vectorized code has two less nested \texttt{for} loops compared to the non-vectorized code. As a result, the vectorized one runs much faster for the same task. To quantify this performance difference, we perform the spatial correlation function calculation using both codes on the same velocity field, shown in Fig.~\ref{fig:vectorization-performance}a. The times taken for the two functions are:
 \begin{itemize}
   \item \texttt{Vectorized code: 0.84 s}
   \item \texttt{Non-vectorized code: 52.06 s}
@@ -188,7 +188,7 @@ This is designed for tracking colloidal chains. We show here the basic working p
 	\includegraphics[width=5.5in]{Figs/A-2/corrTrack.pdf}
 	%select pdftexify command to run jpg or pdf files
 	\end{center}
-	\caption[Cross-correlation based particle detecting method]
+	\caption[Cross-correlation Based Particle Detecting Method]
 	{
 	\textbf{Cross-correlation based particle detecting method.}
   (a) A sample image of colloidal particles. Inset: a mask produced by cropping the raw image and binarize.
@@ -309,14 +309,14 @@ def track_spheres(img, mask, num_particles):
 \section{Fourier Transform Based Orientation Analysis}
 \label{sec:A-fourier-transform-based-orientation-analysis}
 \subsection{Working Principle}
-The orientation of patterns in an image can be found by calculating the Fourier transform of the image. The idea is that in the direction of predominant pattern orientation (Fig.~\ref{fig:oft-illustration}a, the vertical direction), the signal frequency is smaller compared to the perpendicular direction. Such feature manifests in the frequency domain as anisotropic patterns (Fig.~\ref{fig:oft-illustration}b, horizontal orientation). This method is used in the study of the emergence of active turbulence in Chap.~\ref{the-emergence-of-active-turbulence}.
+The orientation of patterns in an image can be found by calculating the Fourier transform of the image. The idea is that in the direction of predominant pattern orientation (Fig.~\ref{fig:oft-illustration}a, the vertical direction), the signal frequency is smaller compared to the perpendicular direction. Such a feature manifests in the frequency domain as anisotropic patterns (Fig.~\ref{fig:oft-illustration}b, horizontal orientation). This method is used in the study of the emergence of active turbulence in Chap.~\ref{the-emergence-of-active-turbulence}.
 
 \begin{figure}[h]
 	\begin{center}
 	\includegraphics[width=5.5in]{Figs/A-2/orientationFT.pdf}
 	%select pdftexify command to run jpg or pdf files
 	\end{center}
-	\caption[Fourier transform based orientation analysis illustration]
+	\caption[Fourier Transform Based Orientation Analysis Illustration]
 	{
 	\textbf{Fourier transform based orientation analysis illustration.}
   (a) Raw image.
@@ -403,7 +403,7 @@ Some example applications of this method are shown in Fig.~\ref{fig:oft-gallery}
 	\includegraphics[width=5.5in]{Figs/A-2/oft-gallery.pdf}
 	%select pdftexify command to run jpg or pdf files
 	\end{center}
-	\caption[Fourier transform based orientation analysis examples]
+	\caption[Fourier Transform Based Orientation Analysis Examples]
 	{
 	\textbf{Fourier transform based orientation analysis examples.}
   Orientations of
@@ -416,7 +416,7 @@ Some example applications of this method are shown in Fig.~\ref{fig:oft-gallery}
 
 \section{Density Fluctuation Calculations}
 \label{sec:A-df-calculation}
-The principles of density fluctuation calculation has already been described in Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space}. Here, I show the Python implementation of the calculation.
+The principles of density fluctuation calculation have already been described in Chap.~\ref{giant-number-fluctuations-in-3-dimensional-space}. Here, I show the Python implementation of the calculation.
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.1,linenos]{python}
 def df2(img_stack, boxsize=None, size_min=5, step=250):
