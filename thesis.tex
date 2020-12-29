@@ -1,9 +1,9 @@
 % thesis.tex: Primary TeX control file for thesis.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt, oneside]{mnthesis}
-% \usepackage{epsfig} % Allows the inclusion of eps files
-% \usepackage{epic} % Enhanced picture mode
-% \usepackage{eepic} % Extensions for epic
+\usepackage{epsfig} % Allows the inclusion of eps files
+\usepackage{epic} % Enhanced picture mode
+\usepackage{eepic} % Extensions for epic
 \usepackage{units} % SI unit typesetting
 \usepackage{url} % URL handling
 \usepackage{longtable} % Tables that continue onto multiple pages
@@ -27,6 +27,7 @@
 \usepackage[symbol]{footmisc}  % to use * footage
 \usepackage{dnaseq}
 \usepackage[cache=false]{minted} % python code syntax highlight
+\usepackage{afterpage}
 
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 \newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
@@ -85,12 +86,12 @@
 
 % Results
 \include{Chapters/rheology-of-bacterial-suspensions-under-confinement}
-
+%
 \include{Chapters/the-emergence-of-active-turbulence}
-
+%
 \include{Chapters/giant-number-fluctuations-in-3-dimensional-space}
-
-%Conclusion
+%
+% %Conclusion
 \include{Chapters/summary-and-outlook}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

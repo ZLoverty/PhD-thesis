@@ -36,7 +36,7 @@ Our study reveals a strong confinement effect on dilute bacterial suspensions: t
 suspension flows and the variation of bacterial density within confined channels. These microscopic measurements allow us to construct a simple model based on the boundary-layer mechanism, which qualitatively explains the experimental observations.
 Thus, our study provides not only systematic experimental results on the rheology of confined bacterial suspensions but also evidence on the effect of the boundary layer on the rheology of active fluids.
 
-\begin{figure}[!ht]
+\begin{figure}[!hp]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/3-Rheo/1.pdf}
 	\end{center}
@@ -84,7 +84,7 @@ To obtain the flow profiles of suspensions at different $h$ and $\dot\gamma$, we
 
 The number of bacteria at each height can also be estimated from these movies through direct counting, which allows us to calculate 2D bacterial density $n$.
 
-\begin{figure}[!ht]
+\begin{figure}[!hp]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/3-Rheo/2.pdf}
 	\end{center}
@@ -114,7 +114,8 @@ independent of $h$. At the moderate shear rate, the increasing trend is less pro
 \subsection{Microscopic Dynamics}
 Hydrodynamic interactions between bacteria and external shear flows can profoundly modify the swimming behaviors of bacteria, leading to interesting phenomena such as rheotaxis \cite{Marcos2012}, heterogeneous bacterial distributions \cite{Rusconi2014}, and upstream swimming along confining walls \cite{Hill2007, Nash2010, Costanzo2012, Kaya2012}. These microscopic bacterial dynamics may strongly affect the macroscopic rheology of bacterial suspensions. Hence, we also investigate the microdynamics of bacterial suspensions at microscopic scales in microfluidic channels of different heights.
 
-\begin{figure}[!ht]
+
+\begin{figure}[!p]
 	\begin{center}
 	\includegraphics[width=4 in]{Figs/3-Rheo/3.pdf}
 	\end{center}
@@ -130,11 +131,12 @@ Hydrodynamic interactions between bacteria and external shear flows can profound
 	\label{fig:3-velocity-profile}
 \end{figure}
 
+
 \subsubsection{Velocity Profiles}
 First, we measure the velocity profiles of bacterial suspensions along $y$ in microfluidic channels of different heights at low shear rates (Fig.\ref{fig:3-velocity-profile}), where the confinement effect is most pronounced. Near the center of the channels, the velocity profiles of fluid flows, $V(y)$, are parabolic, consistent with the Hagen-Poiseuille law. However, near the bottom and top walls, the velocity of fluid flows measured from passive colloidal tracers noticeably deviates from the parabolic profile and is significantly higher than the velocity of bacteria, $V_{bac}(y)$. Thus, there exists a boundary layer near the confining walls, where bacteria swim against the background flow and exhibit strong relative motions. The thickness of these boundary layers, where strong relative motions of bacteria can be observed, is about 5 $\mu$m, independent of $h$. Thus, as $h$ decreases, the boundary layer plays a more important role in suspension flows. Interestingly, the velocity profiles of bacteria, $V_{bac}(y)$, remain parabolic for different $h$, satisfying the no-slip condition at the walls. Such a feature is
 crucial for \textit{E. coli} in natural environments, where they need to maintain their locations in the lower intestine of their hosts against expelling flows.
 
-\begin{figure}[!ht]
+\begin{figure}[!p]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/3-Rheo/4.pdf}
 	\end{center}
@@ -152,7 +154,7 @@ crucial for \textit{E. coli} in natural environments, where they need to maintai
 The difference in the velocity profiles of fluid flows and bacteria indicates the existence of boundary layers near the confining walls consisting of upstream swimming bacteria against imposed shear flows, an observation in agreement with previous experiments \cite{Hill2007, Kaya2012} and simulations \cite{Costanzo2012, Chilukuri2014, Ezhilan2015, Nash2010}. To illustrate the phenomenon directly, Fig.~\ref{fig:3-upstream}a shows the trajectories of colloidal and bacterial tracers near the bottom wall. The relative motions between bacteria and the background fluid can be
 clearly identified. The orientation of bacteria against the bottom and top walls can be estimated from the images showing the bacteria near the side walls (Fig.~\ref{fig:3-upstream}b). We plot the distribution of the orientation angle of bacteria against the side walls (Fig.~\ref{fig:3-upstream}c), which strongly biases toward acute angles with the mean at 20°.
 
-\begin{figure}[!ht]
+\begin{figure}[!hp]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/3-Rheo/5.pdf}
 	\end{center}
@@ -236,8 +238,8 @@ we have
   \frac{\eta}{\eta_0} = \frac{\eta_b}{\eta_0} \left[ 1 - \frac{6\langle V_d \rangle}{h\dot\gamma}  \right]
 \end{equation}
 
-
-\begin{figure}[!ht]
+\afterpage{%
+\begin{figure}[!hp]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/3-Rheo/6.pdf}
 	\end{center}
@@ -249,6 +251,8 @@ we have
   }
 	\label{fig:3-scaling}
 \end{figure}
+}
+
 
 
 We fit our experimental results using the above equation, where $\eta_b/\eta_0$ is given by the exponential function for bulk samples as discussed above. $\langle V_d \rangle$ is taken as a fitting parameter, which we assume is independent of $\dot\gamma$. We find that $\langle V_d \rangle$ decreases with increasing $h$ and shows an approximate power law scaling, $\langle V_d \rangle \sim h^{-\alpha}$, with $\alpha = - 1.9 \pm 0.6$ (Fig.~\ref{fig:3-scaling}a).
@@ -266,7 +270,7 @@ above. Here, $\zeta$ is the drag coefficient and a is the characteristic size of
 However, for intermediate Pe that is more relevant to our experiments, $\sigma^S$ becomes positive (see Fig. 2 of Ref.~\cite{Takatori2017}), which leads to the reduction of viscosity in confined systems, consistent with our experiments. Nevertheless, for suspensions of spherical particles, where the analytical solution of the viscosity is available (Eq. 5 of Ref.~\cite{Takatori2017}), the decrease of viscosity is less than a factor of 1.1 when we decrease $h$ from 50 to 25 $\mu$m even at the optimal shear rates of 2.1 s$^{-1}$ that leads to the largest viscosity reduction. In comparison, the viscosity decreases by more than a factor of 3 over the same range of $h$ in our experiments. Although the analytical solution for suspensions of active ellipsoids appropriate for the bacteria is not available, numerical solutions show that the magnitude of $\sigma^S$ of active ellipsoids is smaller than that of active spheres \cite{Takatori2017}. Hence, we expect that the effect of the confinement-induced viscosity reduction is even weaker for suspensions of active ellipsoids.
 This conclusion is supported by the failure of our attempt to collapse data using a dimensionless shear rate with the characteristic run-time of bacteria (Fig.~\ref{fig:3-rheology}b). Thus, other factor(s) need to be considered to fully explain the experimental observations.
 
-\begin{figure}[!ht]
+\begin{figure}[!hp]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/3-Rheo/7a.pdf}
 	\end{center}
@@ -285,7 +289,7 @@ This conclusion is supported by the failure of our attempt to collapse data usin
 A possible origin of $\langle V_d \rangle$ is the boundary layer of upstream swimming bacteria. To estimate their effect, we numerically calculate $\langle V_d \rangle$ by assuming a smectic layer of upstream swimming bacteria in a 2D channel with a line density $n$ randomly distributed along the top and bottom walls (Fig.~\ref{fig:3-model}a). Since a bacterium is force-free at low Reynolds numbers, the far-field disturbance flow induced by the bacterium is a hydrodynamic dipolar flow. The flow of a single force dipole near the walls can be constructed by superposition of two Stokeslets of strength $F$ at position $\mathbf{r_0} + \mathbf{u}d/2$ and $\mathbf{r_0} - \mathbf{u}d/2$, respectively, where $\mathbf{r_0} = (x_0, y_0)$ is the center of the force dipole (Fig.~\ref{fig:3-model}b inset). We fix $y_0$ at 1 $\mu$m away from the walls in our calculation. The classical solution of a Stokeslet near a wall is used in this construction \cite{Blake1971}, so that the disturbance flow satisfies both the no-penetration and the no-slip boundary conditions at the closest wall. d = 2.2 $\mu$m is the distance between the two Stokeslets in a force dipole obtained from experiments \cite{Drescher2011}. $\mathbf{u}$ indicates the direction of the force dipole, which forms an acute angle $\theta$ against the imposed shear flow. We choose $\theta = 20$°, the mean angle of bacterial orientation from our experimental observations. Other acute angles lead to qualitatively similar results.
 $F$ is related to bacterial swimming speed $v$ through $F = \zeta v$ with $F \approx 0.43$ pN for \textit{E. coli} \cite{Drescher2011}. The disturbance flow is translationally invariant along $x$ for infinite large systems. In our calculation, we set the system size to be 1 mm in $x$, much larger than the average spacing between dipoles. The disturbance flow is then obtained near the center of the system. Specifically, we compute the x-component disturbance flow, $V_d(y)$, at a fixed $x$ defined as $x = 0$. All the results are averaged over 100 different random configurations. To avoid the singularity at $x = 0$, we exclude those configurations where the locations of the Stokeslets fall in $x \in$ [-10 nm, 10 nm]. A cutoff, $l_c$, in $y$ can be further chosen based on $\int_{-h/2}^{-h/2+l_c} V_d(y)dy = 0$, below which the near-field bacterial flow is important and the dipole-flow approximation of our simple model breaks down. $l_c \sim 1.4$ $\mu$m, slightly higher than the location of the upper Stokeslet.
 
-\begin{figure}[!ht]
+\begin{figure}[!hp]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/3-Rheo/7b.pdf}
 	\end{center}

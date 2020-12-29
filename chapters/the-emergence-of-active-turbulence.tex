@@ -23,7 +23,7 @@ Moreover, the kinetic pathway towards the collective motion of swimming microorg
 
 Here, we aim to address the above open questions. Our experiments provide not only the most comprehensive phase diagram of the flow of 3D bacterial suspensions heretofore, but also the detailed characterization of the kinetic route of the bacterial turbulent transition. Our experimental phase diagram quantitatively agrees with the kinetic theories, as well as our simple hydrodynamic model balancing dipolar interactions and rotational diffusion of bacteria. By further examining the effect of doping immobile bacteria on the phase dynamics, we show unambiguously that hydrodynamic interactions dominate the formation of collective swimming in 3D bacterial suspensions. Moreover, our kinetic measurements reveal an unexpected kinetic pathway near the phase boundary in analogy of the nucleation and growth process in equilibrium phase transitions and confirm the existence of a long-wavelength instability deep inside the turbulent phase. Together, our experiments validate the basic assumption of the kinetic theories and corroborate the principal predictions of the theories on the transition point and the mode of instability. Furthermore, our study uncovers new kinetic features of the bacterial turbulent transition and sheds new light on the nature of the nonequilibrium phase transition in active microbiological systems. These findings open new questions for future experimental and theoretical development.
 
-\begin{figure}[!ht]
+\begin{figure}[!p]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/4-Emergence/S1.pdf}
 	\end{center}
@@ -75,7 +75,8 @@ spectrum $E(k)$ is obtained by summing up $E(k_x,k_y)$ at a constant $k=(k_x^2+k
 
 To extract bacterial nematic order, we perform Fast Fourier transformation (FFT) on the local regions ($20 \times 20$ $\mu$m$^2$) of confocal images. The FFT patterns are first smoothed with 3 neighboring pixels (0.15 $\mu$m$^{-1}$) and then fitted with ellipses. The aspect ratio of the ellipses, $a/b$, quantifies the local nematic order of bacteria (Appendix.~\ref{sec:A-fourier-transform-based-orientation-analysis}). The average of the aspect ratio is finally taken over the whole field of view, $F = \langle a/b \rangle$. To calibrate our method, we show numerically that the anisotropy of the FFT pattern of local regions, $a/b$, is approximately linearly proportional to the local nematic order parameter of bacteria $S=\frac{1}{N}\sum_{j=1}^N(3\cos^2\alpha_j - 1)/2$ within the range of our experiments, where $\alpha_j$ is the angle between the orientation of bacterium $j$ with respect to the mean orientation of all the $N$ bacteria in a local region in 3D.
 
-\begin{figure}[!ht]
+
+\begin{figure}[!hp]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/4-Emergence/1.pdf}
 	\end{center}
@@ -89,12 +90,22 @@ To extract bacterial nematic order, we perform Fast Fourier transformation (FFT)
 	\label{fig:4-turbulence}
 \end{figure}
 
+
+
 \section{Results}
 
 We use  \textit{E. coli} as our model bacteria. In order to examine a large control parameter space, three different strains of \textit{E. coli} are used in our experiments, which all share similar body plans (Methods). In addition to a wild-type strain (BW25113), a strain of tumblers with $cheZ$ knocked out (RP1616) and flagella removed is used as immobile passive bacteria. Moreover, a light-powered
 \textit{E. coli} strain (BW25113 with proteorhodopsin, a light-driven transmembrane proton pump \cite{Walter2007}) is also used, whose motility can be varied by green light of different intensities (Fig.~\ref{fig:4-motility}). By mixing different strains of bacteria and controlling light intensity, we explore the phase diagram of 3D bacterial flows spanned by bacterial volume fraction $\phi$, the average swimming speed of bacteria $v$ and the number fraction of active swimmers $f$.
 
-\begin{figure}[!ht]
+
+
+
+\subsection{Transition to Bacterial Turbulence}
+The collective motion of bacteria leads to bacterial turbulence with characteristic intermittent jets and whirls, whose lengths and speeds are much larger than those of individual bacteria (Figs.~\ref{fig:4-turbulence}a and b). To quantify bacterial turbulence, we calculate the orientational correlation of local velocities, $c_i=\min_{j=1..4}(\hat{v_i}\cdot\hat{v_j})$, where $\hat{v_i}$ is the unit vector along the direction of the local velocity at position $i$ and $\hat{v_j}$ is the direction of the velocity in one of its four neighboring boxes adopted in Particle Imaging Velocimetry (PIV).
+Note that our PIV measures 2D in-plane flows $\vec{v}=(v_x, v_y)$ in 3D bacterial suspensions (Methods). We identify a local region with high velocity orientational correlation when $c \ge 0.9$. The area fraction of these highly correlated regions, $M$, is used in our study as the order parameter quantifying the rise of bacterial turbulence (Fig.~\ref{fig:4-turbulence}c). This choice is similar to that used in previous studies \cite{Cisneros2011}. In addition to the velocity orientational order, we also measure the strength of bacterial flows via kinetic energy per unit mass, $E=\langle v_x^2 + v_y^2 \rangle / 2$.
+Although the definition of kinetic energy density is the same as that used for classical turbulent flows, the inertia of bacterial swimming in our experiments is negligible with the Reynolds number on the order of $10^{-4}$.
+
+\begin{figure}[!hp]
 	\begin{center}
 	\includegraphics[width=4 in]{Figs/4-Emergence/S2C.pdf}
 	\end{center}
@@ -105,12 +116,16 @@ We use  \textit{E. coli} as our model bacteria. In order to examine a large cont
 	\label{fig:4-correlation-length}
 \end{figure}
 
-\subsection{Transition to Bacterial Turbulence}
-The collective motion of bacteria leads to bacterial turbulence with characteristic intermittent jets and whirls, whose lengths and speeds are much larger than those of individual bacteria (Figs.~\ref{fig:4-turbulence}a and b). To quantify bacterial turbulence, we calculate the orientational correlation of local velocities, $c_i=\min_{j=1..4}(\hat{v_i}\cdot\hat{v_j})$, where $\hat{v_i}$ is the unit vector along the direction of the local velocity at position $i$ and $\hat{v_j}$ is the direction of the velocity in one of its four neighboring boxes adopted in Particle Imaging Velocimetry (PIV).
-Note that our PIV measures 2D in-plane flows $\vec{v}=(v_x, v_y)$ in 3D bacterial suspensions (Methods). We identify a local region with high velocity orientational correlation when $c \ge 0.9$. The area fraction of these highly correlated regions, $M$, is used in our study as the order parameter quantifying the rise of bacterial turbulence (Fig.~\ref{fig:4-turbulence}c). This choice is similar to that used in previous studies \cite{Cisneros2011}. In addition to the velocity orientational order, we also measure the strength of bacterial flows via kinetic energy per unit mass, $E=\langle v_x^2 + v_y^2 \rangle / 2$.
-Although the definition of kinetic energy density is the same as that used for classical turbulent flows, the inertia of bacterial swimming in our experiments is negligible with the Reynolds number on the order of $10^{-4}$.
+A transition to bacterial turbulence is observed as we increase bacterial volume fraction, $\phi$ (Fig.~\ref{fig:4-transition}a). A sharp increase of $M$ occurs around $\phi = 0.018$. The transition point, $\phi_c$, is then obtained from the inflection point of the error function fitting of $M(\phi)$. The transition to bacterial turbulence at $\phi_c$ is also coincident with a more gradual increase of $E$ (Fig.~\ref{fig:4-transition}a).
+We find similar sharp transitions to bacterial turbulence when increasing $v$ and $f$ at fixed $\phi$ (Fig.~\ref{fig:4-transition}b, c).
+Particularly, bacterial turbulence is observed at $f = 20\%$ for the mixture of wild-type \textit{E. coli} ($v = 28.7$ $\mu$m/s) and immobile bacteria at $\phi = 0.18$. Such a low $f$ demonstrates the robustness of the collective flow of bacterial suspensions, greatly surpassing the state-of-the-art design of active robotic systems \cite{Li2019a}.
+This high tolerance to malfunctioning units likely arises from long-range hydrodynamic interactions, lacking in dry active matter \cite{Marchetti2013}.
 
-\begin{figure}[!ht]
+\subsection{3D Phase Diagram}
+Systematic measurements over a thousand bacterial samples under different combinations of control parameters yield a full 3D phase diagram of bacterial flows, where bacterial turbulence emerges at large $\phi$, $v$ and $f$ (Fig.~\ref{fig:4-transition}d).
+It should be emphasized that, although the transition to bacterial turbulence has been investigated with increasing $\phi$ and $v$ in separate experiments \cite{Cisneros2011, Sokolov2007, Sokolov2009, Sokolov2012, Ryan2013}, to the best of our knowledge, systematic measurements over such a large parameter space in the same experimental system have not been achieved previously. This comprehensive 3D phase diagram not only allows us to quantitatively verify the theoretical prediction on the transition point, but also sets up a framework for exploring the kinetics of the transition in the next section.
+
+\begin{figure}[!hp]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/4-Emergence/2.pdf}
 	\end{center}
@@ -125,15 +140,6 @@ Although the definition of kinetic energy density is the same as that used for c
 	}
 	\label{fig:4-transition}
 \end{figure}
-
-A transition to bacterial turbulence is observed as we increase bacterial volume fraction, $\phi$ (Fig.~\ref{fig:4-transition}a). A sharp increase of $M$ occurs around $\phi = 0.018$. The transition point, $\phi_c$, is then obtained from the inflection point of the error function fitting of $M(\phi)$. The transition to bacterial turbulence at $\phi_c$ is also coincident with a more gradual increase of $E$ (Fig.~\ref{fig:4-transition}a).
-We find similar sharp transitions to bacterial turbulence when increasing $v$ and $f$ at fixed $\phi$ (Fig.~\ref{fig:4-transition}b, c).
-Particularly, bacterial turbulence is observed at $f = 20\%$ for the mixture of wild-type \textit{E. coli} ($v = 28.7$ $\mu$m/s) and immobile bacteria at $\phi = 0.18$. Such a low $f$ demonstrates the robustness of the collective flow of bacterial suspensions, greatly surpassing the state-of-the-art design of active robotic systems \cite{Li2019a}.
-This high tolerance to malfunctioning units likely arises from long-range hydrodynamic interactions, lacking in dry active matter \cite{Marchetti2013}.
-
-\subsection{3D Phase Diagram}
-Systematic measurements over a thousand bacterial samples under different combinations of control parameters yield a full 3D phase diagram of bacterial flows, where bacterial turbulence emerges at large $\phi$, $v$ and $f$ (Fig.~\ref{fig:4-transition}d).
-It should be emphasized that, although the transition to bacterial turbulence has been investigated with increasing $\phi$ and $v$ in separate experiments \cite{Cisneros2011, Sokolov2007, Sokolov2009, Sokolov2012, Ryan2013}, to the best of our knowledge, systematic measurements over such a large parameter space in the same experimental system have not been achieved previously. This comprehensive 3D phase diagram not only allows us to quantitatively verify the theoretical prediction on the transition point, but also sets up a framework for exploring the kinetics of the transition in the next section.
 
 We first estimate the phase boundary between disordered and turbulent phases using a simple hydrodynamic model proposed in Ref.~\cite{Drescher2011}, where the pairwise hydrodynamic interaction that promotes local bacterial alignment competes with the rotational relaxation that disorientates bacteria. Although these
 two competing factors also form the basic ingredients of the kinetic theories \cite{Koch2011, Saintillan2015}, this simple model considers the interaction between two bacteria, instead of mean-field particle probability distributions. Specifically, we calculate the rotation of a bacterium in a flow field induced by the swimming of its neighbor at distance $r$. A critical distance $r_c$ is determined when the flow-driven rotation of the bacterium balances the reorientation of the bacterium due to random tumbling and rotational diffusion. The transition volume fraction is then given as $\phi_c=V_b/r_c^3$, where $V_b = 2\pi ab^2 = 2.20$ $\mu$m$^3$ is the volume of a single bacterium. Here, we approximate the bacterial body as a cylinder with an average length $2a = 2.8$ $\mu$m and
@@ -161,7 +167,8 @@ orientated along its major axis, which is slightly smaller than the measured val
 Without fitting parameters, Eq.~\ref{eq:4-koch-model} quantitatively agrees with our experiments (Fig.~\ref{fig:4-transition}e), although small deviations between the theory and experiments can be observed at high concentrations. As such, our systematic measurements of the phase diagram provide a quantitative verification of the prediction of the kinetic theories on the transition point.
 Our experiments also confirm numerical results from large-scale particle-based simulations with hydrodynamic interactions and random reorientations \cite{Krishnamurthy2015, Bardfalvy2019}, where collective motions have been observed above the predicted threshold concentration.
 
-\begin{figure}[!ht]
+\afterpage{
+\begin{figure}[!p]
 	\begin{center}
 	\includegraphics[width=4 in]{Figs/4-Emergence/S3.pdf}
 	\end{center}
@@ -171,6 +178,9 @@ Our experiments also confirm numerical results from large-scale particle-based s
 	}
 	\label{fig:4-immobile}
 \end{figure}
+\clearpage
+}
+
 
 At $f = 1$, we find $\phi_c$ ranges between 0.02 and 0.08 for different bacterial velocities (Fig.~\ref{fig:4-transition}e inset). The average distance between bacteria at $\phi_c$ is about 6 to 9.5 $\mu$m, on the order of the size of a single bacterium \cite{Berg2004}. Short-range hydrodynamic and steric interactions could be important at such small scales \cite{Aranson2007, Ezhilan2013}. Hence, it is nontrivial that the far-field dipolar hydrodynamic interaction adapted in our simple model (Eq.~\ref{eq:4-model}) and in the kinetic theories (Eq.~\ref{eq:4-koch-model}) is sufficient to describe the experimental phase boundary.
 The observation supports the basic assumption of the kinetic theories \cite{Koch2011, Saintillan2015}. Consistent with this finding, increasing the fraction of immobile bacteria at either a fixed total bacterial volume fraction $\phi$ or a fixed volume fraction of active swimmers $f\phi$ suppresses bacterial turbulence in our experiments (Fig.~\ref{fig:4-immobile}), rather than promoting the collective motion as observed in dry active matter with purely short-range steric interactions \cite{Kumar2014}. Thus, our study provides experimental evidence on the dominant role of long-range hydrodynamic interactions in 3D suspensions, resolving the controversy over the interparticle interaction responsible for 3D bacterial collective swimming. Physically, if bacterial orientation is random, the effective volume occupied by a bacterium should be considered as a sphere of radius a instead of the excluded volume of the bacterial body $V_b$, which would lead to much larger effective $\phi_c$ up to 0.41 in the semi-dilute regime \cite{Cisneros2011}. The dominant role of the long-range dipolar interaction observed in our experiments suggests that bacterial orientation is strongly correlated near the phase boundary under the influence of the hydrodynamic interaction. As a result, bacteria show preferred alignment with their neighbors, giving rise to relatively large inter-bacteria distances suitable for the long-range hydrodynamic interaction.
@@ -178,7 +188,7 @@ The observation supports the basic assumption of the kinetic theories \cite{Koch
 Lastly, it is worth noting that the size of samples in our experiments is fixed with the minimal dimension between 150 $\mu$m and 170 $\mu$m, much larger than the size of single bacteria. The volume of our samples is on the order of several microliters, which contains more than 107 bacteria at $\phi = 0.018$. Simulations and kinetic theories have shown that $\phi_c$ is independent of the system size at such large scales \cite{Stenhammar2017}. More recent experiments have also shown that the onset of collective motions and bacterial superfluids is insensitive to the system size above 170 $\mu$m \cite{Martinez2020}. Thus, the phase diagram shown in Fig.~\ref{fig:4-transition}d should approximate the phase behavior of bacterial suspensions in the bulk limit.
 
 
-\begin{figure}[!htbp]
+\begin{figure}[!hp]
 	\begin{center}
 	\includegraphics[height=5.2 in]{Figs/4-Emergence/3.pdf}
 	\end{center}
@@ -204,7 +214,7 @@ Far above the boundary, the increase of the velocity orientational correlation i
 The growths of $M$ and $E$ are decoupled in this case.
 The system exhibits a transient state with high velocity orientational order but low kinetic energy (the middle two pictures at $t = 10$ and $30$ s in Fig.~\ref{fig:4-kinetics}d).
 
-\begin{figure}[!htbp]
+\begin{figure}[!hp]
 	\begin{center}
 	\includegraphics[height=5 in]{Figs/4-Emergence/4.pdf}
 	\end{center}
@@ -230,7 +240,7 @@ The presence of the transient state with high velocity orientational correlation
 $\Delta\tau$ increases with $\phi$ and can be as large as 65 s above $\phi = 0.16$ deep inside the turbulent phase.
 Note that although we discuss transition kinetics with increasing $\phi$, qualitatively similar trends are also observed when $v$ and $f$ are varied (Figs.~\ref{fig:4-two-step}c-f).
 
-\begin{figure}[!ht]
+\begin{figure}[!p]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/4-Emergence/5.pdf}
 	\end{center}
@@ -249,7 +259,7 @@ Hence, our measurements of transition kinetics provide experimental evidence con
 The observation of the long incubation period near the phase boundary is, however, not captured by the kinetic theories. Although the growth rate of the long wavelength instability also approaches zero near the phase boundary within the framework of the kinetic theories, one would expect to see the initial increase of $E(k)$ at small k near the phase boundary. This prediction contradicts our k-space analysis (Fig.~\ref{fig:4-spectra}a), as well as the real-space observation shown in Fig.~\ref{fig:4-kinetics}b, where the collective turbulent phase initiates locally at small scales and coalesces into large-scale structures only after the prolonged incubation period. Beyond the kinetic theories, the presence of two different transition kinetics is reminiscent of a theoretical phase diagram on the motility-induced phase separation of active fluids, where binodal and spinodal regions have been predicted based on the concept of swim pressures \cite{Takatori2015}.
 
 
-\begin{figure}[!htbp]
+\begin{figure}[!p]
 	\begin{center}
 	\includegraphics[width=5.5 in]{Figs/4-Emergence/6.pdf}
 	\end{center}
